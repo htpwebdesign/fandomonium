@@ -5,7 +5,8 @@
 
 function fan_register_custom_post_types() {
 
-    // ****** TEMPLATE THAT WE CAN ALL USE 
+    // **************** VENDOR CPT ********************//
+    // ***********************************************//
     $labels = array(
         'name'               => _x( 'Vendors', 'post type general name' ),
         'singular_name'      => _x( 'Vendor', 'post type singular name'),
@@ -51,7 +52,7 @@ function fan_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-store',
-        'supports'           => array( 'title', 'thumbnail', 'editor' ),
+        'supports'           => array( 'title', 'thumbnail' ),
     );
     register_post_type( 'fan-vendor', $args );
 
@@ -71,7 +72,7 @@ function fan_register_custom_post_types() {
         'all_items'             => __( 'All Events' ),
         'search_items'          => __( 'Search Events' ),
         'parent_item_colon'     => __( 'Parent Events:' ),
-        'not_found'             => __( 'No Events found.' ),
+        'not_found'             => __( 'No Events found!' ),
         'not_found_in_trash'    => __( 'No Events found in Trash.' ),
         'archives'              => __( 'Event Archives'),
         'insert_into_item'      => __( 'Insert into Event'),
@@ -101,18 +102,13 @@ function fan_register_custom_post_types() {
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-star-filled',
-        'supports'           => array(  'title', 'thumbnail'),
+        'supports'           => array( 'title', 'thumbnail' ),
     );
     register_post_type( 'fan-event', $args );
 
-}
-add_action( 'init', 'fan_register_custom_post_types' );
+    // **************** GUEST CPT ********************//
+    // ***********************************************//
 
-
-// guest custom post type - AK
-function guest_register_custom_post_types() {
-
-    // ****** TEMPLATE THAT WE CAN ALL USE 
     $labels = array(
         'name'               => _x( 'Guests', 'post type general name' ),
         'singular_name'      => _x( 'Guest', 'post type singular name'),
@@ -150,22 +146,19 @@ function guest_register_custom_post_types() {
         'show_in_admin_bar'  => true,
         'show_in_rest'       => true,
         'query_var'          => true,
-        // this makes it so that its name in the URL looks pretty!
-        // right here, you can see it in /works
         'rewrite'            => array( 'slug' => 'guests' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-heart',
-        'supports'           => array( 'title', 'thumbnail', 'editor' ),
+        'supports'           => array( 'title', 'thumbnail' ),
     );
     register_post_type( 'fan-guest', $args );
 
-
-
 }
-add_action( 'init', 'guest_register_custom_post_types' );
+add_action( 'init', 'fan_register_custom_post_types' );
+
 // // // // // // // // REGISTER TAXONOMIES HERE // // // // // // / //
 
 // taxonomies
@@ -232,7 +225,6 @@ add_action( 'init', 'fan_register_taxonomies');
 
 function fan_rewrite_flush() {
     fan_register_custom_post_types();
-    guest_register_custom_post_types();
     fan_register_taxonomies();
     flush_rewrite_rules();
 }
