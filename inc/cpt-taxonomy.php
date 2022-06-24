@@ -61,8 +61,66 @@ function fan_register_custom_post_types() {
 add_action( 'init', 'fan_register_custom_post_types' );
 
 
+// guest custom post type - AK
+function guest_register_custom_post_types() {
+
+    // ****** TEMPLATE THAT WE CAN ALL USE 
+    $labels = array(
+        'name'               => _x( 'Guests', 'post type general name' ),
+        'singular_name'      => _x( 'Guest', 'post type singular name'),
+        'menu_name'          => _x( 'Guests', 'admin menu' ),
+        'name_admin_bar'     => _x( 'Guest', 'add new on admin bar' ),
+        'add_new'            => _x( 'Add New', 'guest' ),
+        'add_new_item'       => __( 'Add New Guest' ),
+        'new_item'           => __( 'New Guest' ),
+        'edit_item'          => __( 'Edit Guest' ),
+        'view_item'          => __( 'View Guest' ),
+        'all_items'          => __( 'All Guests' ),
+        'search_items'       => __( 'Search Guests' ),
+        'parent_item_colon'  => __( 'Parent Guests:' ),
+        'not_found'          => __( 'No guests found!' ),
+        'not_found_in_trash' => __( 'No guests found in Trash.' ),
+        'archives'           => __( 'Guest Archives'),
+        'insert_into_item'   => __( 'Insert into guest'),
+        'uploaded_to_this_item' => __( 'Uploaded to this guest'),
+        'filter_item_list'   => __( 'Filter guests list'),
+        'items_list_navigation' => __( 'Guests list navigation'),
+        'items_list'         => __( 'Guests list'),
+        'featured_image'     => __( 'Guest featured image'),
+        'set_featured_image' => __( 'Set guest featured image'),
+        'remove_featured_image' => __( 'Remove guest featured image'),
+        'use_featured_image' => __( 'Use as featured image'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        // this makes it so that its name in the URL looks pretty!
+        // right here, you can see it in /works
+        'rewrite'            => array( 'slug' => 'guests' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-heart',
+        'supports'           => array( 'title', 'thumbnail', 'editor' ),
+    );
+    register_post_type( 'fan-guest', $args );
+
+
+
+}
+add_action( 'init', 'guest_register_custom_post_types' );
 // // // // // // // // REGISTER TAXONOMIES HERE // // // // // // / //
 
+// taxonomies
 function fan_register_taxonomies() {
 
      // Add Work Category taxonomy
@@ -98,6 +156,7 @@ add_action( 'init', 'fan_register_taxonomies');
 
 function fan_rewrite_flush() {
     fan_register_custom_post_types();
+    guest_register_custom_post_types();
     fan_register_taxonomies();
     flush_rewrite_rules();
 }
