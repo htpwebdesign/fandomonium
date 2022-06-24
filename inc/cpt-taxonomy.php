@@ -55,7 +55,55 @@ function fan_register_custom_post_types() {
     );
     register_post_type( 'fan-work', $args );
 
+    
+    // **************** EVENT CPT ********************//
+    // ***********************************************//
+    $labels = array(
+        'name'                  => _x( 'Events', 'post type general name' ),
+        'singular_name'         => _x( 'Event', 'post type singular name'),
+        'menu_name'             => _x( 'Events', 'admin menu' ),
+        'name_admin_bar'        => _x( 'Event', 'add new on admin bar' ),
+        'add_new'               => _x( 'Add New', 'Event' ),
+        'add_new_item'          => __( 'Add New Event' ),
+        'new_item'              => __( 'New Event' ),
+        'edit_item'             => __( 'Edit Event' ),
+        'view_item'             => __( 'View Event' ),
+        'all_items'             => __( 'All Events' ),
+        'search_items'          => __( 'Search Events' ),
+        'parent_item_colon'     => __( 'Parent Events:' ),
+        'not_found'             => __( 'No Events found.' ),
+        'not_found_in_trash'    => __( 'No Events found in Trash.' ),
+        'archives'              => __( 'Event Archives'),
+        'insert_into_item'      => __( 'Insert into Event'),
+        'uploaded_to_this_item' => __( 'Uploaded to this Event'),
+        'filter_item_list'      => __( 'Filter Events list'),
+        'items_list_navigation' => __( 'Events list navigation'),
+        'items_list'            => __( 'Events list'),
+        'featured_image'        => __( 'Event featured image'),
+        'set_featured_image'    => __( 'Set Event featured image'),
+        'remove_featured_image' => __( 'Remove Event featured image'),
+        'use_featured_image'    => __( 'Use as featured image'),
+    );
 
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'events' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-star-filled',
+        'supports'           => array(  'title', 'thumbnail'),
+    );
+    register_post_type( 'fan-event', $args );
 
 }
 add_action( 'init', 'fan_register_custom_post_types' );
