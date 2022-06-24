@@ -171,20 +171,20 @@ add_action( 'init', 'guest_register_custom_post_types' );
 // taxonomies
 function fan_register_taxonomies() {
 
-     // Add Work Category taxonomy
-     $labels = array(
-        'name'              => _x( 'Work Categories', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Work Category', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Work Categories' ),
-        'all_items'         => __( 'All Work Category' ),
-        'parent_item'       => __( 'Parent Work Category' ),
-        'parent_item_colon' => __( 'Parent Work Category:' ),
-        'edit_item'         => __( 'Edit Work Category' ),
-        'view_item'         => __( 'View Work Category' ),
-        'update_item'       => __( 'Update Work Category' ),
-        'add_new_item'      => __( 'Add New Work Category' ),
-        'new_item_name'     => __( 'New Work Category Name' ),
-        'menu_name'         => __( 'Work Category' ),
+    // Add Event Type Taxonomy
+    $labels = array(
+        'name'              => _x( 'Event Types', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Event Type', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Event Types' ),
+        'all_items'         => __( 'All Event Types' ),
+        'parent_item'       => __( 'Parent Event Type' ),
+        'parent_item_colon' => __( 'Parent Event Type:' ),
+        'edit_item'         => __( 'Edit Event Type' ),
+        'view_item'         => __( 'View Event Type' ),
+        'update_item'       => __( 'Update Event Type' ),
+        'add_new_item'      => __( 'Add New Event Type' ),
+        'new_item_name'     => __( 'New Event Type Name' ),
+        'menu_name'         => __( 'Event Type' ),
     );
     $args = array(
         'hierarchical'      => true,
@@ -195,9 +195,37 @@ function fan_register_taxonomies() {
         'show_in_rest'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'work-categories' ),
+        'rewrite'           => array( 'slug' => 'event-type' ),
     );
-    register_taxonomy( 'fan-work-category', array( 'fan-work' ), $args );
+    register_taxonomy( 'fan-event-type', array( 'fan-event' ), $args );
+
+    // Add Vendor Type Taxonomy
+    $labels = array(
+        'name'              => _x( 'Vendor Types', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Vendor Type', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Vendor Types' ),
+        'all_items'         => __( 'All Vendor Types' ),
+        'parent_item'       => __( 'Parent Vendor Type' ),
+        'parent_item_colon' => __( 'Parent Vendor Type:' ),
+        'edit_item'         => __( 'Edit Vendor Type' ),
+        'view_item'         => __( 'View Vendor Type' ),
+        'update_item'       => __( 'Update Vendor Type' ),
+        'add_new_item'      => __( 'Add New Vendor Type' ),
+        'new_item_name'     => __( 'New Vendor Type Name' ),
+        'menu_name'         => __( 'Vendor Type' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'vendor-type' ),
+    );
+    register_taxonomy( 'fan-vendor-type', array( 'fan-vendor' ), $args );
 }
 add_action( 'init', 'fan_register_taxonomies');
 
