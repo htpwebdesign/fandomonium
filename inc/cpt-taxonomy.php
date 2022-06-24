@@ -95,9 +95,4 @@ function fan_register_taxonomies() {
 }
 add_action( 'init', 'fan_register_taxonomies');
 
-function fan_rewrite_flush() {
-    fan_register_custom_post_types();
-    fan_register_taxonomies();
-    flush_rewrite_rules();
-}
-add_action( 'after_switch_theme', 'fan_rewrite_flush' );
+
