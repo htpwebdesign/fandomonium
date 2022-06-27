@@ -31,6 +31,26 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+<section>
+			<h2>Schedule</h2>
+
+			<?php
+
+			if (function_exists('get_field')) {
+				if (get_field('description')) {
+					?>
+						<p><?php the_field('description'); ?></p>
+					<?php
+				}
+			}
+			
+			
+			?>
+			
+
+			
+		</section>
+
 	</main><!-- #main -->
 
 <?php
