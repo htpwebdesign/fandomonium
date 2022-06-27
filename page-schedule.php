@@ -64,6 +64,11 @@ get_header();
 					echo "<div class='anchor-container'>";
 					while ( $query -> have_posts() ) {
 						$query -> the_post();
+						
+						if (get_field('start_time') ===  'August 29, 2022 11:00 am') {
+							echo "</div>";
+							echo "<div class='anchor-container'>";
+						}
 
 						echo "<article class='student-item'>";
 								echo '<a href="'.get_permalink().'">';
