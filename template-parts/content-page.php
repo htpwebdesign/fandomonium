@@ -26,6 +26,21 @@
 				'after'  => '</div>',
 			)
 		);
+
+		if ( function_exists ( 'get_field' ) ) {
+ 
+			if ( get_field( 'about_the_organization' ) ) {
+				echo '<h1>About the organization</h1>';
+					the_field( 'about_the_organization' );
+			}
+			
+			if ( get_field( 'convention_purpose' ) ) {
+				echo '<h1>Convention purpose/statement</h1>';
+					echo '<p>'. get_field( 'convention_purpose' ) .'</p>';
+			}
+			
+	} 
+
 		?>
 	</div><!-- .entry-content -->
 
