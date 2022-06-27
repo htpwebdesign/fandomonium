@@ -78,6 +78,10 @@ get_header();
 							the_excerpt();
 
 							echo "<p>";
+								echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', ''));
+							echo "</p>";
+
+							echo "<p>";
 								the_field('start_time');
 							echo "</p>";
 
