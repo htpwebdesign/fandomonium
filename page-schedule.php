@@ -61,13 +61,13 @@ get_header();
 				
 			
 				if ( $query -> have_posts() ) {
-					echo "<div class='anchor-container'>";
+					echo "<div class='anchor-container day-one'>";
 					while ( $query -> have_posts() ) {
 						$query -> the_post();
 						
 						if (get_field('start_time') ===  'August 29, 2022 11:00 am') {
 							echo "</div>";
-							echo "<div class='anchor-container'>";
+							echo "<div class='anchor-container day-two'>";
 						}
 
 						echo "<article class='student-item'>";
@@ -76,7 +76,7 @@ get_header();
 									the_post_thumbnail( 'thumbnail' );
 								echo '</a>';
 							the_excerpt();
-							echo "<p>".the_taxonomies()."</p>";
+							the_taxonomies();
 						echo "</article>";
 
 						the_field('start_time');
