@@ -73,6 +73,9 @@ get_header();
 							the_excerpt();
 							echo "<p>".the_taxonomies()."</p>";
 						echo "</article>";
+
+						the_field('start_time');
+						the_field('end_time');
 		
 					}
 					wp_reset_postdata();
