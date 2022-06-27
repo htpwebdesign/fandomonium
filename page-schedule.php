@@ -76,11 +76,20 @@ get_header();
 									the_post_thumbnail( 'thumbnail' );
 								echo '</a>';
 							the_excerpt();
-							the_taxonomies();
+
+							echo "<p>";
+								the_field('start_time');
+							echo "</p>";
+
+							echo "<p>";
+								the_field('end_time');
+							echo "</p>";
+
+							
+					
 						echo "</article>";
 
-						the_field('start_time');
-						the_field('end_time');
+						
 		
 					}
 					wp_reset_postdata();
