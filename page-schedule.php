@@ -20,19 +20,15 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
 		?>
+			
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
+
+		<?php fandomonium_post_thumbnail(); ?>
+
+			
 		<section>
-
 			<?php
 
 			if (function_exists('get_field')) :
@@ -42,10 +38,6 @@ get_header();
 					<?php
 				endif;
 			endif;
-
-			
-
-			
 
 			$args = array(
 				'post_type' 	 => 'fan-event',
@@ -61,19 +53,19 @@ get_header();
 				if ( $query -> have_posts() ) {
 					?>
 					<div class="anchor-container day-one">
+						<h2>Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
 									if (get_field('day') === 'one') {
-										echo 'test';
 								
 									?>
 									<article class="schedule day-one">
-										<a href="<?php get_permalink(); ?>">
-											<h2><?php get_the_title(); ?></h2>
-											<?php the_post_thumbnail(); ?>
+										<a href="<?php echo get_permalink(); ?>">
+											<h2><?php echo get_the_title(); ?></h2>
+											<?php the_post_thumbnail('thumbnail'); ?>
 										</a>
-										<p><?php strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+										<p>Type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
 										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
 										<p>End: <?php the_field('end_time') ?></p>
@@ -87,19 +79,19 @@ get_header();
 					</div>
 
 					<div class="anchor-container day-two">
+					<h2>Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
 									if (get_field('day') === 'two') {
-										echo 'test';
 								
 									?>
 									<article class="schedule day-two">
-										<a href="<?php get_permalink(); ?>">
-											<h2><?php get_the_title(); ?></h2>
-											<?php the_post_thumbnail(); ?>
+										<a href="<?php echo get_permalink(); ?>">
+											<h2><?php echo get_the_title(); ?></h2>
+											<?php the_post_thumbnail('thumbnail'); ?>
 										</a>
-										<p><?php strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+										<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
 										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
 										<p>End: <?php the_field('end_time') ?></p>
@@ -118,10 +110,13 @@ get_header();
 			
 			
 			?>
-			
-
-			
 		</section>
+			<?php
+
+		endwhile; // End of the loop.
+		?>
+
+		
 
 	</main><!-- #main -->
 
