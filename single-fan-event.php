@@ -39,19 +39,22 @@ get_header();
 					<p><?php the_field('event_description'); ?></p>
 				<?php
 			endif;
-		endif;
 
-		$posts = get_field('guests');
+			$posts = get_field('guests');
 
 			if( $posts ): ?>
-				<ul>
-				<?php foreach( $posts as $post ): ?>
-					<li>
-						<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
-					</li>
-				<?php endforeach; ?>
-				</ul>
-		<?php endif; 
+					<ul>
+						<?php foreach( $posts as $post ): ?>
+							<li>
+								<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php 
+			endif; 
+		endif;
+
+		
 
 
 		?>
