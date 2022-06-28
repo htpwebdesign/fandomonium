@@ -57,7 +57,7 @@ get_header();
 			
 			if (get_field('start_time')) :
 				?>
-					<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+					<p>Event type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
 					<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 					<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
 					<p>End: <?php the_field('end_time') ?></p>
