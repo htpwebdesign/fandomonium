@@ -31,6 +31,16 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
+
+
+		if (function_exists('get_field')) :
+			if (get_field('event_description')) :
+				?>
+					<p><?php the_field('event_description'); ?></p>
+				<?php
+			endif;
+		endif;
+		
 		?>
 
 	</main><!-- #main -->
