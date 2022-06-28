@@ -53,6 +53,7 @@ get_header();
 				if ( $query -> have_posts() ) {
 					?>
 					<div class="anchor-container day-one">
+						<h2>Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
@@ -79,6 +80,7 @@ get_header();
 					</div>
 
 					<div class="anchor-container day-two">
+					<h2>Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
