@@ -20,16 +20,15 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
+		?>
+			
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+
+		<?php fandomonium_post_thumbnail(); ?>
 
 			
-
-		endwhile; // End of the loop.
-		?>
-
 		<section>
-
 			<?php
 
 			if (function_exists('get_field')) :
@@ -39,10 +38,6 @@ get_header();
 					<?php
 				endif;
 			endif;
-
-			
-
-			
 
 			$args = array(
 				'post_type' 	 => 'fan-event',
@@ -115,10 +110,13 @@ get_header();
 			
 			
 			?>
-			
-
-			
 		</section>
+			<?php
+
+		endwhile; // End of the loop.
+		?>
+
+		
 
 	</main><!-- #main -->
 
