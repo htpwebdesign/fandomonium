@@ -31,6 +31,34 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<section>
+			<?
+				if (function_exists('get_field')):
+					if(get_field('short_description')):
+			?>
+						<p><?the_field('short_description');?></p>
+					<?endif?>
+				<?endif?>
+			
+			<div>
+				<?
+				if (function_exists('get_field')):
+					if(have_rows('faq')):
+						while( have_rows('faq') ) : the_row();
+				?>
+						<div class="faq-heading">
+							<h2><?echo get_sub_field('question');?></h2>
+						</div>
+						<div class="faq-answer">
+							<p><?echo get_sub_field('answer');?></p>
+						</div>
+						<?endwhile?>
+					<?endif?>
+				<?endif?>
+
+			</div>
+		</section>
+
 	</main><!-- #main -->
 
 <?php
