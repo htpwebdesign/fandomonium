@@ -45,7 +45,7 @@ function fandomonium_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
-
+	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
