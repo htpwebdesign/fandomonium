@@ -67,7 +67,7 @@ get_header();
 								</li>
 							<?php endforeach; ?>
 						</ul>
-						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all Events</a>
+						<a href="<?php echo get_permalink( 12 ); ?>">See all Events</a>
 					<?php 
 				endif; 
 				wp_reset_postdata();
@@ -128,7 +128,7 @@ get_header();
 								</li>
 							<?php endforeach; ?>
 						</ul>
-						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all Events</a>
+						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all Guests</a>
 					<?php 
 				endif; 
 				wp_reset_postdata();
