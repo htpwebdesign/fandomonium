@@ -58,7 +58,6 @@ get_header();
 		
 			$query = new WP_Query( $args );
 			
-				
 				if ( $query -> have_posts() ) {
 					?>
 					<div class="anchor-container day-one">
