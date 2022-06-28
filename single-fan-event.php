@@ -40,8 +40,9 @@ get_header();
 				<?php
 			endif;
 
-			$posts = get_field('guests');
+		
 
+			$posts = get_field('guests');
 			if( $posts ): ?>
 					<ul>
 						<?php foreach( $posts as $post ): ?>
@@ -52,6 +53,16 @@ get_header();
 					</ul>
 				<?php 
 			endif; 
+			wp_reset_postdata();
+			
+			if (get_field('start_time')) :
+				?>
+					<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+					<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+					<p>End: <?php the_field('end_time') ?></p>
+				<?php
+				
+			endif;
 		endif;
 
 		
