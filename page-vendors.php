@@ -28,20 +28,10 @@ get_header();
 				comments_template();
 			endif;
 
-		endwhile; // End of the loop.
+		endwhile; // End of the loop.?>
 
-		$terms = get_terms(
-			array(
-				'taxonomy' => 'fan-vendor-type'
-			)
-		);
-
-		if ( $terms && ! is_wp_error( $terms ) ) :
-			foreach ($terms as $term):?>
-
-			<h2><?echo $term->name; ?></h2>
-
-			<? 
+			<h2>Our featured Vendors</h2>
+			<? // wp query for platinum vendors only
 			$args = array(
 					'post_type' => 'fan-vendor',
 					'posts_per_page' => -1,
@@ -49,23 +39,26 @@ get_header();
 						array(
 							'taxonomy' => 'fan-vendor-type',
 							'field' => 'slug',
-							'terms' => $term->slug,
+							'terms' => 'platinum',
 						)
-					),
-					'orderby' => 'title',
-					'order'   => 'ASC',
+					)
 				);
 				$query = new WP_Query($args);
 
-				print_r($query);
+				if($query -> have_posts()):
+					while($query -> have_posts()):
+						$query->the_post();
 			?>
-
-
-			<?php endforeach // end the foreach?> 
-		<?php endif // end if for the terms?>
-		
-				
-
+						<h3><?the_title();?></h3>
+						<?the_post_thumbnail();?>
+						<?	if (function_exists('get_field')): 
+								if (get_field('vendor_description')):?>
+										<p><?php the_field('vendor_description');?></p>
+								<?endif; ?>
+							<?endif?>
+					<?endwhile?>
+					<?wp_reset_postdata();?>
+				<?endif?>
 	</main><!-- #main -->
 
 <?php
