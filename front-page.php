@@ -25,16 +25,18 @@ get_header();
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php fandomonium_post_thumbnail(); ?>
 
-		<section>
-		
-		</section>
+		<section class="welcome-message"></section>
+		<section class="featured-events"></section>
+		<section class="featured-news"></section>
+		<section class="featured-guests"></section>
+		<section class="featured-vendors"></section>
 
 		<?php
 		endwhile; // End of the loop.
 		?>
 
 		</article>
-		
+
 	</main><!-- #main -->
 
 <?php
