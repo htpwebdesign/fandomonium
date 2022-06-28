@@ -58,7 +58,6 @@ get_header();
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
 									if (get_field('day') === 'one') {
-										echo 'test';
 								
 									?>
 									<article class="schedule day-one">
@@ -85,7 +84,6 @@ get_header();
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
 									if (get_field('day') === 'two') {
-										echo 'test';
 								
 									?>
 									<article class="schedule day-two">
