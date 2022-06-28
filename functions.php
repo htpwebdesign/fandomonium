@@ -195,3 +195,17 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 	acf_add_options_sub_page('Header');	
 }
+
+/**
+ * Remove Block Editor from Pages
+ */
+function fan_post_filter( $use_block_editor, $post ) {
+    // Change the integer in array to your Page ID
+    $page_ids = array( 27 );
+    if ( in_array( $post->ID, $page_ids ) ) {
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter( 'use_block_editor_for_post', 'fan_post_filter', 10, 2 );
