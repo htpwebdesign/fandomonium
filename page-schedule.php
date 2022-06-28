@@ -86,6 +86,33 @@ get_header();
 						wp_reset_postdata();
 						?>
 					</div>
+
+					<div class="anchor-container day-two">
+						<?php  
+							while ( $query -> have_posts() ) {
+								$query -> the_post();
+									if (get_field('day') === 'two') {
+										echo 'test';
+								
+									?>
+									<article class="schedule day-two">
+										<a href="<?php get_permalink(); ?>">
+											<h2><?php get_the_title(); ?></h2>
+											<?php the_post_thumbnail(); ?>
+										</a>
+										<p><?php strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+										<p>End: <?php the_field('end_time') ?></p>
+									</article>
+									<?php
+								}
+							
+							}
+						wp_reset_postdata();
+						?>
+					</div>	
+					
 					<?php
 				
 				}
