@@ -45,6 +45,14 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<div>
+			<?php 
+				the_field('start_date_of_convention', 'option');
+				the_field('end_date_of_convention', 'option');
+				the_field('location_of_convention', 'option'); 
+			?>
+		</div>
+
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fandomonium' ); ?></button>
 			<?php
