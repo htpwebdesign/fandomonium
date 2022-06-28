@@ -22,6 +22,8 @@ get_header();
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 
+			fandomonium_post_thumbnail();
+
 
 			if (function_exists('get_field')) :
 				if (get_field('event_description')) :
