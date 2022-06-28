@@ -54,11 +54,9 @@ get_header();
 								</li>
 							<?php endforeach; ?>
 						</ul>
+						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all guests</a>
 					<?php 
 				endif; 
-				?>
-				<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all guests</a>
-				<?php
 				wp_reset_postdata();
 	
 				
