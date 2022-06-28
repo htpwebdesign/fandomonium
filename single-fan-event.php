@@ -42,6 +42,7 @@ get_header();
 
 			if (get_field('start_time')) :
 				?>
+					<h2>Event Details</h2>
 					<p>Event type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
 					<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 					<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
@@ -53,6 +54,7 @@ get_header();
 
 			$posts = get_field('guests');
 			if( $posts ): ?>
+				<h2>Featured Guests</h2>
 					<ul>
 						<?php foreach( $posts as $post ): ?>
 							<li>
