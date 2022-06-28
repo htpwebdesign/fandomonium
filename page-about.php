@@ -44,6 +44,8 @@ get_header();
 			}
 			
 	} 
+		echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
+
 		?>
 
 	</main><!-- #main -->
