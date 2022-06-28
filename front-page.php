@@ -25,7 +25,26 @@ get_header();
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php fandomonium_post_thumbnail(); ?>
 
-		<section class="welcome-message"></section>
+		<section class="welcome-message">
+
+			<?php
+				if (function_exists('get_fields')) {
+
+					if (get_field('welcome_heading')) {
+						?>
+						<h2><?php the_field('welcome_heading'); ?></h2>
+						<?php
+					}
+
+					if (get_field('welcome_message')) {
+						?>
+						<p><?php the_field('welcome_message'); ?></p>
+						<?php
+					}
+				}
+			?>
+
+		</section>
 		<section class="featured-events"></section>
 		<section class="featured-news"></section>
 		<section class="featured-guests"></section>
