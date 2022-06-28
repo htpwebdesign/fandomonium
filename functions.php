@@ -201,7 +201,7 @@ if( function_exists('acf_add_options_page') ) {
  */
 function fan_post_filter( $use_block_editor, $post ) {
     // Change the integer in array to your Page ID
-    $page_ids = array( 27 );
+    $page_ids = array( 27, 85, 89, 12, 73, 37, 137 );
     if ( in_array( $post->ID, $page_ids ) ) {
         return false;
     } else {
