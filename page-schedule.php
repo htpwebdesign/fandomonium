@@ -70,7 +70,7 @@ get_header();
 									?>
 									<article class="schedule day-one">
 										<a href="<?php echo get_permalink(); ?>">
-											<h2><?php get_the_title(); ?></h2>
+											<h2><?php echo get_the_title(); ?></h2>
 											<?php the_post_thumbnail('thumbnail'); ?>
 										</a>
 										<p>Type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
@@ -95,11 +95,11 @@ get_header();
 								
 									?>
 									<article class="schedule day-two">
-										<a href="<?php get_permalink(); ?>">
-											<h2><?php get_the_title(); ?></h2>
-											<?php the_post_thumbnail(); ?>
+										<a href="<?php echo get_permalink(); ?>">
+											<h2><?php echo get_the_title(); ?></h2>
+											<?php the_post_thumbnail('thumbnail'); ?>
 										</a>
-										<p><?php strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+										<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
 										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
 										<p>End: <?php the_field('end_time') ?></p>
