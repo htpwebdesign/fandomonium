@@ -48,7 +48,7 @@ function fan_register_custom_post_types() {
         // right here, you can see it in /works
         'rewrite'            => array( 'slug' => 'vendors' ),
         'capability_type'    => 'post',
-        'has_archive'        => true,
+        'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-store',
