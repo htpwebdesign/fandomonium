@@ -103,7 +103,40 @@ get_header();
 				endif;
 			?>
 		</section>
-		<section class="featured-guests"></section>
+
+
+		<section class="featured-guests">
+
+		<?php
+			if (function_exists('get_fields')) {
+
+				if (get_field('featured_guests_heading')) {
+					?>
+					<h2><?php the_field('featured_guests_heading'); ?></h2>
+					<?php
+				}
+
+				$posts = get_field('featured_guests');
+				if( $posts ): ?>
+						<ul>
+							<?php foreach( $posts as $post ): ?>
+								<li>
+									<a href="<?php echo get_permalink( $post->ID ); ?>">
+										<?php echo get_the_title( $post->ID ); ?>
+										<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+									</a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all Events</a>
+					<?php 
+				endif; 
+				wp_reset_postdata();
+			}
+			?>
+
+		</section>
+
 		<section class="featured-vendors"></section>
 
 		<?php
