@@ -59,6 +59,30 @@ get_header();
 					<?endwhile?>
 					<?wp_reset_postdata();?>
 				<?endif?>
+
+				<h2>Other Vendors</h2>
+
+				<? // wp query for all other vendors
+				$args = array(
+						'post_type' => 'fan-vendor',
+						'posts_per_page' => -1,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'fan-vendor-type',
+								'field' => 'slug',
+								'terms' => array('gold', 'silver', 'bronze')
+							)
+						)
+					);
+					$query = new WP_Query($args);
+					if($query -> have_posts()):
+						while($query -> have_posts()):
+							$query->the_post();
+				?>
+							<h3><?the_title();?></h3>
+						<?endwhile?>
+					<?wp_reset_postdata();?>
+				<?endif?>
 	</main><!-- #main -->
 
 <?php
