@@ -73,7 +73,7 @@ get_header();
 											<h2><?php get_the_title(); ?></h2>
 											<?php the_post_thumbnail('thumbnail'); ?>
 										</a>
-										<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+										<p>Type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
 										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
 										<p>End: <?php the_field('end_time') ?></p>
