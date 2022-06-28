@@ -225,3 +225,15 @@ if ( ! function_exists( 'fandomonium_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+/**
+ * Add Ticket fields to archive-product.php in woocommerce
+ */
+add_action('woocommerce_archive_description', 'add_ticket_fields', 15);
+function add_ticket_fields() {
+	if (function_exists('get_field')) {
+		if (get_field('ticket_page_description', 27)) {
+			the_field('ticket_page_description', 27);
+		}
+	}
+}
