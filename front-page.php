@@ -26,7 +26,6 @@ get_header();
 		<?php fandomonium_post_thumbnail(); ?>
 
 		<section class="welcome-message">
-
 			<?php
 				if (function_exists('get_fields')) {
 
@@ -43,8 +42,9 @@ get_header();
 					}
 				}
 			?>
-
 		</section>
+
+
 		<section class="featured-events">
 			<?php
 			if (function_exists('get_fields')) {
@@ -70,9 +70,36 @@ get_header();
 				wp_reset_postdata();
 			}
 			?>
-
 		</section>
-		<section class="featured-news"></section>
+
+
+		<section class="featured-news">
+		<?php
+		$args = array(
+					'post_type' 	 	=> 'post',
+					'posts_per_page' 	=>  3,
+					
+				);
+				$blog_query = new WP_query( $args );
+				if ( $blog_query -> have_posts() ) :
+					while ( $blog_query -> have_posts() ) :
+						$blog_query -> the_post();
+
+						?>
+						<article>
+							<a href="<?php the_permalink(); ?>">
+								<h3> <?php the_title(); ?> </h3>
+								<?php the_post_thumbnail( 'medium' ); ?>
+
+							</a>
+						</article>
+						<?php
+
+					endwhile;
+					wp_reset_postdata();
+				endif;
+			?>
+		</section>
 		<section class="featured-guests"></section>
 		<section class="featured-vendors"></section>
 
