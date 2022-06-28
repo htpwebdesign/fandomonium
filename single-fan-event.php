@@ -62,6 +62,9 @@ get_header();
 					</ul>
 				<?php 
 			endif; 
+			?>
+			<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all guests</a>
+			<?php
 			wp_reset_postdata();
 
 			
