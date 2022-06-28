@@ -29,19 +29,42 @@ get_header();
 			endif;
 
 		endwhile; // End of the loop.
-		?>
-		<?php
-			$terms = get_terms(
-				array(
-					'taxonomy' => 'fan-vendor-type'
-				)
-			);
 
-			if ( $terms && ! is_wp_error( $terms ) ) :
-				foreach ($terms as $term):?>
+		$terms = get_terms(
+			array(
+				'taxonomy' => 'fan-vendor-type'
+			)
+		);
+
+		if ( $terms && ! is_wp_error( $terms ) ) :
+			foreach ($terms as $term):?>
 
 			<h2><?echo $term->name; ?></h2>
-	
+
+			<? 
+			$args = array(
+					'post_type' => 'fan-vendor',
+					'posts_per_page' => -1,
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'fan-vendor-type',
+							'field' => 'slug',
+							'terms' => $term->slug,
+						)
+					),
+					'orderby' => 'title',
+					'order'   => 'ASC',
+				);
+				$query = new WP_Query($args);
+
+				print_r($query);
+			?>
+
+
+			<?php endforeach // end the foreach?> 
+		<?php endif // end if for the terms?>
+		
+				
 
 	</main><!-- #main -->
 
