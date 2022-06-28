@@ -60,7 +60,10 @@ get_header();
 						<ul>
 							<?php foreach( $posts as $post ): ?>
 								<li>
-									<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+									<a href="<?php echo get_permalink( $post->ID ); ?>">
+										<?php echo get_the_title( $post->ID ); ?>
+										<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+									</a>
 								</li>
 							<?php endforeach; ?>
 						</ul>
