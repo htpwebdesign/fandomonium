@@ -247,3 +247,11 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
  * Remove WooCommerce Sorting Dropdown
  */
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+/**
+ * Add Product description on archive-products.php
+ */
+add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 15);
+function add_product_excerpt() {
+	the_excerpt();
+}
