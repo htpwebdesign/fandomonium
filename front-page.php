@@ -137,7 +137,13 @@ get_header();
 
 		</section>
 
-		<section class="featured-vendors"></section>
+		<section class="featured-vendors">
+
+			<?php 
+			get_template_part( 'template-parts/page-bottom' );
+			?>
+
+		</section>
 
 		<?php
 		endwhile; // End of the loop.
