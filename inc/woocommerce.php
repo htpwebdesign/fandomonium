@@ -237,3 +237,45 @@ function add_ticket_fields() {
 		}
 	}
 }
+
+/**
+ * Remove WooCommerce Shop Results Count
+ */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+/**
+ * Remove WooCommerce Sorting Dropdown
+ */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+/**
+ * Add Product description on archive-products.php
+ */
+add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 15);
+function add_product_excerpt() {
+	the_excerpt();
+}
+
+/**
+ * Remove WooCommerce "Ticket Details" link on archive-product
+ */
+// remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+// want to change the text to be "Details"
+
+/**
+ * Show number of items in Cart
+ */
+function show_number_of_cart_items() {
+	echo "<div>";
+	echo "<p>You have ". WC()->cart->get_cart_contents_count() ." item(s) in your Cart</p>";
+}
+add_action('woocommerce_after_shop_loop', 'show_number_of_cart_items', 20);
+
+/**
+ * Checkout button to Cart page
+ */
+function checkout_button() {
+	echo "<a class='checkout-btn' href='https://fandomonium.bcitwebdeveloper.ca/cart/'>checkout</a>";
+	echo "</div>";
+}
+add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
