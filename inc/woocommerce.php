@@ -255,3 +255,8 @@ add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 15);
 function add_product_excerpt() {
 	the_excerpt();
 }
+
+/**
+ * Remove WooCommerce "Ticket Details" link on archive-product
+ */
+// remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
