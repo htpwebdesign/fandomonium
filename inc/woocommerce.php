@@ -242,3 +242,8 @@ function add_ticket_fields() {
  * Remove WooCommerce Shop Results Count
  */
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+/**
+ * Remove WooCommerce Sorting Dropdown
+ */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
