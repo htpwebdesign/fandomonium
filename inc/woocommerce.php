@@ -275,14 +275,3 @@ function show_number_of_cart_items() {
 	echo "<p>You have ". WC()->cart->get_cart_contents_count() ." item(s) in your Cart</p>";
 }
 add_action('woocommerce_after_main_content', 'show_number_of_cart_items', 10);
-
-/**
- * Checkout button to Cart page
- */
-function checkout_button() {
-	echo "<a class='checkout-btn' href='https://fandomonium.bcitwebdeveloper.ca/cart/'>checkout</a>";
-}
-add_action('woocommerce_after_main_content', 'checkout_button', 20);
-
-
-// remove_action('woocommerce_get_sidebar', 10);
