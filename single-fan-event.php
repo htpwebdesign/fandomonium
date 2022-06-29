@@ -59,7 +59,7 @@ get_header();
 				endif; 
 				wp_reset_postdata();
 	
-				
+				?><a href="<?php echo get_permalink(12); ?>">Back to Schedule </a><?php
 				
 			endif;
 
