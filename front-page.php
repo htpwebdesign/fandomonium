@@ -78,7 +78,16 @@ get_header();
 
 		<section class="featured-news">
 		<?php
-		$args = array(
+
+			if ( function_exists('get_fields') ) {
+				if (get_field('news_heading')) {
+					?>
+					<h2><?php the_field('news_heading'); ?></h2>
+					<?php
+				}
+			}
+
+				$args = array(
 					'post_type' 	 	=> 'post',
 					'posts_per_page' 	=>  3,
 					
@@ -101,6 +110,8 @@ get_header();
 					endwhile;
 					wp_reset_postdata();
 				endif;
+
+				?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>">See all news</a><?php
 			?>
 		</section>
 
