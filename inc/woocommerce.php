@@ -239,6 +239,10 @@ function add_ticket_fields() {
 }
 
 /**
+ * Remove sidebar on woocommerce pages
+ */
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+/**
  * Remove WooCommerce Shop Results Count
  */
 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
