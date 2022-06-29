@@ -260,3 +260,29 @@ function add_product_excerpt() {
  * Remove WooCommerce "Ticket Details" link on archive-product
  */
 // remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+// want to change the text to be "Details"
+
+/**
+ * Move woocommerce end content wrapper lower on the priority
+ */
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 30);
+
+/**
+ * Show number of items in Cart
+ */
+function show_number_of_cart_items() {
+	echo "<p>You have ". WC()->cart->get_cart_contents_count() ." item(s) in your Cart</p>";
+}
+add_action('woocommerce_after_main_content', 'show_number_of_cart_items', 10);
+
+/**
+ * Checkout button to Cart page
+ */
+function checkout_button() {
+	echo "<a class='checkout-btn' href='https://fandomonium.bcitwebdeveloper.ca/cart/'>checkout</a>";
+}
+add_action('woocommerce_after_main_content', 'checkout_button', 20);
+
+
+// remove_action('woocommerce_get_sidebar', 10);
