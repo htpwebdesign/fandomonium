@@ -78,6 +78,15 @@ get_header();
 
 		<section class="featured-news">
 		<?php
+
+		if ( function_exists('get_fields') ) {
+			if (get_field('news_heading')) {
+				?>
+				<h2><?php the_field('news_heading'); ?></h2>
+				<?php
+			}
+		}
+
 		$args = array(
 					'post_type' 	 	=> 'post',
 					'posts_per_page' 	=>  3,
