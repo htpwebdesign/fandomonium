@@ -1,5 +1,18 @@
 <?php
 
+
+	if ( function_exists('get_fields') ) {
+		if ( get_field( 'cta' ) ) {
+			$link = get_field( 'cta' );
+			$link_url = $link['url'];
+			$link_title = $link['title'];
+			?><a href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html($link_title) ?></a><?php
+			
+		}
+		
+		
+	}
+
 	$args = array(
 		'post_type' 	 => 'fan-vendor',
 		'posts_per_page' => 6,
@@ -17,6 +30,8 @@
 		while ( $query -> have_posts() ) {
 			$query -> the_post();
 				the_title();
+
+
 		}
 		wp_reset_postdata();
 	}
