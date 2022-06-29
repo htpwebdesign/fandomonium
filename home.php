@@ -29,6 +29,8 @@ get_header();
 				}
 			}
 
+			the_widget('Jetpack_Subscriptions_Widget');
+
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
