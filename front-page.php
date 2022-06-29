@@ -140,6 +140,13 @@ get_header();
 		<section class="featured-vendors">
 
 			<?php 
+			if ( function_exists('get_fields') ) {
+				if ( get_field('featured_vendors_heading') ) {
+					?><h2>
+						<?php the_field('featured_vendors_heading') ?>
+					</h2><?php
+				}
+			}
 			get_template_part( 'template-parts/page-bottom' );
 			?>
 
