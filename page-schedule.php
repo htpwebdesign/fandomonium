@@ -28,7 +28,7 @@ get_header();
 		<?php fandomonium_post_thumbnail(); ?>
 
 			
-		<section>
+		<div>
 			<?php
 
 			if (function_exists('get_field')) :
@@ -110,7 +110,7 @@ get_header();
 			
 			
 			?>
-		</section>
+		</div>
 			<?php
 
 		endwhile; // End of the loop.
