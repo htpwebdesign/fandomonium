@@ -10,6 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php fandomonium_post_thumbnail(); ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -24,13 +26,11 @@
 				<?php
 				fandomonium_posted_on();
 				fandomonium_posted_by();
-				?>
+        
+				get_sidebar(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php get_sidebar(); ?>
-	<?php fandomonium_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

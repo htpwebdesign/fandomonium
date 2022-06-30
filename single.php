@@ -18,23 +18,41 @@ get_header();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'fandomonium' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'fandomonium' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
 		endwhile; // End of the loop.
 		?>
+		<section class="more-latest-news">
+			<h2>more latest news</h2>
+			<article>
+				<?php
+				$args = array(
+					'post_type'      => 'post',
+					'posts_per_page' => 3,
+					'post__not_in' => array( $post->ID )
+				);
 
+				$blog_query = new WP_Query($args);
+
+				if ($blog_query->have_posts()) {
+					while ($blog_query->have_posts()) {
+						$blog_query->the_post();
+				?>
+						<article>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail(); ?>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</article>
+				<?php
+					}
+					wp_reset_postdata();
+				}
+				?>
+			</article>
+		</section>
+
+		<?php get_template_part( 'template-parts/page', 'bottom' ); ?>
+		
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -44,8 +44,18 @@ get_header();
 			}
 			
 	} 
-		echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
+		echo '<h1>Location</h1>';
+		$my_map = get_field('map');
+		echo $my_map['address'];
+		echo do_shortcode('[wpgmza id="1"]');
+	
 
+		echo '<h1>Contact Form</h1>';
+		echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
+		
+	
+	
+		
 		?>
 
 	</main><!-- #main -->

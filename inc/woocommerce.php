@@ -227,6 +227,15 @@ if ( ! function_exists( 'fandomonium_woocommerce_header_cart' ) ) {
 }
 
 /**
+ * Remove sidebar on woocommerce pages
+ */
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+/*********** 
+ * Specific to Shop Page (archive-product.php) *
+ ************/
+
+/**
  * Add Ticket fields to archive-product.php in woocommerce
  */
 add_action('woocommerce_archive_description', 'add_ticket_fields', 15);
@@ -237,3 +246,74 @@ function add_ticket_fields() {
 		}
 	}
 }
+
+/**
+ * Remove WooCommerce Shop Results Count
+ */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+
+/**
+ * Remove WooCommerce Sorting Dropdown
+ */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+/**
+ * Default catalogue product ordering by price ASC
+ */
+add_filter( 'woocommerce_default_catalog_orderby', 'fan_default_catalog_orderby');
+
+function fan_default_catalog_orderby( $sort_by ) {
+	return 'price';
+}
+
+/**
+ * Add Product description on archive-products.php
+ */
+add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 15);
+function add_product_excerpt() {
+	the_excerpt();
+}
+
+/**
+ * Remove WooCommerce "Ticket Details" link on archive-product
+ */
+// remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+// want to change the text to be "Details"
+
+/**
+ * Show number of items in Cart
+ */
+function show_number_of_cart_items() {
+	echo "<div>";
+	echo "<p>You have ". WC()->cart->get_cart_contents_count() ." item(s) in your Cart</p>";
+}
+add_action('woocommerce_after_shop_loop', 'show_number_of_cart_items', 20);
+
+/**
+ * Checkout button to Cart page
+ */
+function checkout_button() {
+	echo "<a class='checkout-btn' href='https://fandomonium.bcitwebdeveloper.ca/cart/'>checkout</a>";
+	echo "</div>";
+}
+add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
+
+/*********** 
+ * Specific to Single Product Pages (single-product.php) *
+ ************/
+
+/**
+ * Remove Product Tabs after Product Meta
+ */
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+
+/**
+ * Remove Related Products
+ */
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+/**
+ * Add number of items in cart and checkout link
+ */
+add_action('woocommerce_after_single_product_summary', 'show_number_of_cart_items', 20);
+add_action('woocommerce_after_single_product_summary', 'checkout_button', 30);
