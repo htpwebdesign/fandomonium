@@ -28,6 +28,8 @@ get_header();
 					the_field('news_page_description', 89);
 				}
 			}
+			
+			get_sidebar();
 
 			/* Start the Loop */
 			while ( have_posts() ) :

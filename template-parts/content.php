@@ -26,7 +26,8 @@
 				<?php
 				fandomonium_posted_on();
 				fandomonium_posted_by();
-				?>
+        
+				get_sidebar(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
