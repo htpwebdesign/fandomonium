@@ -26,7 +26,8 @@ get_header();
 				<?php
 				$args = array(
 					'post_type'      => 'post',
-					'posts_per_page' => 6
+					'posts_per_page' => 3,
+					'post__not_in' => array( $post->ID )
 				);
 
 				$blog_query = new WP_Query($args);
