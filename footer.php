@@ -20,6 +20,15 @@
 				<?php wp_nav_menu(array('theme_location' => 'social')) ; ?>
 			</section>
 			<cite>&copy; 2022 Fandomonium - Aleum K., Cory O., Erin D., Fiona Y.</cite>
+			<section>
+			<?php
+			if (function_exists('get_field')) {
+					if (get_field('location_of_convention', 'option')) {
+						the_field('location_of_convention', 'option');
+					}
+				}
+			?>
+			</section>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
