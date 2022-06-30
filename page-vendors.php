@@ -122,8 +122,8 @@ get_header();
 			</div>
 			<?echo do_shortcode('[contact-form-7 id="63" title="Vendor Application"]');?>
 		</section>
+		<?php get_template_part( 'template-parts/page', 'bottom' ); ?>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -11,6 +11,7 @@
 		}
 	}
 	
+	if(!is_page(73)) {
 		$args = array(
 			'post_type' 	 => 'fan-vendor',
 			'posts_per_page' => 6,
@@ -32,7 +33,7 @@
 			}
 			wp_reset_postdata();
 		}
-
+	}
 
 ?>
 
