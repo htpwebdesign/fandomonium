@@ -52,7 +52,7 @@ get_header();
 			
 				if ( $query -> have_posts() ) {
 					?>
-					<div class="anchor-container day-one">
+					<section class="anchor-container day-one">
 						<h2>Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -76,9 +76,9 @@ get_header();
 							}
 						wp_reset_postdata();
 						?>
-					</div>
+					</section>
 
-					<div class="anchor-container day-two">
+					<section class="anchor-container day-two">
 					<h2>Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -102,7 +102,7 @@ get_header();
 							}
 						wp_reset_postdata();
 						?>
-					</div>	
+					</section>	
 					
 					<?php
 				
