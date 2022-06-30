@@ -227,6 +227,15 @@ if ( ! function_exists( 'fandomonium_woocommerce_header_cart' ) ) {
 }
 
 /**
+ * Remove sidebar on woocommerce pages
+ */
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+/*********** 
+ * Specific to Shop Page (archive-product.php) *
+ ************/
+
+/**
  * Add Ticket fields to archive-product.php in woocommerce
  */
 add_action('woocommerce_archive_description', 'add_ticket_fields', 15);
@@ -238,10 +247,6 @@ function add_ticket_fields() {
 	}
 }
 
-/**
- * Remove sidebar on woocommerce pages
- */
-remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 /**
  * Remove WooCommerce Shop Results Count
  */
@@ -293,3 +298,6 @@ function checkout_button() {
 }
 add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
 
+/*********** 
+ * Specific to Single Product Pages (single-product.php) *
+ ************/
