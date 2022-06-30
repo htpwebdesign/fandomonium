@@ -195,7 +195,8 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
  */
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
-	acf_add_options_sub_page('Header');	
+	acf_add_options_sub_page('General');	
+	acf_add_options_sub_page('Header');
 }
 
 /**
