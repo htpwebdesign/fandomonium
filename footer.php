@@ -19,11 +19,7 @@
 			<section class="socials-menu">
 				<?php wp_nav_menu(array('theme_location' => 'social')) ; ?>
 			</section>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fandomonium' ), 'fandomonium', '<a href="https://fandomonium.bcitwebdeveloper.ca">FWD30</a>' );
-				?>
+			<cite>&copy; 2022 Fandomonium - Aleum K., Cory O., Erin D., Fiona Y.</cite>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
