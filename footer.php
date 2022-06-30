@@ -13,12 +13,12 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fandomonium' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'fandomonium' ), 'WordPress' );
-				?>
-			</a>
+			<section class="footer-menu">
+				<?php wp_nav_menu(array('theme_location' => 'footer')) ; ?>
+			</section>
+			<section class="socials-menu">
+				<?php wp_nav_menu(array('theme_location' => 'social')) ; ?>
+			</section>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
