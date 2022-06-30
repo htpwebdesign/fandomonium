@@ -12,6 +12,12 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+		<?php 
+	$link = get_field('back');
+	if( $link ): ?>
+			<a class="button" href="<?php echo esc_url( $link ); ?>"><button><- Back to guest List</button></a>
+	<?php endif; ?>
+	
 		<?php
 		while ( have_posts() ) :
 			the_post();
