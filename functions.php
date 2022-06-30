@@ -49,7 +49,9 @@ function fandomonium_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'fandomonium' ),
+			'header' => esc_html__( 'Header Menu Location', 'fandomonium' ),
+			'footer' => esc_html__( 'Footer Menu Location', 'fandomonium' ),
+			'social' => esc_html__( 'Social Menu Location', 'fandomonium' )
 		)
 	);
 
