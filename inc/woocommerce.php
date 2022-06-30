@@ -311,3 +311,9 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_pr
  * Remove Related Products
  */
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+/**
+ * Add number of items in cart and checkout link
+ */
+add_action('woocommerce_after_single_product_summary', 'show_number_of_cart_items', 20);
+add_action('woocommerce_after_single_product_summary', 'checkout_button', 30);
