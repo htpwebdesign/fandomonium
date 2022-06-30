@@ -302,7 +302,12 @@ add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
  * Specific to Single Product Pages (single-product.php) *
  ************/
 
- /**
+/**
+ * Remove Product Tabs after Product Meta
+ */
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+
+/**
  * Remove Related Products
  */
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
