@@ -48,14 +48,15 @@
 		<div>
 			<?php 
 				if (function_exists('get_field')) {
-					if (get_field('start_date_of_convention', 'option')) {
-						the_field('start_date_of_convention', 'option');
-					}
-					if (get_field('end_date_of_convention', 'option')) {
-						the_field('end_date_of_convention', 'option');
+					if (get_field('start_date_of_convention', 'option') && get_field('end_date_of_convention', 'option')) {
+					?>	
+						<p><?php the_field('start_date_of_convention', 'option') . the_field('end_date_of_convention', 'option') ?></p>
+					<?php
 					}
 					if (get_field('location_of_convention', 'option')) {
-						the_field('location_of_convention', 'option');
+					?>
+						<p><?php the_field('location_of_convention', 'option'); ?></p>
+					<?php
 					}
 				}
 			?>
