@@ -111,8 +111,8 @@ get_header();
 			
 			?>
 		</div>
-			<?php
-
+		<?php
+		get_template_part( 'template-parts/page-bottom' );
 		endwhile; // End of the loop.
 		?>
 
