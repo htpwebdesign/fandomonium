@@ -44,8 +44,8 @@ get_header();
 							the_field( 'occupation_of_guest' );
 					}
 			} 
-					echo '<br><a href="'.get_permalink().'"> View Bio';
-					echo '</a></br>';
+					echo '<a href="'.get_permalink().'"> View Bio';
+					echo '</a>';
 				echo '</article>';
 			}
 			wp_reset_postdata();
@@ -55,18 +55,6 @@ get_header();
 		?>
 		</div>
 
-	
-
-			<?php
-			function fan_archive_title_prefix( $prefix ){
-					if ( get_post_type() === 'fan-guest' ) {
-							return false;
-					} else {
-							return $prefix;
-					}
-			}
-			add_filter( 'get_the_archive_title_prefix', 'fan_archive_title_prefix' );
-			?>
 	</main><!-- #primary -->
 
 <?php

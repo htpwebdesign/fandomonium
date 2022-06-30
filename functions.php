@@ -209,3 +209,13 @@ function fan_post_filter( $use_block_editor, $post ) {
     }
 }
 add_filter( 'use_block_editor_for_post', 'fan_post_filter', 10, 2 );
+
+
+function fan_archive_title_prefix( $prefix ){
+		if ( get_post_type() === 'fan-guest' ) {
+				return false;
+		} else {
+				return $prefix;
+		}
+}
+add_filter( 'get_the_archive_title_prefix', 'fan_archive_title_prefix' );
