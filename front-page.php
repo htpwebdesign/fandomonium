@@ -67,10 +67,14 @@ get_header();
 								</li>
 							<?php endforeach; ?>
 						</ul>
-						<a href="<?php echo get_permalink( 12 ); ?>">See all Events</a>
+						
 					<?php 
+				
 				endif; 
 				wp_reset_postdata();
+			if (get_field('events_link')) {
+				?><a href="<?php echo get_permalink( 12 ); ?>"><?php the_field('events_link'); ?></a><?php
+			}
 			}
 			?>
 		</section>
@@ -109,9 +113,16 @@ get_header();
 
 					endwhile;
 					wp_reset_postdata();
+					
+					if (get_field('news_link')) {
+						?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php the_field('news_link') ?></a><?php
+					}
+					
 				endif;
 
-				?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>">See all news</a><?php
+				
+
+				
 			?>
 		</section>
 
@@ -119,7 +130,7 @@ get_header();
 		<section class="featured-guests">
 
 		<?php
-			if (function_exists('get_fields')) {
+			if (function_exists('get_fields')) :
 
 				if (get_field('featured_guests_heading')) {
 					?>
@@ -139,11 +150,15 @@ get_header();
 								</li>
 							<?php endforeach; ?>
 						</ul>
-						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all Guests</a>
 					<?php 
 				endif; 
 				wp_reset_postdata();
-			}
+
+				if (get_field('guests_link')) {
+					?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php the_field('guests_link') ?></a><?php
+				}
+					
+			endif;
 			?>
 
 		</section>
