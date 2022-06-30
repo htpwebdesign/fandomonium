@@ -292,9 +292,10 @@ add_action('woocommerce_after_shop_loop', 'show_number_of_cart_items', 20);
 /**
  * Checkout button to Cart page
  */
-function checkout_button() {
-	echo "<a class='checkout-btn' href='https://fandomonium.bcitwebdeveloper.ca/cart/'>checkout</a>";
-	echo "</div>";
+function checkout_button() { ?>
+	<a class='checkout-btn' href='<?php echo get_permalink(28) ?>'>checkout</a>
+	</div>
+	<?php
 }
 add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
 
