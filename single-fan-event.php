@@ -60,7 +60,7 @@ get_header();
 				?><a href="<?php echo get_permalink(12); ?>">Back to Schedule </a><?php
 				
 			endif;
-
+			get_template_part( 'template-parts/page-bottom' );
 		endwhile; // End of the loop.
 
 
