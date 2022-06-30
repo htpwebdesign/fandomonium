@@ -13,14 +13,14 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<section class="footer-menu">
+			<nav class="footer-menu">
 				<?php wp_nav_menu(array('theme_location' => 'footer')) ; ?>
-			</section>
-			<section class="socials-menu">
+			</nav>
+			<nav class="socials-menu">
 				<?php wp_nav_menu(array('theme_location' => 'social')) ; ?>
-			</section>
+			</nav>
 			<cite>&copy; 2022 Fandomonium - Aleum K., Cory O., Erin D., Fiona Y.</cite>
-			<section>
+			<nav>
 			<?php
 			if (function_exists('get_field')) {
 					if (get_field('location_of_convention', 'option')) {
@@ -28,7 +28,7 @@
 					}
 				}
 			?>
-			</section>
+			</nav>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
