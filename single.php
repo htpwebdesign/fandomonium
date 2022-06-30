@@ -48,6 +48,9 @@ get_header();
 				?>
 			</article>
 		</section>
+
+		<?php get_template_part( 'template-parts/page', 'bottom' ); ?>
+		
 	</main><!-- #main -->
 
 <?php
