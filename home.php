@@ -51,10 +51,11 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+		get_template_part( 'template-parts/page', 'bottom' );
+		
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_template_part( 'template-parts/page', 'bottom' );
 get_footer();
