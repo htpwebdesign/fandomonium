@@ -1,8 +1,8 @@
 <?php
 
 	if ( function_exists('get_fields') ) {
-		if ( get_field( 'cta' ) ) {
-			$link = get_field( 'cta' );
+		if ( get_field( 'page_bottom_cta', 'options' ) ) {
+			$link = get_field( 'page_bottom_cta', 'options' );
 			$link_url = $link['url'];
 			$link_title = $link['title'];
 			?><a href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html($link_title) ?></a><?php
