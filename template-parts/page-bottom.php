@@ -1,6 +1,6 @@
 <?php
 
-	
+	if(!is_post_type_archive( 'product' )) {
 		if ( function_exists('get_fields') ) {
 			if ( get_field( 'page_bottom_cta', 'options' ) ) {
 				$link = get_field( 'page_bottom_cta', 'options' );
@@ -9,6 +9,7 @@
 				?><a href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html($link_title) ?></a><?php
 			}	
 		}
+	}
 	
 		$args = array(
 			'post_type' 	 => 'fan-vendor',
