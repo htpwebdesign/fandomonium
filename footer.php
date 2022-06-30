@@ -19,7 +19,12 @@
 			<nav class="socials-menu">
 				<?php wp_nav_menu(array('theme_location' => 'social')) ; ?>
 			</nav>
-			<cite>&copy; 2022 Fandomonium - Aleum K., Cory O., Erin D., Fiona Y.</cite>
+			<cite>&copy; 2022 Fandomonium - 
+				<a href="#">Aleum K.</a>,
+				<a href="#">Cory O.</a>,
+				<a href="#">Erin D.</a>,
+				<a href="#">Fiona Y.</a>
+			</cite>
 			<nav>
 			<?php
 			if (function_exists('get_field')) {
