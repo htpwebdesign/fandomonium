@@ -301,3 +301,8 @@ add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
 /*********** 
  * Specific to Single Product Pages (single-product.php) *
  ************/
+
+ /**
+ * Remove Related Products
+ */
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
