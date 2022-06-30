@@ -298,6 +298,14 @@ function checkout_button() {
 }
 add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
 
+/**
+ * Add Page Bottom Template Part to bottom of Shop page
+ */
+function page_bottom_template_part() {
+	get_template_part( 'template-parts/page', 'bottom' );
+}
+add_action('woocommerce_after_shop_loop', 'page_bottom_template_part', 40);
+
 /*********** 
  * Specific to Single Product Pages (single-product.php) *
  ************/
