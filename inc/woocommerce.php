@@ -253,6 +253,15 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
 /**
+ * Default catalogue product ordering by price ASC
+ */
+add_filter( 'woocommerce_default_catalog_orderby', 'fan_default_catalog_orderby');
+
+function fan_default_catalog_orderby( $sort_by ) {
+	return 'price';
+}
+
+/**
  * Add Product description on archive-products.php
  */
 add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 15);
@@ -283,3 +292,4 @@ function checkout_button() {
 	echo "</div>";
 }
 add_action('woocommerce_after_shop_loop', 'checkout_button', 30);
+
