@@ -29,6 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php get_sidebar(); ?>
 	<?php fandomonium_post_thumbnail(); ?>
 
 	<div class="entry-content">
