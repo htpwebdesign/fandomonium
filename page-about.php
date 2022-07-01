@@ -26,28 +26,30 @@ get_header();
 
 			if ( function_exists ( 'get_field' ) ) {
  
-				if ( get_field( 'about_the_organization' ) ) {
-					echo '<h1>About the organization</h1>';
-					echo '<p>'. get_field( 'about_the_organization' ) .'</p>';
+				if ( get_field( 'about_the_organization' ) ) { ?>
+					<h2>About the organization</h2>
+					<p><?php get_field( 'about_the_organization' )?></p>
+				<?php
 				}
 				
-				if ( get_field( 'convention_purpose' ) ) {
-					echo '<h2>Convention purpose/statement</h2>';
-						echo '<p>'. get_field( 'convention_purpose' ) .'</p>';
+				if ( get_field( 'convention_purpose' ) ) { ?>
+					<h2>Convention purpose/statement</h2>
+					<p><?php get_field( 'convention_purpose' )?></p>
+				<?php
 				}
 				
-		} 
-			echo '<h2>Location</h2>';
+		}?>
+		<h2>Location</h2>
+
+		<?php
 			$my_map = get_field('map');
-			echo $my_map['address'];
-			echo do_shortcode('[wpgmza id="1"]');
-		
-	
-			echo '<h2>Contact Form</h2>';
-			echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
-		
-		
-			
+			$my_map['address'];
+			do_shortcode('[wpgmza id="1"]');
+		?>
+		<h2>Contact Form</h2>
+
+		<?php 
+			do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
 			
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -60,6 +62,9 @@ get_header();
 
 		?>
 		</section>
+		
+		<?php get_template_part('template-parts/page', 'bottom'); ?>
+
 	</main><!-- #main -->
 
 <?php
