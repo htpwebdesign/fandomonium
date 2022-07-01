@@ -23,40 +23,39 @@ get_header();
 
 			
 					<section>
-						<h1><?the_title();?></h1>
-					<?
-						if (function_exists('get_field')):
+						<h1><?php the_title();?></h1>
+					<?php if (function_exists('get_field')):
 							if(get_field('short_description')):
 					?>
-								<p><?the_field('short_description');?></p>
-							<?endif?>
-						<?endif?>
+								<p><?php the_field('short_description');?></p>
+							<?php endif?>
+						<?php endif?>
 					
 					<div>
-						<?
+						<?php
 						if (function_exists('get_field')):
 							if(have_rows('faq')):
 								while( have_rows('faq') ) : the_row();
 						?>
 								<div class="faq-heading">
-									<h2><?echo get_sub_field('question');?></h2>
+									<h2><?php echo get_sub_field('question');?></h2>
 								</div>
 								<div class="faq-answer">
-									<p><?echo get_sub_field('answer');?></p>
+									<p><?php echo get_sub_field('answer');?></p>
 								</div>
-								<?endwhile?>
-							<?endif?>
-						<?endif?>
+								<?php endwhile?>
+							<?php endif?>
+						<?php endif?>
 
 						<section>
 							<?if (function_exists('get_field')):
 							if(get_field('cta_sentence')): ?>
-								<p><? the_field('cta_sentence'); ?></p>
+								<p><?php the_field('cta_sentence'); ?></p>
 							<?endif?>
-								<? if(get_field('cta')): ?>
-									<a href="<?echo esc_url((get_field('cta')['url']))?>"><? echo esc_html((get_field('cta')['title']))?></a>
-								<?endif?>
-							<?endif?>
+								<?php if(get_field('cta')): ?>
+									<a href="<?echo esc_url((get_field('cta')['url']))?>"><?php echo esc_html((get_field('cta')['title']))?></a>
+								<?php endif?>
+							<?php endif?>
 						</section>
 
 					</div>
