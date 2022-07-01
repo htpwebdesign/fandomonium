@@ -58,8 +58,10 @@ get_header();
 
 				<section>
 					<?if (function_exists('get_field')):
-						if(get_field('cta')): ?>
-							<p>If you have any more questions or inquires, please contact us!</p>
+					if(get_field('cta_sentence')): ?>
+						<p><? the_field('cta_sentence'); ?></p>
+					<?endif?>
+						<? if(get_field('cta')): ?>
 							<a href="<?echo esc_url((get_field('cta')['url']))?>"><? echo esc_html((get_field('cta')['title']))?></a>
 						<?endif?>
 					<?endif?>
