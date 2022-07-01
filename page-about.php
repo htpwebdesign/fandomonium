@@ -49,7 +49,7 @@ get_header();
 				<?php
 					$my_map = get_field('map');
 					$my_map['address'];
-					do_shortcode('[wpgmza id="1"]');
+					echo do_shortcode('[wpgmza id="1"]');
 				?>
 			</article>
 			<article>
