@@ -26,42 +26,48 @@ get_header();
 
 			if ( function_exists ( 'get_field' ) ) {
  
-				if ( get_field( 'about_the_organization' ) ) {
-					echo '<h1>About the organization</h1>';
-					echo '<p>'. get_field( 'about_the_organization' ) .'</p>';
+				if ( get_field( 'about_the_organization' ) ) { ?>
+					<article>
+						<h2>About the organization</h2>
+						<p><?php the_field( 'about_the_organization' )?></p>
+					</article>
+				<?php
 				}
 				
-				if ( get_field( 'convention_purpose' ) ) {
-					echo '<h2>Convention purpose/statement</h2>';
-						echo '<p>'. get_field( 'convention_purpose' ) .'</p>';
+				if ( get_field( 'convention_purpose' ) ) { ?>
+					<article>
+						<h2>Convention purpose/statement</h2>
+						<p><?php the_field( 'convention_purpose' )?></p>
+					</article>
+				<?php
 				}
 				
-		} 
-			echo '<h2>Location</h2>';
-			$my_map = get_field('map');
-			echo $my_map['address'];
-			echo do_shortcode('[wpgmza id="1"]');
-		
-	
-			echo '<h2>Contact Form</h2>';
-			echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
-		
-		
-			
-			
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-			
-		endwhile; // End of the loop.
+		}?>
+			<article>
+				<h2>Location</h2>
 
-		// make acf for about page AK 
+				<?php
+					$my_map = get_field('map');
+					$my_map['address'];
+					do_shortcode('[wpgmza id="1"]');
+				?>
+			</article>
+			<article>
+				<h2>Contact Form</h2>
 
-		?>
+				<?php 
+					echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
+
+				endwhile; // End of the loop.
+
+				// make acf for about page AK 
+				?>
+			</article>
 		</section>
+
+		<?php get_template_part('template-parts/page', 'bottom'); ?>
+
 	</main><!-- #main -->
 
 <?php
-
 get_footer();

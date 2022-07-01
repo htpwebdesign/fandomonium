@@ -19,8 +19,6 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
-		<div class="guest-part">
 		
 		<?php
 		$args = array (
@@ -53,7 +51,8 @@ get_header();
 		}
 	
 		?>
-		</div>
+
+		<?php get_template_part('template-parts/page', 'bottom'); ?>
 
 	</main><!-- #primary -->
 
