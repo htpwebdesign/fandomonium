@@ -24,8 +24,9 @@ get_header();
 			endif;
 
 			if (function_exists('get_field')) {
-				if (get_field('news_page_description', 89)) {
-					the_field('news_page_description', 89);
+				if (get_field('news_page_description', 89)) { ?>
+					<p><?php the_field('news_page_description', 89);?></p>
+				<?php
 				}
 			}
 			

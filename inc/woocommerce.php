@@ -241,8 +241,9 @@ remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 add_action('woocommerce_archive_description', 'add_ticket_fields', 15);
 function add_ticket_fields() {
 	if (function_exists('get_field')) {
-		if (get_field('ticket_page_description', 27)) {
-			the_field('ticket_page_description', 27);
+		if (get_field('ticket_page_description', 27)) { ?>
+			<p><?php the_field('ticket_page_description', 27);?></p>
+		<?php
 		}
 	}
 }
