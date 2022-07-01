@@ -13,11 +13,15 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php 
-	$link = get_field('back');
-	if( $link ): ?>
-			<a class="button" href="<?php echo esc_url( $link ); ?>"><button><- Back to guest List</button></a>
-	<?php endif; ?>
-	
+		
+		$link = get_field('back');
+		if( $link ): ?>
+		<section>
+		<a class="button" href="<?php echo esc_url( $link ); ?>"><- Back to guest List</a>
+		<?php endif; ?>
+		</section>
+		
+		<section>
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -25,9 +29,28 @@ get_header();
 
 			if ( function_exists ( 'get_field' ) ) {
 				if ( get_field( 'guest_description' ) ) {
-						the_field( 'guest_description' );
+					echo '<p>'.	get_field( 'guest_description' ) .'</p>';
 				}
 		} 
+		echo '<p>'. get_field( 'about_the_organization' ) .'</p>';
+					// Add an ACF relationship field and assign it to the Single guest page
+					if ( function_exists( 'get_field' ) ) : 
+							$featured_works = get_field('guest_event');
+							if ($featured_works) :
+									foreach($featured_works as $post) :
+											setup_postdata($post); 
+											?>
+											<article class="front-portfolio">
+													<a href="<?php the_permalink(); ?>">
+															<h3><?php the_title(); ?></h3>
+													</a>
+											</article>
+											<?php 
+									endforeach;
+									wp_reset_postdata();
+							endif;
+					endif;
+
 				$image = get_field('image_icon1');
 				if (!empty($image)) {
 					$url = get_field('image_url1');
@@ -60,6 +83,6 @@ get_header();
 		?>
 
 	</main><!-- #primary -->
-
+	</section>
 <?php
 get_footer();
