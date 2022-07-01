@@ -42,7 +42,7 @@ get_header();
 											?>
 											<article class="front-portfolio">
 													<a href="<?php the_permalink(); ?>">
-															<h3><?php the_title(); ?></h3>
+														<h3><?php the_title(); ?></h3>
 													</a>
 											</article>
 											<?php 
@@ -81,8 +81,9 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+		<?php get_template_part('template-parts/page', 'bottom'); ?>
 
+		</section>
 	</main><!-- #primary -->
-	</section>
 <?php
 get_footer();
