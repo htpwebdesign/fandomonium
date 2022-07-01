@@ -48,7 +48,7 @@ get_header();
 
 				<?php
 					$my_map = get_field('map');
-					$my_map['address'];
+					echo $my_map['address'];
 					echo do_shortcode('[wpgmza id="1"]');
 				?>
 			</article>
