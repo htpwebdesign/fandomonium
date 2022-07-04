@@ -1,0 +1,26 @@
+// Styling for Hero Section with Banner img
+
+.hero-section {
+    position: relative;
+
+    .page-title {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .post-thumbnail {
+        width: 100%;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
