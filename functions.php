@@ -87,6 +87,9 @@ function fandomonium_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Custom img crop sizes
+	add_image_size( 'custom-logo-small', 100, 100, true );
+
 	/**
 	 * Add support for core custom logo.
 	 *
