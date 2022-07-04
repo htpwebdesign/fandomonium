@@ -18,9 +18,9 @@ get_header();
 
 		if (is_home() && !is_front_page()) :
 	?>
-			<header class="no-banner-header">
+			<section class="no-banner-hero">
 				<h1 class="archive-title"><?php single_post_title(); ?></h1>
-			</header>
+			</section>
 			<?php
 		endif; ?>
 

@@ -13,12 +13,12 @@ get_header();
 	<main id="primary" class="site-main">
 
 
-			<header class="page-header">
+			<section class="no-banner-hero">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_title( '<h1 class="archive-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
-			</header><!-- .page-header -->
+			</section><!-- .page-header -->
 		
 		<?php
 		$args = array (
