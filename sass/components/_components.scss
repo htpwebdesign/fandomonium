@@ -2,11 +2,19 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
+/* Hero Section
+--------------------------------------------- */
+@import "hero/hero-section";
+
+/* Hero when No Banner
+--------------------------------------------- */
+@import "hero/hero-no-banner";
+
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
 
-/* map
+/* Map
 --------------------------------------------- */
 @import "content/map";
 

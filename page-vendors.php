@@ -21,8 +21,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();?>
 
+		<section class="hero-section">
+			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+			<?php fandomonium_post_thumbnail(); ?>
+		</section>
+
 		<section>
-					<h1><?php the_title(); ?></h1>
 					<h2>Our featured Vendors</h2>
 					<?php // wp query for platinum vendors only
 					$args = array(

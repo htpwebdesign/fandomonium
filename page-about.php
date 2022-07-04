@@ -20,10 +20,14 @@ get_header();
 		<section>
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post(); ?>
 
-			the_title( '<h1 class="entry-title">', '</h1>' );
+		<section class="hero-section">
+			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+			<?php fandomonium_post_thumbnail(); ?>
+		</section>
 
+		<?php
 			if ( function_exists ( 'get_field' ) ) {
  
 				if ( get_field( 'about_the_organization' ) ) { ?>

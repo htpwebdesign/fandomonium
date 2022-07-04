@@ -18,12 +18,13 @@ get_header();
 
 		if (is_home() && !is_front_page()) :
 	?>
-			<header>
-				<h1 class="page-title"><?php single_post_title(); ?></h1>
-			</header>
+			<section class="no-banner-hero">
+				<h1 class="archive-title"><?php single_post_title(); ?></h1>
+			</section>
 			<?php
-		endif;
+		endif; ?>
 
+		<?php
 		if (function_exists('get_field')) {
 			if (get_field('news_page_description', 89)) { ?>
 				<p><?php the_field('news_page_description', 89); ?></p>
