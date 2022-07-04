@@ -45,13 +45,14 @@ get_header();
 					</article>
 				<?php
 				}
-		} 
+		} ?>
     
-    <article>
-      <h2>Location</h2>
-	
-		  $location = get_field('map');
-		  if( $location ): ?>
+    	<article>
+      		<h2>Location</h2>
+			
+			<?php
+		  		$location = get_field('map');
+		  		if( $location ): ?>
 				  <div class="acf-map" data-zoom="16">
 						  <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
 				  </div>
