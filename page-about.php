@@ -41,32 +41,31 @@ get_header();
 					</article>
 				<?php
 				}
-				
-		}?>
-			<article>
-				<h2>Location</h2>
+		} 
+    
+    <article>
+      <h2>Location</h2>
+	
+		  $location = get_field('map');
+		  if( $location ): ?>
+				  <div class="acf-map" data-zoom="16">
+						  <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+				  </div>
+		  <?php endif; ?>
+		    <p><em><?php echo esc_html( $location['address'] ); ?></em></p>
 
-				<?php
-					$my_map = get_field('map');
-					echo $my_map['address'];
-					echo do_shortcode('[wpgmza id="1"]');
-				?>
-			</article>
-			<article>
+		</article>
+		<article>
 				<h2>Contact Form</h2>
 
-				<?php 
-					echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
-
-				endwhile; // End of the loop.
-
-				// make acf for about page AK 
-				?>
-			</article>
+				<?php echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]'); ?>
+        
+		  </article>
+      <?php endwhile; // End of the loop. ?>
 		</section>
 
 		<?php get_template_part('template-parts/page', 'bottom'); ?>
-
+    
 	</main><!-- #main -->
 
 <?php
