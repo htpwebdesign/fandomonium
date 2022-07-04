@@ -2,10 +2,6 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
-/* Posts and pages
---------------------------------------------- */
-@import "content/posts-and-pages";
-
 /* Hero Section
 --------------------------------------------- */
 @import "hero/hero-section";
@@ -13,6 +9,14 @@
 /* Hero when No Banner
 --------------------------------------------- */
 @import "hero/hero-no-banner";
+
+/* Posts and pages
+--------------------------------------------- */
+@import "content/posts-and-pages";
+
+/* Map
+--------------------------------------------- */
+@import "content/map";
 
 /* Comments
 --------------------------------------------- */
@@ -33,3 +37,6 @@
 /* Galleries
 --------------------------------------------- */
 @import "media/galleries";
+
+
+
