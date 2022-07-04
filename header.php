@@ -28,7 +28,18 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
+		
+			// Display custom logo if custom logo exists. Otherwise display site title. 
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$logo = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+
+			if ( has_custom_logo() ) {
+				echo '<a href="'.get_the_permalink(85).'"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
+			} else {
+				echo '<h1>' . get_bloginfo('name') . '</h1>';
+			}
+
+
 			if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
