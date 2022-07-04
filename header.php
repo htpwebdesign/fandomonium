@@ -31,7 +31,7 @@
 		
 			// Display custom logo if custom logo exists. Otherwise display site title. 
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
-			$logo = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+			$logo = wp_get_attachment_image_src( $custom_logo_id , 'medium_large' );
 
 			if ( has_custom_logo() ) {
 				echo '<a href="'.get_the_permalink(85).'"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
