@@ -48,12 +48,12 @@ get_header();
 						<?php endif?>
 
 						<section>
-							<?if (function_exists('get_field')):
+							<?php if (function_exists('get_field')):
 							if(get_field('cta_sentence')): ?>
 								<p><?php the_field('cta_sentence'); ?></p>
-							<?endif?>
+							<?php endif?>
 								<?php if(get_field('cta')): ?>
-									<a href="<?echo esc_url((get_field('cta')['url']))?>"><?php echo esc_html((get_field('cta')['title']))?></a>
+									<a href="<?php echo esc_url((get_field('cta')['url']))?>"><?php echo esc_html((get_field('cta')['title']))?></a>
 								<?php endif?>
 							<?php endif?>
 						</section>
