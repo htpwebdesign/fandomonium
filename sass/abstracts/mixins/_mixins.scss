@@ -9,3 +9,23 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin tabletQuery {
+    @media (min-width: 37.5em) { @content; }
+}
+@mixin largeTabletQuery {
+    @media (min-width: 48em) { @content; }
+}
+@mixin DesktopQuery {
+    @media (min-width: 64em) { @content; }
+}
+
+
+@mixin flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+@mixin flexRow {
+	display: flex;
+	flex-direction: row;
+}

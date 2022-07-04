@@ -87,6 +87,9 @@ function fandomonium_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Custom img crop sizes
+	
+
 	/**
 	 * Add support for core custom logo.
 	 *
@@ -143,6 +146,9 @@ function fandomonium_scripts() {
 	wp_enqueue_style( 'fandomonium-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'fandomonium-style', 'rtl', 'replace' );
 
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap', array(), null ); 
+	}
+
 	wp_enqueue_script( 'fandomonium-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	/*google map AK*/
 	wp_enqueue_script( 'google-map',	'https://maps.googleapis.com/maps/api/js?key=AIzaSyBlc0CQZKqH8D3hXgsuXY3QYWwIlWEO8Sw', array(), _S_VERSION, true );
@@ -151,7 +157,6 @@ function fandomonium_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
 add_action( 'wp_enqueue_scripts', 'fandomonium_scripts' );
 
 /**
