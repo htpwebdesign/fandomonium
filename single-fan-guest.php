@@ -32,7 +32,7 @@ get_header();
 					echo '<p>'.	get_field( 'guest_description' ) .'</p>';
 				}
 		} 
-		echo '<p>'. get_field( 'about_the_organization' ) .'</p>';
+		
 					// Add an ACF relationship field and assign it to the Single guest page
 					if ( function_exists( 'get_field' ) ) : 
 							$featured_works = get_field('guest_event');
@@ -40,7 +40,7 @@ get_header();
 									foreach($featured_works as $post) :
 											setup_postdata($post); 
 											?>
-											<article class="front-portfolio">
+											<article class="event-link">
 													<a href="<?php the_permalink(); ?>">
 															<h3><?php the_title(); ?></h3>
 													</a>

@@ -37,29 +37,29 @@ get_header();
 				}
 				
 		} 
-			echo '<h2>Location</h2>';
-			$my_map = get_field('map');
-			echo $my_map['address'];
-			echo do_shortcode('[wpgmza id="1"]');
-		
 	
+		$location = get_field('map');
+		if( $location ): ?>
+				<div class="acf-map" data-zoom="16">
+						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+				</div>
+		<?php endif; ?>
+		<p><em><?php echo esc_html( $location['address'] ); ?></em></p>
+	<?php
 			echo '<h2>Contact Form</h2>';
 			echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]');
 		
-		
-			
 			
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-			
-		endwhile; // End of the loop.
 
 		// make acf for about page AK 
 
 		?>
 		</section>
+			<?php endwhile;?> 
 	</main><!-- #main -->
 
 <?php
