@@ -22,8 +22,10 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 		?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php fandomonium_post_thumbnail(); ?>
+		<section class="hero-section">
+			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+			<?php fandomonium_post_thumbnail(); ?>
+		</section>
 
 		<section class="welcome-message">
 			<?php

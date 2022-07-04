@@ -21,9 +21,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post(); ?>
 
+			<section class="hero-section">
+				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+				<?php fandomonium_post_thumbnail(); ?>
+			</section>
 			
 					<section>
-						<h1><?php the_title();?></h1>
 					<?php if (function_exists('get_field')):
 							if(get_field('short_description')):
 					?>
