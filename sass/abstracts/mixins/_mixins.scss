@@ -29,3 +29,20 @@
 	display: flex;
 	flex-direction: row;
 }
+
+// For text or anything that wants to be centered inside a container
+@mixin flexCenter {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// For img tags, control size of img with div wrap!
+@mixin imgDefault {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
