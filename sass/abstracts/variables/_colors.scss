@@ -9,8 +9,8 @@ $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
+$color__link-visited: #fff; //purple
+$color__link-hover: #2db1b1; //midnightblue
 $color__text-main: #404040;
 
 $color__border-button: #ccc #ccc #bbb;
@@ -20,8 +20,8 @@ $color__border-input: #ccc;
 $color__border-abbr: #666;
 
 //  Fandomonium Color Scheme
-$fan-black: #23120b;
-$fan-white: white;
+$fan-black: #000000;
+$fan-white: #fff;
 $fan-grey: #F1F1F1;
 $fan-main-accent: #2DB1B1;
 $fan-secondary-accent: #FFCF55;
@@ -29,6 +29,10 @@ $fan-button-background-default: $fan-black;
 $fan-button-background-invert: $fan-main-accent;
 $fan-button-border-default: $fan-main-accent;
 $fan-banner-title-color: $fan-main-accent;
+$fan-header-background-color: $fan-black;
+$fan-header-accent-color: $fan-secondary-accent;
+$fan-text-invert-color: $fan-white;
+$fan-text-hover-color: $fan-main-accent;
 
 
 
