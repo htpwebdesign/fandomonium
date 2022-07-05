@@ -1,10 +1,20 @@
 .schedule-container {
     
+   
+    
     .schedule {
+
+        &:nth-of-type(odd) {
+            background-color: $fan-main-accent;
+        }
 
         a {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            color: $fan-black;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
 
             h3 {
                 margin: 0;
