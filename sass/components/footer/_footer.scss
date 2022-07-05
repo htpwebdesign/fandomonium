@@ -25,6 +25,15 @@ footer{
         li a{
             line-height: 1.75;
         }
+
+        @media(min-width: 768px /*change this later*/){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            li{
+                padding-right: 4rem;
+            }
+        }
     }
 
     .footer-nav-contain{
@@ -33,7 +42,7 @@ footer{
 
         #menu-socials-menu{
             a{
-                padding: 2rem;
+                padding: 1rem;
             }
 
             @media (min-width: 425px /*change this number later*/){
@@ -42,6 +51,11 @@ footer{
                 justify-content: flex-end;
             }
         }
+    }
+
+    .footer-bottom{
+        @include flexColumn;
+        align-items: center;
     }
     
 }
