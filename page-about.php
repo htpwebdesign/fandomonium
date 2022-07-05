@@ -17,7 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<section>
+		<section class="content">
 		<?php
 		while ( have_posts() ) :
 			the_post(); ?>
@@ -72,6 +72,7 @@ get_header();
 		<?php get_template_part('template-parts/page', 'bottom'); ?>
     
 	</main><!-- #main -->
+
 
 <?php
 get_footer();
