@@ -31,19 +31,28 @@
             position: absolute;
             right: 0;
             left: 0;
-            top: 3.5rem;
+            top: 5rem;
             z-index: 99;
         }
-        .toggled {
-            .nav-menu {
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
+    }
+    .toggled {
+        .menu-main-menu-container {
+            background-color: $fan-header-background-color;
+            padding: 2rem;
+            z-index: 99;
+        }
+        .nav-menu {
+            left: 0;
+            right: 0;
+            top: 0;
 
-                li {
-                    a {
-                        color: $fan-text-invert-color;
+            li {
+                font-size: 2rem;
+                a {
+                    color: $fan-text-invert-color;
+
+                    &:hover {
+                        color: $fan-text-hover-color;
                     }
                 }
             }
