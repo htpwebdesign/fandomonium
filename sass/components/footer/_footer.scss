@@ -25,6 +25,18 @@ footer{
     .footer-nav-contain{
         @include flexRow;
         justify-content: space-between;
+
+        #menu-socials-menu{
+            a{
+                padding: 2rem;
+            }
+
+            @media (min-width: 425px /*change this number later*/){
+                @include flexRow;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+        }
     }
     
 }
