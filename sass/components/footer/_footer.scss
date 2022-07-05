@@ -4,6 +4,11 @@ footer{
     color: $fan-white;
     padding: 1.5rem;
 
+    .site-info{
+        max-width: 1053px; //change this later when media queries are available
+        margin: 0 auto;
+    }
+
     a,
     a:hover,
     a:visited,
