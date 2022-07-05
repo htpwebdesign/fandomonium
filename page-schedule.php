@@ -67,7 +67,7 @@ get_header();
 									<article class="schedule">
 										<a href="<?php echo get_permalink(); ?>">
 											<div class="time-column">
-												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+												<h3><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></h3>
 												<p><?php the_field('end_time') ?></p>
 											</div>
 
@@ -77,7 +77,7 @@ get_header();
 											</div>
 
 											<div class="type-column">
-												<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+												<h3><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></h3>
 												<p>More Info</p>
 											</div>
 										</a>
@@ -102,7 +102,7 @@ get_header();
 									<a href="<?php echo get_permalink(); ?>">
 
 											<div class="time-column">
-												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+												<h3><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></h3>
 												<p><?php the_field('end_time') ?></p>
 											</div>
 
@@ -112,7 +112,7 @@ get_header();
 											</div>
 
 											<div class="type-column">
-												<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+												<h3><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></h3>
 												<p>More Info</p>
 											</div>
 
