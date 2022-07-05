@@ -150,6 +150,7 @@ function fandomonium_scripts() {
 	}
 
 	wp_enqueue_script( 'fandomonium-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'fandomonium-schedule', get_template_directory_uri() . '/js/schedule.js', array(), _S_VERSION, true );
 	/*google map AK*/
 	wp_enqueue_script( 'google-map',	'https://maps.googleapis.com/maps/api/js?key=AIzaSyBlc0CQZKqH8D3hXgsuXY3QYWwIlWEO8Sw', array(), _S_VERSION, true );
 	wp_enqueue_script( 'google-map-init',get_template_directory_uri() . '/js/google-map-script.js', array('google-map','jquery'), _S_VERSION, true );
