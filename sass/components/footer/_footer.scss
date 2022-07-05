@@ -1,0 +1,62 @@
+// footer partial
+footer{
+    background-color: $fan-black;
+    color: $fan-white;
+    padding: 1.5rem;
+
+    .site-info{
+        max-width: 1053px; //change this later when media queries are available
+        margin: 0 auto;
+    }
+
+    a,
+    a:hover,
+    a:visited,
+    a:active{
+        color: $fan-white;
+
+    }
+
+    ul{
+        list-style: none;
+        margin: 0 0 2rem 0; // change these numbers later
+        padding: 0; // change these numbers later
+
+        li a{
+            line-height: 1.75;
+            padding: .5rem;
+        }
+
+        @media(min-width: 768px /*change this later*/){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            li{
+                padding-right: 4rem;
+            }
+        }
+    }
+
+    .footer-nav-contain{
+        @include flexRow;
+        justify-content: space-between;
+
+        #menu-socials-menu{
+            a{
+                padding: 1rem;
+            }
+
+            @media (min-width: 425px /*change this number later*/){
+                @include flexRow;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .footer-bottom{
+        @include flexColumn;
+        align-items: center;
+    }
+    
+}
