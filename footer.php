@@ -37,6 +37,9 @@
 						}
 					?>
 				</nav>
+				<div>
+					<span><?the_privacy_policy_link()?> || <a href="<?echo get_page_link(31); ?>">Return Policy</a></span>
+				</div>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
