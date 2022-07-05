@@ -39,7 +39,7 @@ get_header();
 
 			?>
 				<div class="tab">
-					<button class="tablinks" onclick="showDay(event, 'day-one')">Day One</button>
+					<button class="tablinks" id="btnOne" onclick="showDay(event, 'day-one')">Day One</button>
 					<button class="tablinks" onclick="showDay(event, 'day-two')">Day two</button>
 				</div>
 			<?php
