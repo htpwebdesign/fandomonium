@@ -5,6 +5,14 @@
         a {
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
+
+            h3 {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+            }
         }
        
     }
