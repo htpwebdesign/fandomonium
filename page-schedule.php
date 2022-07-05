@@ -72,7 +72,7 @@ get_header();
 											</div>
 
 											<div class="title-date-column">
-												<h2><?php echo get_the_title(); ?></h2>
+												<h3><?php echo get_the_title(); ?></h3>
 												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 											</div>
 
@@ -107,7 +107,7 @@ get_header();
 											</div>
 
 											<div class="title-date-column">
-												<h2><?php echo get_the_title(); ?></h2>
+												<h3><?php echo get_the_title(); ?></h3>
 												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 											</div>
 
