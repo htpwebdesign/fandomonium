@@ -39,8 +39,8 @@ get_header();
 
 			?>
 				<div class="tab">
-					<button class="tablinks">Day One</button>
-					<button class="tablinks">Day two</button>
+					<button class="tablinks" onclick="showDay(event, 'day-one')">Day One</button>
+					<button class="tablinks" onclick="showDay(event, 'day-two')">Day two</button>
 				</div>
 			<?php
 
@@ -56,7 +56,7 @@ get_header();
 			
 				if ( $query -> have_posts() ) {
 					?>
-					<section class="schedule-container day-one" id="day-one">
+					<section class="schedule-container day-one tabcontent" id="day-one">
 						<h2>Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -90,7 +90,7 @@ get_header();
 						?>
 					</section>
 
-					<section class="schedule-container day-two">
+					<section class="schedule-container tabcontent day-two" id="day-two">
 					<h2>Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
