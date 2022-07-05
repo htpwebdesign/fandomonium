@@ -10,7 +10,8 @@
 
         a {
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-auto-rows: 5rem;
+            grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
             align-items: center;
             color: $fan-black;
             text-decoration: none;
@@ -18,6 +19,11 @@
 
             h3 {
                 margin: 0;
+                font-size: $fan-p-size;
+
+                @include tabletQuery {
+                    font-size: 1.25rem;
+                }
             }
 
             p {
