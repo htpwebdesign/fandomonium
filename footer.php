@@ -21,21 +21,23 @@
 					<?php wp_nav_menu(array('theme_location' => 'social')) ; ?>
 				</nav>
 			</div>
-			<cite>&copy; 2022 Fandomonium - 
-				<a href="#">Aleum K.</a>,
-				<a href="#">Cory O.</a>,
-				<a href="#">Erin D.</a>,
-				<a href="#">Fiona Y.</a>
-			</cite>
-			<nav>
-			<?php
-			if (function_exists('get_field')) {
-					if (get_field('location_of_convention', 'option')) {
-						the_field('location_of_convention', 'option');
-					}
-				}
-			?>
-			</nav>
+			<div class="footer-bottom">
+				<cite>&copy; 2022 Fandomonium - 
+					<a href="#">Aleum K.</a>,
+					<a href="#">Cory O.</a>,
+					<a href="#">Erin D.</a>,
+					<a href="#">Fiona Y.</a>
+				</cite>
+				<nav>
+					<?php
+					if (function_exists('get_field')) {
+							if (get_field('location_of_convention', 'option')) {
+								the_field('location_of_convention', 'option');
+							}
+						}
+					?>
+				</nav>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
