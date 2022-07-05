@@ -21,5 +21,10 @@ footer{
             line-height: 1.75;
         }
     }
+
+    .footer-nav-contain{
+        @include flexRow;
+        justify-content: space-between;
+    }
     
 }
