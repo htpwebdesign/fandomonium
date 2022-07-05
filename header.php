@@ -34,29 +34,14 @@
 			$logo = wp_get_attachment_image_src( $custom_logo_id , 'medium_large' );
 
 			if ( has_custom_logo() ) {
-				echo '<a href="'.get_the_permalink(85).'"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
+				echo '<a class="site-logo-container" href="'.get_the_permalink(85).'"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
 			} else {
 				echo '<h1>' . get_bloginfo('name') . '</h1>';
 			}
-
-
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$fandomonium_description = get_bloginfo( 'description', 'display' );
-			if ( $fandomonium_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $fandomonium_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
 		</div><!-- .site-branding -->
 
-		<div>
+		<div class="date-location">
 			<?php 
 				if (function_exists('get_field')) {
 					if (get_field('start_date_of_convention', 'option') && get_field('end_date_of_convention', 'option')) {
@@ -74,7 +59,7 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'fandomonium' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'fandomonium' ); ?>test</button>
 			<?php
 			wp_nav_menu(
 				array(
