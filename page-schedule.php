@@ -60,13 +60,21 @@ get_header();
 									?>
 									<article class="schedule day-one">
 										<a href="<?php echo get_permalink(); ?>">
-											<h2><?php echo get_the_title(); ?></h2>
-											<?php the_post_thumbnail('thumbnail'); ?>
+											<div class="time-column">
+												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+												<p><?php the_field('end_time') ?></p>
+											</div>
+
+											<div class="title-date-column">
+												<h2><?php echo get_the_title(); ?></h2>
+												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+											</div>
+
+											<div class="type-column">
+												<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+												<p>More Info</p>
+											</div>
 										</a>
-										<p>Type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
-										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
-										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
-										<p>End: <?php the_field('end_time') ?></p>
 									</article>
 									<?php
 								}
@@ -85,14 +93,25 @@ get_header();
 								
 									?>
 									<article class="schedule day-two">
-										<a href="<?php echo get_permalink(); ?>">
-											<h2><?php echo get_the_title(); ?></h2>
-											<?php the_post_thumbnail('thumbnail'); ?>
+									<a href="<?php echo get_permalink(); ?>">
+
+											<div class="time-column">
+												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+												<p><?php the_field('end_time') ?></p>
+											</div>
+
+											<div class="title-date-column">
+												<h2><?php echo get_the_title(); ?></h2>
+												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+											</div>
+
+											<div class="type-column">
+												<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+												<p>More Info</p>
+											</div>
+
+											
 										</a>
-										<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
-										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
-										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
-										<p>End: <?php the_field('end_time') ?></p>
 									</article>
 									<?php
 								}
