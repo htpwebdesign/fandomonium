@@ -27,8 +27,13 @@ get_header();
 		</section>
 
 		<div>
-			<?php
 
+			<div class="tab">
+				<button></button>
+				<button></button>
+			</div>
+
+			<?php
 			if (function_exists('get_field')) :
 				if (get_field('description')) :
 					?>
@@ -45,12 +50,11 @@ get_header();
 				'order' 		 => 'ASC',
 			);
 
-		
 			$query = new WP_Query( $args );
 			
 				if ( $query -> have_posts() ) {
 					?>
-					<section class="anchor-container day-one">
+					<section class="schedule-container day-one" id="day-one">
 						<h2>Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -58,7 +62,7 @@ get_header();
 									if (get_field('day') === 'one') {
 								
 									?>
-									<article class="schedule day-one">
+									<article class="schedule">
 										<a href="<?php echo get_permalink(); ?>">
 											<div class="time-column">
 												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
@@ -84,7 +88,7 @@ get_header();
 						?>
 					</section>
 
-					<section class="anchor-container day-two">
+					<section class="schedule-container day-two">
 					<h2>Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -92,7 +96,7 @@ get_header();
 									if (get_field('day') === 'two') {
 								
 									?>
-									<article class="schedule day-two">
+									<article class="schedule">
 									<a href="<?php echo get_permalink(); ?>">
 
 											<div class="time-column">
