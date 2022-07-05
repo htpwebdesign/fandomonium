@@ -28,11 +28,6 @@ get_header();
 
 		<div>
 
-			<div class="tab">
-				<button></button>
-				<button></button>
-			</div>
-
 			<?php
 			if (function_exists('get_field')) :
 				if (get_field('description')) :
@@ -41,6 +36,13 @@ get_header();
 					<?php
 				endif;
 			endif;
+
+			?>
+				<div class="tab">
+					<button class="tablinks">Day One</button>
+					<button class="tablinks">Day two</button>
+				</div>
+			<?php
 
 			$args = array(
 				'post_type' 	 => 'fan-event',
