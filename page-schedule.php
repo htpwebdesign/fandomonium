@@ -27,8 +27,8 @@ get_header();
 		</section>
 
 		<div>
-			<?php
 
+			<?php
 			if (function_exists('get_field')) :
 				if (get_field('description')) :
 					?>
@@ -36,6 +36,13 @@ get_header();
 					<?php
 				endif;
 			endif;
+
+			?>
+				<div class="tab">
+					<button class="tablinks" id="btnOne" onclick="showDay(event, 'day-one')">Day One</button>
+					<button class="tablinks" onclick="showDay(event, 'day-two')">Day two</button>
+				</div>
+			<?php
 
 			$args = array(
 				'post_type' 	 => 'fan-event',
@@ -45,12 +52,11 @@ get_header();
 				'order' 		 => 'ASC',
 			);
 
-		
 			$query = new WP_Query( $args );
 			
 				if ( $query -> have_posts() ) {
 					?>
-					<section class="anchor-container day-one">
+					<section class="schedule-container day-one tabcontent" id="day-one">
 						<h2>Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -58,15 +64,23 @@ get_header();
 									if (get_field('day') === 'one') {
 								
 									?>
-									<article class="schedule day-one">
+									<article class="schedule">
 										<a href="<?php echo get_permalink(); ?>">
-											<h2><?php echo get_the_title(); ?></h2>
-											<?php the_post_thumbnail('thumbnail'); ?>
+											<div class="time-column">
+												<h3><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></h3>
+												<p><?php the_field('end_time') ?></p>
+											</div>
+
+											<div class="title-date-column">
+												<h3><?php echo get_the_title(); ?></h3>
+												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+											</div>
+
+											<div class="type-column">
+												<h3><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></h3>
+												<p>More Info</p>
+											</div>
 										</a>
-										<p>Type: <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
-										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
-										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
-										<p>End: <?php the_field('end_time') ?></p>
 									</article>
 									<?php
 								}
@@ -76,7 +90,7 @@ get_header();
 						?>
 					</section>
 
-					<section class="anchor-container day-two">
+					<section class="schedule-container tabcontent day-two" id="day-two">
 					<h2>Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
@@ -84,15 +98,26 @@ get_header();
 									if (get_field('day') === 'two') {
 								
 									?>
-									<article class="schedule day-two">
-										<a href="<?php echo get_permalink(); ?>">
-											<h2><?php echo get_the_title(); ?></h2>
-											<?php the_post_thumbnail('thumbnail'); ?>
+									<article class="schedule">
+									<a href="<?php echo get_permalink(); ?>">
+
+											<div class="time-column">
+												<h3><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></h3>
+												<p><?php the_field('end_time') ?></p>
+											</div>
+
+											<div class="title-date-column">
+												<h3><?php echo get_the_title(); ?></h3>
+												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+											</div>
+
+											<div class="type-column">
+												<h3><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></h3>
+												<p>More Info</p>
+											</div>
+
+											
 										</a>
-										<p><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
-										<p>Date: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
-										<p>Start: <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
-										<p>End: <?php the_field('end_time') ?></p>
 									</article>
 									<?php
 								}
