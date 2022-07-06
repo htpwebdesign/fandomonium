@@ -50,12 +50,16 @@
 		if ($query->have_posts()) {
 	?>
 			<article class="feat-vendors">
-				<?php
-				while ($query->have_posts()) {
-					$query->the_post();
-					the_title();
-				}
-				?>
+				<h2>Featured Vendors</h2>
+			
+				<div class="vendors-logos">
+					<?php
+					while ($query->have_posts()) {
+						$query->the_post();
+						the_title();
+					}
+					?>
+				</div>
 			</article>
 	<?php
 			wp_reset_postdata();
