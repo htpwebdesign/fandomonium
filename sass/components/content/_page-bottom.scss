@@ -1,4 +1,6 @@
 .page-bottom-section{
+    @include flexColumn;
+    align-items: center;
 
     article{
         padding: 2rem;
