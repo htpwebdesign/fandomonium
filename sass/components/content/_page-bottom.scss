@@ -1,0 +1,39 @@
+.page-bottom-section{
+
+    .buy-tickets-cta{
+        @include flexColumn;
+        align-items: center;
+        padding: 2rem 0;
+        max-width: 210px;
+        margin: 0 auto;
+        
+
+        a{
+            color: $fan-black;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 0.75rem 3rem;
+            background-color: $fan-white;
+            border: 2px solid $fan-button-border-default;
+            border-radius: .25rem;
+            transition: background-color .3s ease-in;
+
+
+            &:hover{
+                color: $fan-white;
+                background-color: $fan-button-background-invert;
+                transition: background-color .3s ease-in,  color .3s ease-in;
+            }
+        }
+    }
+
+    
+    .feat-vendors{
+        padding: 0 0 2rem 0;
+
+        div{
+            @include flexRow;
+        }
+    }
+
+}
