@@ -24,4 +24,14 @@
             }
         }
     }
+
+    
+    .feat-vendors{
+        padding: 0 0 2rem 0;
+
+        div{
+            @include flexRow;
+        }
+    }
+
 }
