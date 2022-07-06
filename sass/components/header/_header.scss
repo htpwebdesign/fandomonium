@@ -8,11 +8,19 @@
     border-bottom: 1px solid $fan-header-accent-color;
 
     .site-branding {
-        width: 25%;
+        width: 5.5rem;
+
+        @include largeTabletQuery {
+            width: 6rem;
+        }
     }
     .date-location {
         width: 50%;
-        margin: 0 1rem;
+        margin: 0.5rem;
+
+        @include largeTabletQuery {
+            margin: 1rem;
+        }
 
         p {
             text-align: left;
