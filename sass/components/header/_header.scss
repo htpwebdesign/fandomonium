@@ -8,7 +8,6 @@
     .site-branding {
         width: 25%;
     }
-
     .date-location {
         width: 50%;
         margin: 0 1rem;
@@ -26,14 +25,6 @@
         .menu-toggle {
             width: 100%;
         }
-        .menu-main-menu-container {
-            width: 100%;
-            position: absolute;
-            right: 0;
-            left: 0;
-            top: 0;
-            z-index: 80;
-        }
     }
     .toggled {
         .menu-toggle {
@@ -43,9 +34,14 @@
             top: 2rem;
         }
         .menu-main-menu-container {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 80;
             background-color: $fan-header-background-color;
             padding: 7rem 2rem 2rem;
-            z-index: 80;
         }
         .nav-menu {
             left: 0;
