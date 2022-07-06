@@ -1,9 +1,10 @@
 .page-bottom-section{
-    @include flexColumn;
-    align-items: center;
 
-    article{
-        padding: 2rem;
+    .buy-tickets-cta{
+        padding: 2rem 0;
+        max-width: 156px;
+        margin: 0 auto;
+        
 
         a{
             color: $fan-black;
