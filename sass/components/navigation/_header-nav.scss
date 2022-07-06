@@ -20,7 +20,7 @@
             display: none;
         }
     }
-    
+
     // the ul containing the menu
     .nav-menu {
         display: none;
@@ -36,6 +36,7 @@
             }
             a {
                 color: $fan-text-invert-color;
+                padding: 1.5rem;
 
                 &:hover {
                     color: $fan-text-hover-color;
