@@ -22,7 +22,6 @@
 			}
 
 			li {
-
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
@@ -74,14 +73,23 @@
 .main-navigation.toggled ul {
 	display: block;
 }
+.toggled {
+	.menu-main-menu-container {
+		display: block;
+		@include largeTabletQuery {
+			display: none;
+		}
+	}
+}
 
-@media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
+.menu-toggle {
+	@include largeTabletQuery {
 		display: none;
 	}
-
-	.main-navigation ul {
+}
+.main-navigation ul {
+	display: none;
+	@include largeTabletQuery {
 		display: flex;
 	}
 }
@@ -89,7 +97,6 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 	}

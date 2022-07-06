@@ -22,8 +22,33 @@
     .main-navigation {
         width: 25%;
 
-        .menu-toggle {
+        @include largeTabletQuery {
             width: 100%;
+        }
+        .menu-toggle {
+            @include tabletQuery {
+                padding: 1rem 3rem;
+                margin: 0;
+                width: 100%;
+            }
+        }
+        .nav-menu {
+            @include largeTabletQuery {
+                justify-content: space-between;
+            }
+            li {
+                @include largeTabletQuery {
+                    font-size: 1rem;
+                    padding: 0 0.5rem;
+                }
+                a {
+                    color: $fan-text-invert-color;
+
+                    &:hover {
+                        color: $fan-text-hover-color;
+                    }
+                }
+            }
         }
     }
     .toggled {
