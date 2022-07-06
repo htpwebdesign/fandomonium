@@ -17,7 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<section class="content">
+	<section class="about-content">
 		<?php
 		while ( have_posts() ) :
 			the_post(); ?>
@@ -27,6 +27,7 @@ get_header();
 			<?php fandomonium_post_thumbnail(); ?>
 		</section>
 
+		
 		<?php
 			if ( function_exists ( 'get_field' ) ) {
  
@@ -46,7 +47,7 @@ get_header();
 				<?php
 				}
 		} ?>
-    
+			<section class="about-grid">
     	<article>
       		<h2>Location</h2>
 			
@@ -67,6 +68,7 @@ get_header();
         
 		  </article>
       <?php endwhile; // End of the loop. ?>
+			</section>
 		</section>
 
 		<?php get_template_part('template-parts/page', 'bottom'); ?>
