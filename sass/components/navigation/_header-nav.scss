@@ -1,0 +1,98 @@
+// Header Navigation
+
+.main-navigation {
+    width: 25%;
+
+    @include largeTabletQuery {
+        width: 100%;
+    }
+
+    // hamburger button
+    .menu-toggle {
+        display: block;
+
+        @include tabletQuery {
+            padding: 1rem 3rem;
+            margin: 0;
+            width: 100%;
+        }
+        @include largeTabletQuery {
+            display: none;
+        }
+    }
+    
+    // the ul containing the menu
+    .nav-menu {
+        display: none;
+
+        @include largeTabletQuery {
+            display: flex;
+            justify-content: space-between;
+        }
+        li {
+            @include largeTabletQuery {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+            a {
+                color: $fan-text-invert-color;
+
+                &:hover {
+                    color: $fan-text-hover-color;
+                }
+            }
+        }
+    }
+}
+
+// When hamburger button is toggled
+.toggled {
+
+    // hamburger button after toggle
+    .menu-toggle {
+        width: 20%;
+        position: absolute;
+        z-index: 99;
+        top: 2rem;
+
+        @include largeTabletQuery {
+            display: none;
+        }
+    }
+
+    // the div containing the ul of menu
+    .menu-main-menu-container {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 80;
+        width: 100%;
+        background-color: $fan-header-background-color;
+        padding: 7rem 2rem 2rem;
+
+		@include largeTabletQuery {
+			display: none;
+		}
+    }
+
+    // the ul containing the menu
+    .nav-menu {
+        display: block;
+        left: 0;
+        right: 0;
+        top: 0;
+
+        li {
+            font-size: 2rem;
+            a {
+                color: $fan-text-invert-color;
+
+                &:hover {
+                    color: $fan-text-hover-color;
+                }
+            }
+        }
+    }
+}

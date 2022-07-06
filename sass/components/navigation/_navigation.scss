@@ -1,6 +1,5 @@
 .main-navigation {
 	display: block;
-	width: 100%;
 
 	ul {
 		display: none;
@@ -68,31 +67,7 @@
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-.toggled {
-	.menu-main-menu-container {
-		display: block;
-		@include largeTabletQuery {
-			display: none;
-		}
-	}
-}
-
-.menu-toggle {
-	@include largeTabletQuery {
-		display: none;
-	}
-}
-.main-navigation ul {
-	display: none;
-	@include largeTabletQuery {
-		display: flex;
-	}
-}
+/* Small Navigation */
 
 .comment-navigation,
 .posts-navigation,
