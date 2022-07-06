@@ -1,8 +1,10 @@
 .page-bottom-section{
 
     .buy-tickets-cta{
+        @include flexColumn;
+        align-items: center;
         padding: 2rem 0;
-        max-width: 156px;
+        max-width: 210px;
         margin: 0 auto;
         
 
