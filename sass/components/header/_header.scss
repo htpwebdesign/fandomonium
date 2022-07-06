@@ -1,3 +1,5 @@
+// Site Header
+
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -6,56 +8,24 @@
     border-bottom: 1px solid $fan-header-accent-color;
 
     .site-branding {
-        width: 25%;
-    }
+        width: 5.5rem;
 
+        @include largeTabletQuery {
+            width: 6rem;
+        }
+    }
     .date-location {
         width: 50%;
-        margin: 0 1rem;
+        margin: 0.5rem;
+
+        @include largeTabletQuery {
+            margin: 1rem;
+        }
 
         p {
             text-align: left;
             margin: 0;
             color: $fan-header-accent-color;
-        }
-    }
-
-    .main-navigation {
-        width: 25%;
-
-        .menu-toggle {
-            width: 100%;
-        }
-        .menu-main-menu-container {
-            width: 100%;
-            position: absolute;
-            right: 0;
-            left: 0;
-            top: 5rem;
-            z-index: 99;
-        }
-    }
-    .toggled {
-        .menu-main-menu-container {
-            background-color: $fan-header-background-color;
-            padding: 2rem;
-            z-index: 99;
-        }
-        .nav-menu {
-            left: 0;
-            right: 0;
-            top: 0;
-
-            li {
-                font-size: 2rem;
-                a {
-                    color: $fan-text-invert-color;
-
-                    &:hover {
-                        color: $fan-text-hover-color;
-                    }
-                }
-            }
         }
     }
 }
