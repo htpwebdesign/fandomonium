@@ -31,15 +31,21 @@
             position: absolute;
             right: 0;
             left: 0;
-            top: 5rem;
-            z-index: 99;
+            top: 0;
+            z-index: 80;
         }
     }
     .toggled {
+        .menu-toggle {
+            width: 20%;
+            position: absolute;
+            z-index: 99;
+            top: 2rem;
+        }
         .menu-main-menu-container {
             background-color: $fan-header-background-color;
-            padding: 2rem;
-            z-index: 99;
+            padding: 7rem 2rem 2rem;
+            z-index: 80;
         }
         .nav-menu {
             left: 0;
