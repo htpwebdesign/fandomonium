@@ -30,10 +30,10 @@ get_header();
 		);
 		$query = new WP_Query($args);
 		if ($query -> have_posts())	{
-			echo '<section>';
+			echo '<section class="guest-container">';
 			while ( $query -> have_posts()) {
 				$query -> the_post();
-				echo '<article>';
+				echo '<article class="guest-wrapper">';
 					the_post_thumbnail('thumbnail');
 					echo '<h2>'.get_the_title().'</h2>';
 					// make acf for guest page AK 
@@ -42,7 +42,7 @@ get_header();
 							the_field( 'occupation_of_guest' );
 					}
 			} 
-					echo '<a href="'.get_permalink().'"> View Bio';
+					echo '<a class= "content-view "href="'.get_permalink().'"> View Bio';
 					echo '</a>';
 				echo '</article>';
 			}
