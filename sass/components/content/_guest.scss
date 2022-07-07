@@ -1,0 +1,25 @@
+.guest-container {
+
+  text-align: center;
+
+  .guest-wrapper {
+     @include flexColumn;
+     align-items: center;
+  }
+
+  .content-view {
+     text-decoration: none;
+     color:$fan-main-accent;
+     margin-bottom: 10px;
+  }
+  
+   @include tabletQuery {
+     
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+     img {
+        margin-top: 20px;
+     }
+   }
+}
