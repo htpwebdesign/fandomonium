@@ -19,6 +19,11 @@ get_header();
             <section class="hero-with-img">
                 <?php the_title('<h1 class="page-title">', '</h1>'); ?>
                 <?php fandomonium_post_thumbnail(); ?>
+				<?php if(function_exists('get_field')):
+					if(get_field('cta')): ?>
+						<a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
+					<?php endif?>
+				<?php endif ?>
             </section>
         </main>
 
@@ -94,7 +99,7 @@ get_header();
 			</section>
 
 			<section>
-				<h2 class="h1" id="vendor-apply">Apply as a Vendor</h2>
+				<h2 class="h1">Apply as a Vendor</h2>
 				<div>
 					<p>These are our available tiers:</p>
 					<?php 
@@ -118,7 +123,7 @@ get_header();
 							<?php endforeach?>
 						<?php endif?>
 				</div>
-				<?php echo do_shortcode('[contact-form-7 id="63" title="Vendor Application"]');?>
+				<?php echo do_shortcode('[contact-form-7 id="63" title="Vendor Application" html_id="vendor-application"]');?>
 			</section>
 
 			<?php // If comments are open or we have at least one comment, load up the comment template.
