@@ -1,7 +1,7 @@
 @use "../abstracts/mixins/mixins" as *;
 
 .site {
-	max-width: 50rem;
+	// max-width: 50rem;
 	margin: 0 auto;
 
 	@include desktopQuery {
