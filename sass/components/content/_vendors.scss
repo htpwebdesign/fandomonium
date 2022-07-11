@@ -1,1 +1,30 @@
 // vendors page 
+
+//CTA Styles
+.vendor-apply{
+    position: absolute;
+    bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    a{
+        color: $fan-teal;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0.75rem;
+        border: 3px solid $color__button_border;
+        border-radius: .25rem;
+        transition: background-color .25s ease-in;
+        max-width: 12rem;
+
+        &:hover{
+            color: $color__button-text-invert;
+            background-color: $color__button_background_invert;
+            transition: background-color .25s ease-in,  color .3s ease-in;
+        }
+    }
+
+}

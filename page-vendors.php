@@ -19,11 +19,13 @@ get_header();
             <section class="hero-with-img">
                 <?php the_title('<h1 class="page-title">', '</h1>'); ?>
                 <?php fandomonium_post_thumbnail(); ?>
-				<?php if(function_exists('get_field')):
-					if(get_field('cta')): ?>
-						<a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
-					<?php endif?>
-				<?php endif ?>
+				<div class="vendor-apply">
+					<?php if(function_exists('get_field')):
+						if(get_field('cta')): ?>
+							<a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
+						<?php endif?>
+					<?php endif ?>
+				</div>
             </section>
         </main>
 
