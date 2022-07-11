@@ -35,16 +35,16 @@ get_header();
 							<?php endif?>
 						<?php endif?>
 					
-					<div>
+					<div id="my-accordion" class="accordionjs">
 						<?php
 						if (function_exists('get_field')):
 							if(have_rows('faq')):
 								while( have_rows('faq') ) : the_row();
 						?>
-								<div class="faq-heading">
+								<button class="faq-heading accordion">
 									<h2><?php echo get_sub_field('question');?></h2>
-								</div>
-								<div class="faq-answer">
+								</button>
+								<div class="faq-answer panel">
 									<p><?php echo get_sub_field('answer');?></p>
 								</div>
 								<?php endwhile?>
