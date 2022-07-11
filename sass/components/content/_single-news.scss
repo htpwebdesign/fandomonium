@@ -1,9 +1,23 @@
 // Single News Page
 
 .single-post {
+    .top-page-container {
+        margin: 2rem auto;
+        @include desktopQuery {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .widget-area {
+            margin: 2rem auto;
+            @include desktopQuery {
+                width: 700px;
+            }
+        }
+    }
     .post-thumbnail {
         height: 500px;
-        
+
         img {
             @include imgDefault;
         }

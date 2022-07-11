@@ -11,7 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div>
+	<div class="top-page-container">
 		<a href=<?php esc_url(get_post_type_archive_link('post')) ?>>
 			< Back to Latest News </a>
 				<?php get_sidebar(); ?>
