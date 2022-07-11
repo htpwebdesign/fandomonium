@@ -1,0 +1,11 @@
+// Single News Page
+
+.single-post {
+    .post-thumbnail {
+        height: 500px;
+        
+        img {
+            @include imgDefault;
+        }
+    }
+}
