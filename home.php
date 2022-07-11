@@ -14,7 +14,7 @@ if (is_home() && !is_front_page()) :
 ?>
 	<main class=site-hero>
 		<section class="hero-no-img">
-		<h1 class="archive-title"><?php single_post_title(); ?></h1>
+			<h1 class="archive-title"><?php single_post_title(); ?></h1>
 		</section>
 	</main>
 <?php
@@ -29,26 +29,33 @@ endif; ?>
 		if (function_exists('get_field')) {
 			if (get_field('news_page_description', 89)) { ?>
 				<p><?php the_field('news_page_description', 89); ?></p>
-			<?php
+		<?php
 			}
 		}
 
-		get_sidebar();
+		get_sidebar(); ?>
+		<section class="news-container">
 
-		/* Start the Loop */
-		while (have_posts()) :
-			the_post();
+			<?php
+			/* Start the Loop */
+			while (have_posts()) :
+				the_post();
 			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php fandomonium_post_thumbnail(); ?>
 
-				<header class="entry-header">
-					<?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
-				</header>
-			</article>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="thumbnail-container">
+						<?php fandomonium_post_thumbnail(); ?>
+					</div>
+
+					<header class="entry-header">
+						<?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
+					</header>
+				</article>
+
+			<?php endwhile; ?>
+		</section>
+
 	<?php
-		endwhile;
-
 		the_posts_navigation();
 
 	else :

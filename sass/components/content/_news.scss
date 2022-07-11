@@ -1,0 +1,40 @@
+
+.blog {
+    .news-container {
+        margin: 2rem auto;
+        
+        @include tabletQuery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 1rem;
+            margin: 4.5rem auto;
+        }
+        @include desktopQuery {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        article {
+            
+            @include largeTabletQuery {
+                width: 400px;
+                margin: 0 auto;
+            }
+            @include desktopQuery {
+                width: 300px;
+            }
+
+            .thumbnail-container {
+                height: 300px;
+
+                @include desktopQuery {
+                    width: 300px;
+                    height: 250px;
+                }
+    
+                img {
+                    @include imgDefault;
+                }
+            }
+        }
+    }
+}
