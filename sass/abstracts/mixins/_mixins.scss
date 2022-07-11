@@ -16,6 +16,9 @@
 @mixin largeTabletQuery {
     @media (min-width: 48em) { @content; }
 }
+@mixin medScreenQuery {
+	@media (min-width: 54em) { @content; }
+}
 @mixin desktopQuery {
     @media (min-width: 64em) { @content; }
 }
