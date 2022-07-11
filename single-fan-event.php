@@ -17,9 +17,12 @@ get_header();
 			the_post();
 			?>
 			<div class="single-event-header"> 
-			<?php
-			fandomonium_post_thumbnail();
-			?>
+				<div class="event-img-container">	
+					<?php
+					fandomonium_post_thumbnail();
+					?>
+				</div>
+				
 				<div class="title-description-container">
 					<?php
 					the_title( '<h1 class="entry-title">', '</h1>' );
