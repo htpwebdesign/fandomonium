@@ -77,10 +77,14 @@ get_header();
 												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 											</div>
 
+											
+
 											<div class="type-column">
 												<h3><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></h3>
 												<p>More Info</p>
 											</div>
+
+											<?php echo the_post_thumbnail('thumbnail') ?>
 										</a>
 									</article>
 									<?php
@@ -117,7 +121,7 @@ get_header();
 												<p>More Info</p>
 											</div>
 
-											
+											<?php echo the_post_thumbnail('thumbnail') ?>
 										</a>
 									</article>
 									<?php
