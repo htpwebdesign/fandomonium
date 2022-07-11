@@ -1,4 +1,6 @@
 .schedule-container {
+    overflow: hidden;
+    border-radius: 7px;
 
     h2 {
         text-align: center;
@@ -68,13 +70,23 @@
         display: flex;
         justify-content: flex-start;
         margin: auto;
-        margin-left: 2rem;
+        margin-left: 1rem;
+        @include desktopQuery {
+            margin-left: 2rem;
+        }
 
         .tablinks {
             border: none;
             border-radius: 0px;
             cursor: pointer;
-            width: 8rem;
+            width: 5rem;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+
+            @include desktopQuery {
+                
+                width: 8rem;
+            }
             
             &#btnOne {
                 background-color: $fan-teal-faded; 
@@ -86,7 +98,5 @@
         }
        
     }
-    .tabcontent {
-        display: none;
 
-    }
+  
