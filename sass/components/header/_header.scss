@@ -4,8 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $fan-header-background-color;
-    border-bottom: 1px solid $fan-header-accent-color;
+    background-color: $color__header-background;
+    border-bottom: 1px solid $color__header-accent;
 
     .site-branding {
         width: 5.5rem;
@@ -25,7 +25,7 @@
         p {
             text-align: left;
             margin: 0;
-            color: $fan-header-accent-color;
+            color: $color__header-accent;
         }
     }
 }
