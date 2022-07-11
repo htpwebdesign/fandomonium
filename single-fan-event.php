@@ -74,6 +74,7 @@ get_header();
 
 				?>
 				<h2>More Events</h2>
+				<div class="more-events-container">
 				<?php
 	
 					$args = array(
@@ -90,7 +91,9 @@ get_header();
 							<article>
 								<a href="<?php the_permalink(); ?>">
 									<h3> <?php the_title(); ?> </h3>
-									<?php the_post_thumbnail( 'medium' ); ?>
+									<div class="more-events-img-container">
+										<?php the_post_thumbnail( 'medium' ); ?>
+									</div>
 								</a>
 							</article>
 							<?php
@@ -98,7 +101,8 @@ get_header();
 						endwhile;
 						wp_reset_postdata();
 					endif;
-				
+				?></div>
+				<?php
 				
 			endif;
 			get_template_part( 'template-parts/page-bottom' );
