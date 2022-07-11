@@ -44,6 +44,8 @@ get_header();
 					<?php
 					
 				endif;
+
+				?><a href="<?php echo get_permalink(12); ?>">Back to Schedule </a><?php
 	
 	
 				$posts = get_field('guests');
@@ -61,7 +63,7 @@ get_header();
 				endif; 
 				wp_reset_postdata();
 	
-				?><a href="<?php echo get_permalink(12); ?>">Back to Schedule </a><?php
+				
 				
 			endif;
 			get_template_part( 'template-parts/page-bottom' );
