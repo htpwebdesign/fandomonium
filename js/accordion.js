@@ -1,5 +1,5 @@
-const acc = document.getElementsByClassName("accordion");
-let i;
+var acc = document.getElementsByClassName("accordion");
+var i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
@@ -8,11 +8,11 @@ for (i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
 
     /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (!this.classList.contains("active")) {
-      panel.classList.toggle('cakes')
+    let panel = this.nextElementSibling;
+    if (panel.style.visibility === "visible") {
+      panel.style.visibility = "hidden";
     } else {
-      panel.classList.remove('cakes');
+      panel.style.visibility = "visible";
     }
   });
 }
