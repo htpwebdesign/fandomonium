@@ -1,17 +1,44 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
+// FANDOMONIUM COLOURS
+$fan-black: #000000;
+$fan-white: #fff;
+$fan-offwhite: #F1F1F1;
+$fan-teal: #2DB1B1;
+$fan-yellow: #FFCF55;
+
+
+// COLOURS
+$color__main: $fan-teal;
+$color__accent: $fan-yellow;
+
+$color__background-body: $fan-white;
+$color__background-screen: $fan-offwhite;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
+
+// HEADER & HERO RELATED
+$color__header-background: $fan-black;
+$color__header-accent-color: $color__accent;
+$color__nav-link: $fan-white;
+$color__hero-img-title: $color__main;
+
+
+// LINK AND BUTTON COLORS
+$color__link: $color__main;
+$color__link-hover: $color__main;
+$color__link-visited: $color__main;
+$color__button_background: $color__background-body; // default button
+$color__button_background_invert: $color__main; // button on hover
+$color__button_border: $color__main; // button border
+
+
+// TYPOGRAPHY COLORS
+$color__text-main: $fan-black;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #fff; //purple
-$color__link-hover: #2db1b1; //midnightblue
-$color__text-main: #404040;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -19,16 +46,9 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-//  Fandomonium Color Scheme
-$fan-black: #000000;
-$fan-white: #fff;
-$fan-grey: #F1F1F1;
-$fan-main-accent: #2DB1B1;
-$fan-secondary-accent: #FFCF55;
-$fan-button-background-default: $fan-black;
-$fan-button-background-invert: $fan-main-accent;
-$fan-button-border-default: $fan-main-accent;
-$fan-banner-title-color: $fan-main-accent;
+
+
+// $fan-banner-title-color: $fan-main-accent;
 $fan-header-background-color: $fan-black;
 $fan-header-accent-color: $fan-secondary-accent;
 $fan-text-invert-color: $fan-white;
