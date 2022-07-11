@@ -12,29 +12,29 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php 
 		
+		<?php 
 		$link = get_field('back');
 		if( $link ): ?>
 		<section>
-		<a class="button" href="<?php echo esc_url( $link ); ?>"><- Back to guest List</a>
+		<a class="guest-button" href="<?php echo esc_url( $link ); ?>"><- Back to guest List</a>
 		<?php endif; ?>
 		</section>
-		
-		<section>
+
+
+		<div class="single-guest-wrapper">
+		<div class="single-guest1">		
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'template-parts/content', get_post_type() );?>
+		</div>
 
-			if ( function_exists ( 'get_field' ) ) {
-				if ( get_field( 'guest_description' ) ) {
-					echo '<p>'.	get_field( 'guest_description' ) .'</p>';
-				}
-		} 
-		
-					// Add an ACF relationship field and assign it to the Single guest page
-					if ( function_exists( 'get_field' ) ) : 
+			<div class="single-guest2">	
+			<section class="single-event">
+				<?php
+						// Add an ACF relationship field and assign it to the Single guest page
+						if ( function_exists( 'get_field' ) ) : 
 							$featured_works = get_field('guest_event');
 							if ($featured_works) :
 									foreach($featured_works as $post) :
@@ -50,7 +50,16 @@ get_header();
 									wp_reset_postdata();
 							endif;
 					endif;
-
+				?>
+			</section>
+			
+			<?php
+			if ( function_exists ( 'get_field' ) ) {
+				if ( get_field( 'guest_description' ) ) {
+					echo '<p>'.	get_field( 'guest_description' ) .'</p>';
+				}
+			} 
+		
 				$image = get_field('image_icon1');
 				if (!empty($image)) {
 					$url = get_field('image_url1');
@@ -68,22 +77,29 @@ get_header();
 						<a href="<?php echo $url; ?>" target="_blank"><img src="<?php 
 								echo $image['url']; ?>" alt="<?php 
 								echo $image['alt']; ?>" /></a>
-					<?php 
+		
+				</section>
+				<?php 
+					
 				}
 
-			the_post_navigation(
+				the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'fwd' ) . '</span> <span class="nav-title">%title</span>',
 					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'fwd' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
 
-
+			
 		endwhile; // End of the loop.
+		
 		?>
+
+		</div>
 		<?php get_template_part('template-parts/page', 'bottom'); ?>
 
-		</section>
+
 	</main><!-- #primary -->
+
 <?php
 get_footer();
