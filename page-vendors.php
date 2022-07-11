@@ -13,19 +13,22 @@
  */
 
 get_header();
+// get_template_part('template-parts/content', 'hero'); 
 ?>
+<main class=site-hero>
+            <section class="hero-with-img">
+                <?php the_title('<h1 class="page-title">', '</h1>'); ?>
+                <?php fandomonium_post_thumbnail(); ?>
+            </section>
+        </main>
+
 
 	<main id="primary" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();?>
-
-		<section class="hero-section">
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			<?php fandomonium_post_thumbnail(); ?>
-		</section>
-
+			
 		<section>
 					<h2>Our featured Vendors</h2>
 					<?php // wp query for platinum vendors only

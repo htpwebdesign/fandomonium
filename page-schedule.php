@@ -14,6 +14,12 @@
 
 get_header();
 ?>
+<main class=site-hero>
+	<section class="hero-with-img">
+		<?php the_title('<h1 class="page-title">', '</h1>'); ?>
+		<?php fandomonium_post_thumbnail(); ?>
+	</section>
+</main>
 
 	<main id="primary" class="site-main">
 
@@ -21,11 +27,6 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 		?>
-		<section class="hero-section">
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			<?php fandomonium_post_thumbnail(); ?>
-		</section>
-
 		<div>
 
 			<?php
