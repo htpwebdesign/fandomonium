@@ -4,7 +4,7 @@
 	max-width: 50rem;
 	margin: 0 auto;
 
-	@include esktopQuery {
+	@include desktopQuery {
 		max-width: 2200px;
 		display: grid;
 		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
