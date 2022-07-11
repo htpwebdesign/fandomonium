@@ -1,7 +1,13 @@
 // Styling for hero text with no banner
 
-.no-banner-hero {
+.hero-no-img {
     .archive-title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: $fan-h1-size;
+        font-weight: $fan-title-font-weight;
+    }
+    .page-title {
         text-align: center;
         text-transform: uppercase;
         font-size: $fan-h1-size;

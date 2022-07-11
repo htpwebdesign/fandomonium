@@ -9,20 +9,21 @@
  */
 
 get_header();
+
+if (is_home() && !is_front_page()) :
 ?>
+	<main class=site-hero>
+		<section class="hero-no-img">
+		<h1 class="archive-title"><?php single_post_title(); ?></h1>
+		</section>
+	</main>
+<?php
+endif; ?>
 
 <main id="primary" class="site-main">
 
 	<?php
-	if (have_posts()) :
-
-		if (is_home() && !is_front_page()) :
-	?>
-			<section class="no-banner-hero">
-				<h1 class="archive-title"><?php single_post_title(); ?></h1>
-			</section>
-			<?php
-		endif; ?>
+	if (have_posts()) : ?>
 
 		<?php
 		if (function_exists('get_field')) {
@@ -40,12 +41,12 @@ get_header();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php fandomonium_post_thumbnail(); ?>
-				
+
 				<header class="entry-header">
 					<?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
 				</header>
 			</article>
-		<?php
+	<?php
 		endwhile;
 
 		the_posts_navigation();
@@ -57,7 +58,7 @@ get_header();
 	endif;
 	get_template_part('template-parts/page', 'bottom');
 
-		?>
+	?>
 
 </main><!-- #main -->
 
