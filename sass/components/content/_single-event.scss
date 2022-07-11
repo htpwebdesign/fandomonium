@@ -2,9 +2,7 @@
 .single-event-header {
     margin-top: 2rem;
 
-    img {
-        padding: 1rem 0;
-    }
+   
 
     @include desktopQuery {
         display: flex;
@@ -22,7 +20,12 @@
 
 .event-details-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: $fan-black;
+
+    p {
+        color: $fan-teal;
+    }
 }
 .single-event-guest-container {
     list-style: none;
@@ -51,3 +54,44 @@
     }
   
 }
+
+.heading-container {
+    display: flex;
+    align-items: center;
+
+    a {
+        margin-left: 1rem;
+    }
+}
+
+.more-events-img-container {
+    max-width: 12rem;
+    height: 9rem;
+
+    img {
+        @include imgDefault
+    }
+}
+
+.more-events-container {
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    margin: auto;
+
+    a {
+        position: relative;
+    }
+
+    h3 {
+        margin: 0;
+        position: absolute;
+        color: $fan-teal;
+        background-color: rgb($fan-black, 0.9);
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+    }
+}
+
