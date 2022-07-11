@@ -71,7 +71,33 @@ get_header();
 					<?php 
 				endif; 
 				wp_reset_postdata();
+
+				?>
+				<h2>More Events</h2>
+				<?php
 	
+					$args = array(
+						'post_type' 	 	=> 'fan-event',
+						'posts_per_page' 	=>  4,
+						'orderby'       	=> 'rand',
+					);
+					$blog_query = new WP_query( $args );
+					if ( $blog_query -> have_posts() ) :
+						while ( $blog_query -> have_posts() ) :
+							$blog_query -> the_post();
+	
+							?>
+							<article>
+								<a href="<?php the_permalink(); ?>">
+									<h3> <?php the_title(); ?> </h3>
+									<?php the_post_thumbnail( 'medium' ); ?>
+								</a>
+							</article>
+							<?php
+	
+						endwhile;
+						wp_reset_postdata();
+					endif;
 				
 				
 			endif;
