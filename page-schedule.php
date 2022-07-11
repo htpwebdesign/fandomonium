@@ -58,7 +58,7 @@ get_header();
 				if ( $query -> have_posts() ) {
 					?>
 					<section class="schedule-container day-one tabcontent" id="day-one">
-						<h2>Day One</h2>
+						<h2 class="screen-reader-text">Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
@@ -96,7 +96,7 @@ get_header();
 					</section>
 
 					<section class="schedule-container day-two tabcontent" id="day-two">
-					<h2>Day Two</h2>
+					<h2 class="screen-reader-text">Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
