@@ -5,7 +5,7 @@
     margin: -.125rem;
     width: 100%;
     text-align: left;
-    border: .125rem solid $fan-main-accent;
+    border: .125rem solid $fan-teal;
     background-color: $fan-white;
     transition: 0.4s;
     position: relative;
@@ -20,7 +20,9 @@
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    border: .125rem solid $fan-main-accent;
+    border: .125rem solid $fan-teal;
+    background-color: $fan-teal;
+    color: $fan-white;
   }
 
   .active::after{
@@ -31,16 +33,16 @@
   .panel {
     padding: 0 1rem;
     visibility: hidden;
-    background-color: white;
+    background-color: $fan-white;
     height: 0;
-    border: .125rem solid $fan-main-accent;
+    border: .125rem solid $fan-teal;
     margin: -.0625rem 0;
     transition: height .25s ease-in;
   }
 
 .active+.panel{
     visibility: visible;
-    height: 116px;
+    height: 8rem;
     transition: height .25s ease-in;
 }
 
@@ -53,7 +55,7 @@
         color: $fan-black;
         
         &:hover{
-            color: $fan-main-accent;
+            color: $fan-teal;
         }
     }
 }
