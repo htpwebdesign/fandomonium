@@ -1,16 +1,26 @@
 .schedule-container {
+
+    h2 {
+        text-align: center;
+    }
     
     &.day-one {
         .schedule {
             &:nth-of-type(odd) {
-                background-color: $fan-teal;
+                background-color: $fan-teal-faded;
+            }
+            &:nth-of-type(even) {
+                background-color: rgba($fan-teal-faded, 0.2);
             }
         }
     }
     &.day-two {
         .schedule {
             &:nth-of-type(odd) {
-                background-color: $fan-yellow;
+                background-color: $fan-yellow-faded;
+            }
+            &:nth-of-type(even) {
+                background-color: rgba($fan-yellow-faded, 0.2);
             }
         }
     }
@@ -19,7 +29,7 @@
     a {
         display: grid;
         grid-auto-rows: 5rem;
-        grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
+        grid-template-columns: minmax(4rem, 1fr) 1fr minmax(5rem, 1fr) 3rem;
         align-items: center;
         color: $color__link;
         text-decoration: none;
@@ -27,7 +37,7 @@
 
         h3 {
             margin: 0;
-            font-size: $fan-p-size;
+            font-size: .9rem;
 
             @include tabletQuery {
                 font-size: 1.25rem;
@@ -36,6 +46,17 @@
 
         p {
             margin: 0;
+            font-size: .75rem;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 3rem;
+
+            @include desktopQuery {
+
+                width: 4rem;
+            }
         }
     }
        
@@ -44,21 +65,28 @@
 
 
     .tab {
+        display: flex;
+        justify-content: flex-start;
+        margin: auto;
+        margin-left: 2rem;
 
         .tablinks {
             border: none;
+            border-radius: 0px;
             cursor: pointer;
+            width: 8rem;
             
+            &#btnOne {
+                background-color: $fan-teal-faded; 
+            }
+            &#btnTwo {
+                background-color: $fan-yellow-faded; 
+            }
 
-            &.active-tab#btnOne {
-                background-color: $fan-teal;
-            }
-            &.active-tab#btnTwo {
-                background-color: $fan-yellow;
-            }
         }
        
     }
     .tabcontent {
         display: none;
+
     }
