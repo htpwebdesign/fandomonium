@@ -35,11 +35,11 @@
                 padding: 0 0.5rem;
             }
             a {
-                color: $fan-text-invert-color;
+                color: $color__nav-link;
                 padding: 1.5rem;
 
                 &:hover {
-                    color: $fan-text-hover-color;
+                    color: $color__nav-link-hover;
                 }
             }
         }
@@ -70,7 +70,7 @@
         top: 0;
         z-index: 80;
         width: 100%;
-        background-color: $fan-header-background-color;
+        background-color: $color__header-background;
         padding: 7rem 2rem 2rem;
 
 		@include largeTabletQuery {
@@ -88,10 +88,10 @@
         li {
             font-size: 2rem;
             a {
-                color: $fan-text-invert-color;
+                color: $color__nav-link;
 
                 &:hover {
-                    color: $fan-text-hover-color;
+                    color: $color__nav-link-hover;
                 }
             }
         }
