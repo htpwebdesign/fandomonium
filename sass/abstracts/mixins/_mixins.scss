@@ -16,7 +16,7 @@
 @mixin largeTabletQuery {
     @media (min-width: 48em) { @content; }
 }
-@mixin DesktopQuery {
+@mixin esktopQuery {
     @media (min-width: 64em) { @content; }
 }
 
