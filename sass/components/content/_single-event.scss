@@ -1,0 +1,17 @@
+
+.single-event-header {
+    margin-top: 2rem;
+
+    img {
+        padding: 1rem 0;
+    }
+
+    @include desktopQuery {
+        display: flex;
+    }
+
+}
+
+.title-description-container {
+    padding: 1rem;
+}
