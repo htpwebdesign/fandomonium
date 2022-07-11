@@ -14,9 +14,40 @@
 
 .title-description-container {
     padding: 1rem;
+
+    h1 {
+        margin: 0;
+    }
 }
 
 .event-details-container {
     display: flex;
     justify-content: space-between;
+}
+.single-event-guest-container {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin-left: 0;
+    gap: 2rem;
+    overflow: auto;
+    white-space: nowrap;
+
+    a {
+        text-decoration: none;
+        color: $fan-black;
+    }
+    p {
+        text-align: center;
+        
+    }
+
+    img {
+        max-width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+    }
+  
 }
