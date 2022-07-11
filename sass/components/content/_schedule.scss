@@ -1,52 +1,64 @@
 .schedule-container {
     
-   
-    
-    .schedule {
+    &.day-one {
+        .schedule {
+            &:nth-of-type(odd) {
+                background-color: $fan-teal;
+            }
+        }
+    }
+    &.day-two {
+        .schedule {
+            &:nth-of-type(odd) {
+                background-color: $fan-yellow;
+            }
+        }
+    }
 
-        &:nth-of-type(odd) {
-            background-color: $color__main-accent;
+
+    a {
+        display: grid;
+        grid-auto-rows: 5rem;
+        grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
+        align-items: center;
+        color: $color__link;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+
+        h3 {
+            margin: 0;
+            font-size: $fan-p-size;
+
+            @include tabletQuery {
+                font-size: 1.25rem;
+            }
         }
 
-        a {
-            display: grid;
-            grid-auto-rows: 5rem;
-            grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
-            align-items: center;
-            color: $color__link;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
+        p {
+            margin: 0;
+        }
+    }
+       
+}
 
-            h3 {
-                margin: 0;
-                font-size: $fan-p-size;
 
-                @include tabletQuery {
-                    font-size: 1.25rem;
-                }
+
+    .tab {
+
+        .tablinks {
+            border: none;
+            cursor: pointer;
+            
+
+            &.active-tab#btnOne {
+                background-color: $fan-teal;
             }
-
-            p {
-                margin: 0;
+            &.active-tab#btnTwo {
+                background-color: $fan-yellow;
             }
         }
        
     }
-}
-
-
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-
-    .tablinks.active {
-        background-color: #ccc;
+    .tabcontent {
+        display: none;
     }
-}
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
