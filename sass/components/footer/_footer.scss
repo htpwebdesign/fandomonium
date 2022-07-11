@@ -57,6 +57,12 @@ footer{
     .footer-bottom{
         @include flexColumn;
         align-items: center;
+
+        cite, 
+        cite a,
+        nav{
+            color: $fan-yellow;
+        }
     }
     
 }
