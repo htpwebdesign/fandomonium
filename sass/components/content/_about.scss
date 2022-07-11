@@ -1,10 +1,13 @@
 .about-content {
 
-    text-align: center;
+  
 
     h2 {
        padding-top: 2rem;
+       color:red;
     }
+
+ 
 
     @include tabletQuery {
        .about-grid {

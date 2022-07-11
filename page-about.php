@@ -61,12 +61,12 @@ get_header();
 		    <p><em><?php echo esc_html( $location['address'] ); ?></em></p>
 
 		</article>
-		<article>
+		<section class="contact-form">
 				<h2>Contact Form</h2>
 
 				<?php echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]'); ?>
         
-		  </article>
+		</section>
       <?php endwhile; // End of the loop. ?>
 			</section>
 		</section>
