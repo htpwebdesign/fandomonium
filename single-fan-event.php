@@ -15,19 +15,21 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			
-			the_title( '<h1 class="entry-title">', '</h1>' );
-			
-
+			?>
+			<div class="single-event-header"> 
+			<?php
 			fandomonium_post_thumbnail();
-
-
-			if (function_exists('get_field')) :
-				if (get_field('event_description')) :
-					?>
-						<p><?php the_field('event_description'); ?></p>
+			?>
+				<div class="title-description-container">
 					<?php
+					the_title( '<h1 class="entry-title">', '</h1>' );
+					if (function_exists('get_field')) :
+						if (get_field('event_description')) :
+							?>
+								<p><?php the_field('event_description'); ?></p>
+				</div>
+			</div>
+						<?php
 				endif;
 	
 				if (get_field('start_time')) :
