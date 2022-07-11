@@ -1,5 +1,5 @@
 // FANDOMONIUM COLOURS
-$fan-black: #000000;
+$fan-black: #131516;
 $fan-white: #fff;
 $fan-offwhite: #F1F1F1;
 $fan-teal: #2DB1B1;
@@ -7,8 +7,8 @@ $fan-yellow: #FFCF55;
 
 
 // COLOURS
-$color__main: $fan-teal;
-$color__accent: $fan-yellow;
+$color__main-accent: $fan-teal;
+$color__second-accent: $fan-yellow;
 
 $color__background-body: $fan-white;
 $color__background-screen: $fan-offwhite;
@@ -18,42 +18,39 @@ $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 
-// HEADER & HERO RELATED
-$color__header-background: $fan-black;
-$color__header-accent: $color__accent;
-$color__nav-link: $fan-white;
-$color__nav-link-hover: $color__main;
-$color__hero-img-title: $color__main;
-
-
-// LINK AND BUTTON COLORS
-$color__link: $color__main;
-$color__link-hover: $color__main;
-$color__link-visited: $color__main;
-$color__button_background: $color__background-body; // default button
-$color__button_background_invert: $color__main; // button on hover
-$color__button_border: $color__main; // button border
-
-
 // TYPOGRAPHY COLORS
 $color__text-main: $fan-black;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
+$color__hero-img-title: $color__main-accent;
+
+
+// HEADER & FOOTER RELATED
+$color__header-background: #000;
+$color__header-accent: $color__second-accent;
+
+$color__footer-background: #000;
+$color__footer-accent: $color__second-accent;
+
+$color__nav-link: $fan-white;
+$color__nav-link-hover: $color__main-accent;
+
+
+// LINK & BUTTON COLORS
+$color__link: #303030;
+$color__link-hover: $color__main-accent;
+$color__link-visited: $color__text-main;
+$color__button_background: $color__background-body; // default button background
+$color__button_background_invert: $color__main-accent; // button background on hover
+$color__button_border: $color__main-accent; // button border
+$color__button-text: $color__text-main; // text inside default button
+$color__button-text-invert: $color__background-body; // button invert text
+
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
-
-
-
-// $fan-banner-title-color: $fan-main-accent;
-$fan-header-background-color: $fan-black;
-$fan-header-accent-color: $fan-secondary-accent;
-$fan-text-invert-color: $fan-white;
-$fan-text-hover-color: $fan-main-accent;
-
-
 
