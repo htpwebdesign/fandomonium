@@ -51,10 +51,13 @@ get_header();
 				$posts = get_field('guests');
 				if( $posts ): ?>
 					<h2>Featured Guests</h2>
-						<ul>
+						<ul class="single-event-guest-container">
 							<?php foreach( $posts as $post ): ?>
 								<li>
-									<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo get_the_title( $post->ID ); ?></a>
+									<a href="<?php echo get_permalink( $post->ID ); ?>">
+										<?php echo the_post_thumbnail('medium'); ?>
+										<p><?php the_title(); ?></p>
+									</a>
 								</li>
 							<?php endforeach; ?>
 						</ul>
