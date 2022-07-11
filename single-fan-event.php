@@ -34,23 +34,29 @@ get_header();
 	
 				if (get_field('start_time')) :
 					?>
-						<h2>Event Details</h2>
+						<div class="heading-container">
+							<h2>Event Details</h2>
+							<a href="<?php echo get_permalink(12); ?>">Back to Schedule </a>
+						</div>
 						<div class="event-details-container">
-							<p>Type:<br> <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
-							<p>Date:<br> <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
-							<p>Start:<br> <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
-							<p>End:<br> <?php the_field('end_time') ?></p>
+							<p><strong>Type:</strong><br> <?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></p>
+							<p><strong>Date:</strong><br> <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
+							<p><strong>Start:</strong><br> <?php $startTime = explode('2022', get_field('start_time')); echo $startTime[1]; ?></p>
+							<p><strong>End:</strong><br> <?php the_field('end_time') ?></p>
 						</div>
 					<?php
 					
 				endif;
 
-				?><a href="<?php echo get_permalink(12); ?>">Back to Schedule </a><?php
+				
 	
 	
 				$posts = get_field('guests');
 				if( $posts ): ?>
-					<h2>Featured Guests</h2>
+					<div class="heading-container">
+						<h2>Featured Guests</h2>
+						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all guests</a>
+					</div>
 						<ul class="single-event-guest-container">
 							<?php foreach( $posts as $post ): ?>
 								<li>
@@ -61,7 +67,7 @@ get_header();
 								</li>
 							<?php endforeach; ?>
 						</ul>
-						<a href="<?php echo get_post_type_archive_link('fan-guest'); ?>">See all guests</a>
+						
 					<?php 
 				endif; 
 				wp_reset_postdata();
