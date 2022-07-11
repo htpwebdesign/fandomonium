@@ -43,3 +43,17 @@
     height: 116px;
     transition: height .25s ease-in;
 }
+
+.contact{
+    @include flexColumn;
+    align-items: center;
+    padding-top: 2rem;
+
+    a{
+        color: $fan-black;
+        
+        &:hover{
+            color: $fan-main-accent;
+        }
+    }
+}

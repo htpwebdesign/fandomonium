@@ -51,7 +51,7 @@ get_header();
 							<?php endif?>
 						<?php endif?>
 
-						<section>
+						<section class="contact">
 							<?php if (function_exists('get_field')):
 							if(get_field('cta_sentence')): ?>
 								<p><?php the_field('cta_sentence'); ?></p>
