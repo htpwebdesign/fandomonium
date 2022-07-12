@@ -6,6 +6,7 @@
     @include desktopQuery {
         display: flex;
     }
+
     .event-img-container {
         img {
             width: 144rem;
@@ -77,8 +78,16 @@
 }
 
 .more-events-img-container {
-    max-width: 12rem;
-    height: 9rem;
+    width: 100%;
+    height: 14rem;
+
+    @include mobileLargeQuery {
+        height: 12rem;
+    }
+
+    @include largeTabletQuery {
+        height: 10rem;
+    }
 
     img {
         @include imgDefault
@@ -86,11 +95,17 @@
 }
 
 .more-events-container {
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    display: flex;
-    margin: auto;
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+
+    @include mobileLargeQuery {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include largeTabletQuery {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  
 
     a {
         position: relative;
