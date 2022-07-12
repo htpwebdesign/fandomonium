@@ -9,13 +9,13 @@
 
 get_header();
 ?>
-	<main class=site-hero>
-		<section class="hero-no-img">
-			<h1 class="archive-title"><?php the_archive_title(); ?></h1>
-		</section>
-	</main>
 
 	<main id="primary" class="site-main">
+		<section class=site-hero>
+			<div class="hero-no-img">
+				<h1 class="archive-title"><?php the_archive_title(); ?></h1>
+			</div>
+		</section>
 
 		<?php
 		the_archive_description( '<div class="archive-description">', '</div>' );
