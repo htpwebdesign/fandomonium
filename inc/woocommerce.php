@@ -289,7 +289,7 @@ function add_currency() {
  */
 function show_number_of_cart_items() {
 	echo "<div class='cart-items'>";
-	echo "<p>You have ". WC()->cart->get_cart_contents_count() ." item(s) in your Cart</p>";
+	echo "<p>You have <span class='items-number'>". WC()->cart->get_cart_contents_count() ."</span> item(s) in your Cart</p>";
 }
 add_action('woocommerce_after_shop_loop', 'show_number_of_cart_items', 20);
 
