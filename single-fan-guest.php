@@ -21,8 +21,7 @@ get_header();
 		<?php endif; ?>
 		</section>
 
-
-		<div class="single-guest-wrapper">
+		<section class="single-container">
 		<div class="single-guest1">		
 		<?php
 		while ( have_posts() ) :
@@ -78,7 +77,9 @@ get_header();
 								echo $image['url']; ?>" alt="<?php 
 								echo $image['alt']; ?>" /></a>
 		
-				</section>
+
+
+
 				<?php 
 					
 				}
@@ -89,13 +90,14 @@ get_header();
 					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'fwd' ) . '</span> <span class="nav-title">%title</span>',
 				)
 			);
-
 			
+
+		
 		endwhile; // End of the loop.
 		
 		?>
-
 		</div>
+		</section>
 		<?php get_template_part('template-parts/page', 'bottom'); ?>
 
 
