@@ -5,15 +5,17 @@
    
     @include desktopQuery {
         display: flex;
-    }
 
-    .event-img-container {
+        .event-img-container {
 
-        .post-thumbnail {
-            width: 27rem;
+            .post-thumbnail {
+                width: 27rem;
+            }
+           
         }
-       
     }
+
+  
 
     
 
