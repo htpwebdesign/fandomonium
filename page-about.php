@@ -63,7 +63,7 @@ get_header();
 
 		</article>
 		<section class="contact-form">
-				<h2>CONTACT FORM</h2>
+				<h2>Contact Form</h2>
 
 				<?php echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]'); ?>
         
