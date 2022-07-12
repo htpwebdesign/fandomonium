@@ -1,0 +1,104 @@
+// vendors page 
+
+//CTA Styles
+html{
+    scroll-behavior: smooth;
+}
+
+.vendor-apply{
+    position: absolute;
+    bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    a{
+        color: $fan-teal;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 0.75rem;
+        border: 3px solid $color__button_border;
+        border-radius: .25rem;
+        transition: background-color .25s ease-in;
+        max-width: 12rem;
+
+        &:hover{
+            color: $color__button-text-invert;
+            background-color: $color__button_background_invert;
+            transition: background-color .25s ease-in,  color .3s ease-in;
+        }
+    }
+
+}
+
+.vendors{
+
+    .platinum-vendors{
+        margin: 2rem 0;
+
+        @include tabletQuery{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem
+        }
+
+        article{
+            @include flexColumn;
+            align-items: center;
+            max-width: 380px;
+            margin: 0 auto;
+
+            img{
+                max-width: 40%;
+            }
+        }
+    }
+
+    .other-vendors{
+        h3{
+            margin: .25rem 0;
+        }
+        @include tabletQuery{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .list-contain{
+        margin: 0 auto 2rem auto;
+        max-width: 10.5rem;
+
+        @include tabletQuery{
+            max-width: 100%;
+        }
+    }
+}
+
+.tiers{
+        @include flexRow;
+        align-items: normal;
+        flex-wrap: wrap;
+
+    @include desktopQuery{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    article{
+        @include flexColumn;
+        align-items: center;
+        max-width: 380px;
+        margin: 0 auto;
+
+        .price{
+            font-size: $fan-h2-size;
+            font-weight: 700;
+            margin: 0 ;
+        }
+
+
+    }
+}

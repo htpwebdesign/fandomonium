@@ -57,7 +57,7 @@
 					<?php
 					while ($query->have_posts()) {
 						$query->the_post();
-						the_title();
+						the_post_thumbnail();
 					}
 					?>
 				</div>

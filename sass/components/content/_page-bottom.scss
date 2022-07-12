@@ -32,7 +32,19 @@
         padding: 0 0 2rem 0;
 
         div{
-            @include flexRow;
+            display: grid;
+            grid-template-columns: 4.9rem 4.9rem 4.9rem; 
+            justify-content: space-between;
+            gap: 1.5rem;
+
+            @include tabletQuery{
+                @include flexRow;
+                justify-content: space-between;
+            }
+
+            img{
+                max-width: 4.9rem;
+            }
         }
     }
 
