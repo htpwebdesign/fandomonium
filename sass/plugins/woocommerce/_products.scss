@@ -7,9 +7,28 @@ ul.products {
 		position: relative;
 		margin-bottom: 2em;
 
-		img {
-			display: block;
+		a {
+			text-decoration: none;
+
+			&:hover {
+				color: $color__text-main;
+			}
+
+			img {
+				display: block;
+				@include imgDefault;
+			}
+
+			.price {
+				font-size: 2rem;
+			}
+
+			ul {
+				margin: 1rem 2rem 2rem;
+    			padding: 0;
+			}
 		}
+
 
 		.button {
 			display: block;
@@ -24,7 +43,7 @@ ul.products {
 		li.product {
 
 			@include column-width(3);
-			float: left;
+			// float: left;
 			margin-right: $columns__margin;
 
 			&.first {
