@@ -335,3 +335,11 @@ add_action('woocommerce_single_product_summary', 'add_currency', 15);
  */
 add_action('woocommerce_after_single_product_summary', 'show_number_of_cart_items', 20);
 add_action('woocommerce_after_single_product_summary', 'checkout_button', 30);
+
+/**
+ * Display subheading for 'Quantity'
+ */
+function add_qty_subheading() {
+	echo '<p class="quantity-title">Qty</p>';
+}
+add_action('woocommerce_before_add_to_cart_quantity', 'add_qty_subheading', 99);
