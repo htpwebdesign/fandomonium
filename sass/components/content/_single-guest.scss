@@ -1,8 +1,23 @@
 .entry-footer{
    display: none;
 }
+
+.guest-button {
+   
+   text-transform: uppercase;
+   text-decoration: none;
+   padding: 10px 30px;
+   border-width: 2px;
+   border-style: solid;
+   border-color: rgb(45, 177, 177);
+}
+
 .single-container {
    text-align: center;
+
+   .top-page-container {
+      display: none;
+   }
 
    .single-event {
       display: grid;
@@ -10,8 +25,10 @@
       grid-template-rows: 1fr;
       text-align: center;
    }
+
    
 }
+
 
 
 
@@ -22,6 +39,15 @@
          grid-template-rows: 1fr;
          grid-template-columns: 1fr 1fr;
          gap: 150px;
+
+         .single-guest1 {
+            margin-top: 20px;
+
+            img {
+               width:100%;
+               height:400px;
+            }
+         }
       }
       
    }
