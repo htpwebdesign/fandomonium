@@ -36,7 +36,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();?>
 			
-		<section>
+		<section class="vendors">
 					<h2>Our featured Vendors</h2>
 					<?php // wp query for platinum vendors only
 					$args = array(
@@ -52,7 +52,7 @@ get_header();
 						);
 						$query = new WP_Query($args);?>
 					
-					<div>
+					<div class="platinum-vendors">
 						<?php if($query -> have_posts()):
 							while($query -> have_posts()):
 								$query->the_post(); ?>

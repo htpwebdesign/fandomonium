@@ -28,3 +28,27 @@
     }
 
 }
+
+.vendors{
+
+    .platinum-vendors{
+        @include tabletQuery{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem
+        }
+
+        article{
+            @include flexColumn;
+            align-items: center;
+            max-width: 380px;
+            margin: 0 auto;
+
+            img{
+                max-width: 50%;
+            }
+        }
+    }
+
+    
+}
