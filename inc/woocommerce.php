@@ -280,7 +280,8 @@ function add_product_excerpt() {
  */
 add_action('woocommerce_after_shop_loop_item_title', 'add_currency', 15);
 function add_currency() {
-	echo '<span class="currency-display">cad</span>';
+	$currency = get_woocommerce_currency();
+	echo '<span class="currency-display">'. $currency .'</span>';
 }
 
 /**
