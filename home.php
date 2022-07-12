@@ -9,21 +9,22 @@
  */
 
 get_header();
-
-if (is_home() && !is_front_page()) :
 ?>
-	<main class=site-hero>
-		<section class="hero-no-img">
-			<h1 class="archive-title"><?php single_post_title(); ?></h1>
-		</section>
-	</main>
-<?php
-endif; ?>
 
 <main id="primary" class="site-main">
 
 	<?php
-	if (have_posts()) : ?>
+	if (have_posts()) :
+
+		if (is_home() && !is_front_page()) :
+	?>
+			<section class=site-hero>
+				<div class="hero-no-img">
+					<h1 class="archive-title"><?php single_post_title(); ?></h1>
+				</div>
+			</section>
+		<?php
+		endif; ?>
 
 		<?php
 		if (function_exists('get_field')) {
