@@ -1,7 +1,22 @@
 .single-product {
-
 	div.product {
 		position: relative;
+
+		.summary {
+			.product_title {
+				margin-bottom: 0;
+			}
+			.price {
+				display: inline-block;
+				font-size: $fan-h2-size;
+				margin: 1rem auto;
+			}
+			.woocommerce-product-details__short-description {
+				ul {
+					padding: 0;
+				}
+			}
+		}
 
 		.woocommerce-product-gallery {
 			position: relative;
@@ -37,7 +52,6 @@
 					}
 
 					&:hover {
-
 						img {
 							opacity: 1;
 						}
@@ -46,20 +60,16 @@
 			}
 
 			@for $i from 2 through 5 {
-
 				&.woocommerce-product-gallery--columns-#{$i} {
-
 					.flex-control-thumbs {
-
 						li {
-
 							@include column-width($i);
 
 							&:nth-child(#{$i}n) {
 								margin-right: 0;
 							}
 
-							&:nth-child(#{$i}n+1) {
+							&:nth-child(#{$i}n + 1) {
 								clear: both;
 							}
 						}
@@ -71,7 +81,6 @@
 }
 
 .stock {
-
 	&:empty::before {
 		display: none;
 	}
