@@ -126,7 +126,10 @@ get_header();
 							<?php endforeach?>
 						<?php endif?>
 				</div>
+				<div class="vendor-form">
+				<h2>Vendor Resgistration Form</h2>
 				<?php echo do_shortcode('[contact-form-7 id="63" title="Vendor Application" html_id="vendor-application"]');?>
+				</div>
 			</section>
 
 			<?php // If comments are open or we have at least one comment, load up the comment template.
