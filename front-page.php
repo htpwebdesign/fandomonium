@@ -64,8 +64,8 @@ get_header();
 							<?php foreach( $posts as $post ): ?>
 								<li>
 									<a href="<?php echo get_permalink( $post->ID ); ?>">
-										<?php echo get_the_title( $post->ID ); ?>
-										<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+										<?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
+										<p><?php the_title(); ?></p>	
 									</a>
 								</li>
 							<?php endforeach; ?>
