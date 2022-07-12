@@ -49,4 +49,28 @@
             margin-left: 1rem;
         }
     }
+
+    img {
+        object-position: center;
+            object-fit: cover;
+            display: block;
+            margin: auto;
+            width: 100%;
+
+            @include largeTabletQuery {
+                height: 12rem;
+            }
+    
+    }
+
+    .blog-posts-container {
+        
+        @include largeTabletQuery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+
+
 }
