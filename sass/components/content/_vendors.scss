@@ -47,8 +47,9 @@ html{
         article{
             @include flexColumn;
             align-items: center;
-            max-width: 380px;
-            margin: 0 auto;
+            // max-width: 380px;
+            // margin: 0 auto;
+            //style this better when actual content is on the page
 
             img{
                 max-width: 40%;
@@ -57,22 +58,21 @@ html{
     }
 
     .other-vendors{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
         h3{
             margin: .25rem 0;
+          
         }
         @include tabletQuery{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
         }
     }
-
     .list-contain{
-        margin: 0 auto 2rem auto;
-        max-width: 10.5rem;
-
-        @include tabletQuery{
-            max-width: 100%;
-        }
+        margin: 2rem 0;
     }
 }
 

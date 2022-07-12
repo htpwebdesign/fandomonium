@@ -37,13 +37,12 @@
     height: 0;
     border: .125rem solid $fan-teal;
     margin: -.0625rem 0;
-    transition: height .25s ease-in;
+
   }
 
 .active+.panel{
     visibility: visible;
-    height: 8rem;
-    transition: height .25s ease-in;
+    height: 100%;
 }
 
 .contact{
