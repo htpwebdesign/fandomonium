@@ -9,13 +9,13 @@
 
 get_header();
 ?>
-	<main class=site-hero>
-		<section class="hero-no-img">
-			<h1 class="archive-title"><?php the_archive_title(); ?></h1>
-		</section>
-	</main>
 
 	<main id="primary" class="site-main">
+		<section class=site-hero>
+			<div class="hero-no-img">
+				<h1 class="archive-title"><?php the_archive_title(); ?></h1>
+			</div>
+		</section>
 
 		<?php
 		the_archive_description( '<div class="archive-description">', '</div>' );
@@ -35,17 +35,20 @@ get_header();
 			while ( $query -> have_posts()) {
 				$query -> the_post();
 				echo '<article class="guest-wrapper">';
-					the_post_thumbnail('thumbnail');
+					echo '<a href="'.get_permalink().'">';
+						the_post_thumbnail('thumbnail');
 					echo '<h2>'.get_the_title().'</h2>';
+					echo '</a>';
+
 					// make acf for guest page AK 
 					if ( function_exists ( 'get_field' ) ) {
 					if ( get_field( 'occupation_of_guest' ) ) {
+							echo '<p>';
 							the_field( 'occupation_of_guest' );
+							echo '</p>';
 					}
 			} 
-					echo '<a class= "content-view "href="'.get_permalink().'"> View Bio';
-					echo '</a>';
-				echo '</article>';
+			echo '</article>';
 			}
 			wp_reset_postdata();
 			echo '</section>';

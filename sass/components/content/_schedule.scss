@@ -1,52 +1,102 @@
 .schedule-container {
-    
-   
-    
-    .schedule {
+    overflow: hidden;
+    border-radius: 7px;
 
-        &:nth-of-type(odd) {
-            background-color: $color__main-accent;
+    h2 {
+        text-align: center;
+    }
+    
+    &.day-one {
+        .schedule {
+            &:nth-of-type(odd) {
+                background-color: $fan-teal-faded;
+            }
+            &:nth-of-type(even) {
+                background-color: rgba($fan-teal-faded, 0.2);
+            }
+        }
+    }
+    &.day-two {
+        .schedule {
+            &:nth-of-type(odd) {
+                background-color: $fan-yellow-faded;
+            }
+            &:nth-of-type(even) {
+                background-color: rgba($fan-yellow-faded, 0.2);
+            }
+        }
+    }
+
+
+    a {
+        display: grid;
+        grid-auto-rows: 5rem;
+        grid-template-columns: minmax(4rem, 1fr) 1fr minmax(5rem, 1fr) 3rem;
+        align-items: center;
+        color: $color__link;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+
+        h3 {
+            margin: 0;
+            font-size: .9rem;
+
+            @include tabletQuery {
+                font-size: 1.25rem;
+            }
         }
 
-        a {
-            display: grid;
-            grid-auto-rows: 5rem;
-            grid-template-columns: minmax(5rem, 1fr) 2fr minmax(5rem, 1fr);
-            align-items: center;
-            color: $color__link;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
+        p {
+            margin: 0;
+            font-size: .75rem;
+        }
 
-            h3 {
-                margin: 0;
-                font-size: $fan-p-size;
+        img {
+            border-radius: 50%;
+            width: 3rem;
 
-                @include tabletQuery {
-                    font-size: 1.25rem;
-                }
+            @include desktopQuery {
+
+                width: 4rem;
+            }
+        }
+    }
+       
+}
+
+
+
+    .tab {
+        display: flex;
+        justify-content: flex-start;
+        margin: auto;
+        margin-left: 1rem;
+        @include desktopQuery {
+            margin-left: 2rem;
+        }
+
+        .tablinks {
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            width: 5rem;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+
+            @include desktopQuery {
+                
+                width: 8rem;
+            }
+            
+            &#btnOne {
+                background-color: $fan-teal-faded; 
+            }
+            &#btnTwo {
+                background-color: $fan-yellow-faded; 
             }
 
-            p {
-                margin: 0;
-            }
         }
        
     }
-}
 
-
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-
-    .tablinks.active {
-        background-color: #ccc;
-    }
-}
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
+  

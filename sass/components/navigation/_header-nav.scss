@@ -36,7 +36,10 @@
             }
             a {
                 color: $color__nav-link;
-                padding: 1.5rem;
+
+                @include medScreenQuery {
+                    padding: 0.5rem;
+                }
 
                 &:hover {
                     color: $color__nav-link-hover;

@@ -14,12 +14,7 @@
 
 get_header();
 ?>
-<main class=site-hero>
-	<section class="hero-with-img">
-		<?php the_title('<h1 class="page-title">', '</h1>'); ?>
-		<?php fandomonium_post_thumbnail(); ?>
-	</section>
-</main>
+
 
 	<main id="primary" class="site-main">
 
@@ -27,6 +22,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 		?>
+		<section class=site-hero>
+			<div class="hero-with-img">
+				<?php the_title('<h1 class="page-title">', '</h1>'); ?>
+				<?php fandomonium_post_thumbnail(); ?>
+			</div>
+		</section>
 		<div>
 
 			<?php
@@ -41,7 +42,7 @@ get_header();
 			?>
 				<div class="tab">
 					<button class="tablinks" id="btnOne" onclick="showDay(event, 'day-one')">Day One</button>
-					<button class="tablinks" onclick="showDay(event, 'day-two')">Day two</button>
+					<button class="tablinks" id="btnTwo" onclick="showDay(event, 'day-two')">Day two</button>
 				</div>
 			<?php
 
@@ -58,7 +59,7 @@ get_header();
 				if ( $query -> have_posts() ) {
 					?>
 					<section class="schedule-container day-one tabcontent" id="day-one">
-						<h2>Day One</h2>
+						<h2 class="screen-reader-text">Day One</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
@@ -77,10 +78,14 @@ get_header();
 												<p><?php $startTime = explode('2022', get_field('start_time')); echo $startTime[0]; ?></p>
 											</div>
 
+											
+
 											<div class="type-column">
 												<h3><?php echo strip_tags(get_the_term_list($post->ID, 'fan-event-type', '')); ?></h3>
 												<p>More Info</p>
 											</div>
+
+											<?php echo the_post_thumbnail('thumbnail') ?>
 										</a>
 									</article>
 									<?php
@@ -91,8 +96,8 @@ get_header();
 						?>
 					</section>
 
-					<section class="schedule-container tabcontent day-two" id="day-two">
-					<h2>Day Two</h2>
+					<section class="schedule-container day-two tabcontent" id="day-two">
+					<h2 class="screen-reader-text">Day Two</h2>
 						<?php  
 							while ( $query -> have_posts() ) {
 								$query -> the_post();
@@ -117,7 +122,7 @@ get_header();
 												<p>More Info</p>
 											</div>
 
-											
+											<?php echo the_post_thumbnail('thumbnail') ?>
 										</a>
 									</article>
 									<?php

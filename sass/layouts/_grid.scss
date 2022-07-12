@@ -1,35 +1,26 @@
 @use "../abstracts/mixins/mixins" as *;
 
 .site {
-	// max-width: 50rem;
 	margin: 0 auto;
-
-	@include desktopQuery {
-		max-width: 2200px;
-		display: grid;
-		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
-		grid-template-areas:
-			"header header header"
-			"hero hero hero"
-			". main ."
-			"footer footer footer";
-	}
-}
-
-.site-header {
-	grid-area: header;
-}
-
-.site-hero {
-	grid-area: hero;
 }
 
 .site-main {
 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 	padding: 0 1rem;
-	grid-area: main;
+
+	@include desktopQuery {
+		max-width: 2200px;
+		display: grid;
+		grid-template-columns: 1fr minmax(0, 1000px) 1fr;
+		padding: 0;
+	}
 }
 
-.site-footer {
-	grid-area: footer;
+// all children of site-main
+.site-main > * { 
+	grid-column: 2/3;
+}
+
+.site-hero {
+	grid-column: 1/4;
 }

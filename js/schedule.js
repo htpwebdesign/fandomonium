@@ -8,14 +8,14 @@ function showDay(event, day) {
     }
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
     }
     document.getElementById(day).style.display = "block";
     if (event) {
-        event.currentTarget.className += " active";
+        event.currentTarget.className += " active-tab";
     } else {
         let btn = document.getElementById('btnOne');
-        btn.classList.add('active');
+        btn.classList.add('active-tab');
     }
     
   }

@@ -13,28 +13,27 @@
  */
 
 get_header();
-// get_template_part('template-parts/content', 'hero'); 
 ?>
-<main class=site-hero>
-            <section class="hero-with-img">
-                <?php the_title('<h1 class="page-title">', '</h1>'); ?>
-                <?php fandomonium_post_thumbnail(); ?>
-				<div class="vendor-apply">
-					<?php if(function_exists('get_field')):
-						if(get_field('cta')): ?>
-							<a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
-						<?php endif?>
-					<?php endif ?>
-				</div>
-            </section>
-        </main>
-
 
 	<main id="primary" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();?>
+
+		<section class=site-hero>
+            <div class="hero-with-img">
+                <?php the_title('<h1 class="page-title">', '</h1>'); ?>
+                <?php fandomonium_post_thumbnail(); ?>
+             <div class="vendor-apply">
+					     <?php if(function_exists('get_field')):
+						    if(get_field('cta')): ?>
+							  <a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
+						    <?php endif?>
+					     <?php endif ?>
+				      </div>
+            </div>
+        </section>
 			
 		<section class="vendors">
 					<h2>Our featured Vendors</h2>

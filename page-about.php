@@ -14,14 +14,15 @@
 
 get_header();
 ?>
-	<main class=site-hero>
-		<section class="hero-no-img">
-			<?php the_title('<h1 class="page-title">', '</h1>'); ?>
-			<?php fandomonium_post_thumbnail(); ?>
-		</section>
-	</main>
+	
 
 	<main id="primary" class="site-main">
+		<section class=site-hero>
+			<div class="hero-no-img">
+				<?php the_title('<h1 class="page-title">', '</h1>'); ?>
+				<?php fandomonium_post_thumbnail(); ?>
+			</div>
+		</section>
 
 	<section class="about-content">
 		<?php
@@ -62,7 +63,7 @@ get_header();
 
 		</article>
 		<section class="contact-form">
-				<h2>Contact Form</h2>
+				<h2>CONTACT FORM</h2>
 
 				<?php echo do_shortcode('[contact-form-7 id="9" title="Contact form 1"]'); ?>
         

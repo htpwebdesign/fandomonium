@@ -22,11 +22,11 @@ get_header();
 		?>
 		<section class="more-latest-news">
 			<h2>more latest news</h2>
-			<article>
+			<article class="latest-news-container">
 				<?php
 				$args = array(
 					'post_type'      => 'post',
-					'posts_per_page' => 3,
+					'posts_per_page' => 6,
 					'post__not_in' => array( $post->ID )
 				);
 
@@ -36,7 +36,7 @@ get_header();
 					while ($blog_query->have_posts()) {
 						$blog_query->the_post();
 				?>
-						<article>
+						<article class="post-container">
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail(); ?>
 								<h3><?php the_title(); ?></h3>

@@ -3,10 +3,17 @@
     margin-top: 2rem;
 
    
-
     @include desktopQuery {
         display: flex;
     }
+    .event-img-container {
+        img {
+            width: 144rem;
+            height: auto;
+        }
+    }
+
+    
 
 }
 
