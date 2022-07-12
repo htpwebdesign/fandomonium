@@ -89,6 +89,7 @@
 
     a {
         position: relative;
+        display: block;
     }
 
     h3 {
@@ -99,6 +100,9 @@
         width: 100%;
         text-align: center;
         bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
     }
 }
 
