@@ -1,13 +1,25 @@
 ul.products {
 	margin: 0;
 	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	// gap: 0 2rem;
+
+	@include tabletQuery {
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+	@include desktopQuery {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 
 	li.product {
 		list-style: none;
 		position: relative;
-		margin-bottom: 2em;
-		// @include flexColumn;
-		// align-items: center;
+		margin-bottom: 2rem;
+		@include flexColumn;
+		justify-content: space-between;
 
 		a {
 			width: 100%;
@@ -19,7 +31,9 @@ ul.products {
 
 			img {
 				display: block;
-				@include imgDefault;
+				width: 100%;
+    			aspect-ratio: 1/1;
+    			object-fit: cover;
 			}
 
 			.price {
@@ -44,6 +58,9 @@ ul.products {
 			font-weight: 600;
 			letter-spacing: 0.5px;
 			text-align: center;
+    		align-self: center;
+    		width: 200px;
+			margin: 2rem;
 
 			&:hover {
 				background-color: $color__button_background_invert;
@@ -54,34 +71,34 @@ ul.products {
 }
 
 @media screen and (min-width: 48em) {
-	ul.products {
-		li.product {
-			@include column-width(3);
-			// float: left;
-			margin-right: $columns__margin;
+	// ul.products {
+	// 	li.product {
+	// 		@include column-width(3);
+	// 		// float: left;
+	// 		margin-right: $columns__margin;
 
-			&.first {
-				clear: both;
-			}
+	// 		&.first {
+	// 			clear: both;
+	// 		}
 
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
+	// 		&.last {
+	// 			margin-right: 0;
+	// 		}
+	// 	}
+	// }
 
-	ul.products.columns-1 {
-		li.product {
-			float: none;
-			width: 100%;
-		}
-	}
+	// ul.products.columns-1 {
+	// 	li.product {
+	// 		float: none;
+	// 		width: 100%;
+	// 	}
+	// }
 
-	@for $i from 2 through 6 {
-		ul.products.columns-#{$i} {
-			li.product {
-				@include column-width($i);
-			}
-		}
-	}
+	// @for $i from 2 through 6 {
+	// 	ul.products.columns-#{$i} {
+	// 		li.product {
+	// 			@include column-width($i);
+	// 		}
+	// 	}
+	// }
 }
