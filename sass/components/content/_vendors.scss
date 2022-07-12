@@ -36,6 +36,8 @@ html{
 .vendors{
 
     .platinum-vendors{
+        margin: 2rem 0;
+
         @include tabletQuery{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -61,6 +63,15 @@ html{
         @include tabletQuery{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .list-contain{
+        margin: 0 auto 2rem auto;
+        max-width: 10.5rem;
+
+        @include tabletQuery{
+            max-width: 100%;
         }
     }
 }
