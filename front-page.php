@@ -109,20 +109,21 @@ get_header();
 				);
 				$blog_query = new WP_query( $args );
 				if ( $blog_query -> have_posts() ) :
+					?><div class="blog-posts-container"><?php
 					while ( $blog_query -> have_posts() ) :
 						$blog_query -> the_post();
 
 						?>
 						<article>
 							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail( 'large' ); ?>
 								<h3> <?php the_title(); ?> </h3>
-								<?php the_post_thumbnail( 'medium' ); ?>
-
 							</a>
 						</article>
 						<?php
 
 					endwhile;
+					?></div><?php
 					wp_reset_postdata();
 					
 					
