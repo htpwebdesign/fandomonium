@@ -20,7 +20,7 @@ function fandomonium_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
+			'thumbnail_image_width' => 300,
 			'single_image_width'    => 300,
 			'product_grid'          => array(
 				'default_rows'    => 3,
@@ -288,7 +288,7 @@ function add_currency() {
  * Show number of items in Cart
  */
 function show_number_of_cart_items() {
-	echo "<div>";
+	echo "<div class='cart-items'>";
 	echo "<p>You have ". WC()->cart->get_cart_contents_count() ." item(s) in your Cart</p>";
 }
 add_action('woocommerce_after_shop_loop', 'show_number_of_cart_items', 20);
