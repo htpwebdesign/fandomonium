@@ -35,17 +35,20 @@ get_header();
 			while ( $query -> have_posts()) {
 				$query -> the_post();
 				echo '<article class="guest-wrapper">';
-					the_post_thumbnail('thumbnail');
+					echo '<a href="'.get_permalink().'">';
+						the_post_thumbnail('thumbnail');
 					echo '<h2>'.get_the_title().'</h2>';
+					echo '</a>';
+
 					// make acf for guest page AK 
 					if ( function_exists ( 'get_field' ) ) {
 					if ( get_field( 'occupation_of_guest' ) ) {
+							echo '<p>';
 							the_field( 'occupation_of_guest' );
+							echo '</p>';
 					}
 			} 
-					echo '<a class= "content-view "href="'.get_permalink().'"> View Bio';
-					echo '</a>';
-				echo '</article>';
+			echo '</article>';
 			}
 			wp_reset_postdata();
 			echo '</section>';
