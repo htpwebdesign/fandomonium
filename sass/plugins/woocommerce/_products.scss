@@ -61,44 +61,14 @@ ul.products {
     		align-self: center;
     		width: 200px;
 			margin: 2rem;
+			transition: background-color .3s ease-in,  color .3s ease-in, border .3s ease-in;
 
 			&:hover {
-				background-color: $color__button_background_invert;
+				background-color: $fan-black;
 				color: $color__button-text-invert;
+				border: 2px solid $fan-black;
+				transition: background-color .3s ease-in,  color .3s ease-in, border .3s ease-in;
 			}
 		}
 	}
-}
-
-@media screen and (min-width: 48em) {
-	// ul.products {
-	// 	li.product {
-	// 		@include column-width(3);
-	// 		// float: left;
-	// 		margin-right: $columns__margin;
-
-	// 		&.first {
-	// 			clear: both;
-	// 		}
-
-	// 		&.last {
-	// 			margin-right: 0;
-	// 		}
-	// 	}
-	// }
-
-	// ul.products.columns-1 {
-	// 	li.product {
-	// 		float: none;
-	// 		width: 100%;
-	// 	}
-	// }
-
-	// @for $i from 2 through 6 {
-	// 	ul.products.columns-#{$i} {
-	// 		li.product {
-	// 			@include column-width($i);
-	// 		}
-	// 	}
-	// }
 }
