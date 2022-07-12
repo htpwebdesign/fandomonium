@@ -1,1 +1,30 @@
 
+.featured-events {
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @include largeTabletQuery {
+            display: flex;
+            gap: 2rem;
+        }
+   
+        
+    }
+
+    a {
+
+        img {
+            object-position: center;
+            object-fit: cover;
+            display: block;
+            margin: auto;
+
+            @include largeTabletQuery {
+                height: 12rem;
+            }
+        }
+    }
+}
