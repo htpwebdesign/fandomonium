@@ -69,7 +69,7 @@ get_header();
 								<li>
 									<a href="<?php echo get_permalink( $post->ID ); ?>">
 										<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-										<p><?php the_title(); ?></p>	
+										<h3><?php the_title(); ?></h3>	
 									</a>
 								</li>
 							<?php endforeach; ?>
@@ -141,12 +141,16 @@ get_header();
 
 		<?php
 			if (function_exists('get_fields')) :
-
+				?><div class="featured-guests-heading-container"><?php
 				if (get_field('featured_guests_heading')) {
 					?>
 					<h2><?php the_field('featured_guests_heading'); ?></h2>
 					<?php
 				}
+				if (get_field('guests_link')) {
+					?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php the_field('guests_link') ?></a><?php
+				}
+				?></div><?php
 
 				$posts = get_field('featured_guests');
 				if( $posts ): ?>
@@ -154,8 +158,8 @@ get_header();
 							<?php foreach( $posts as $post ): ?>
 								<li>
 									<a href="<?php echo get_permalink( $post->ID ); ?>">
-										<?php echo get_the_title( $post->ID ); ?>
-										<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+										<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+										<h3><?php the_title(); ?></h3>
 									</a>
 								</li>
 							<?php endforeach; ?>
@@ -164,9 +168,7 @@ get_header();
 				endif; 
 				wp_reset_postdata();
 
-				if (get_field('guests_link')) {
-					?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php the_field('guests_link') ?></a><?php
-				}
+				
 					
 			endif;
 			?>
