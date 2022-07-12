@@ -102,8 +102,8 @@ get_header();
 
 			<section>
 				<h2 class="h1">Apply as a Vendor</h2>
-				<div>
-					<p>These are our available tiers:</p>
+				<p>These are our available tiers:</p>
+				<div class="tiers">
 					<?php 
 						$terms = get_terms( 
 							array(
@@ -113,15 +113,15 @@ get_header();
 
 						if ( $terms && ! is_wp_error( $terms ) ) :
 							foreach ($terms as $term):?>
-							
-							<h3><?php echo $term->name; ?></h3>
-							<?php if(function_exists('get_field')):
-								if(get_field('tier_price', $term)):?>
-								<p><?php the_field('tier_price', $term);?></p>
+							<article>
+								<h3><?php echo $term->name; ?></h3>
+								<?php if(function_exists('get_field')):
+									if(get_field('tier_price', $term)):?>
+									<p class="price"><?php the_field('tier_price', $term);?></p>
+									<?php endif?>
 								<?php endif?>
-							<?php endif?>
-							<p><?echo $term->description;?></p>
-
+								<p><?echo $term->description;?></p>
+							</article>
 							<?php endforeach?>
 						<?php endif?>
 				</div>

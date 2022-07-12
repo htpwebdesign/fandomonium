@@ -1,6 +1,10 @@
 // vendors page 
 
 //CTA Styles
+html{
+    scroll-behavior: smooth;
+}
+
 .vendor-apply{
     position: absolute;
     bottom: 4rem;
@@ -58,5 +62,32 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
         }
+    }
+}
+
+.tiers{
+        @include flexRow;
+        align-items: normal;
+        flex-wrap: wrap;
+
+    @include desktopQuery{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+    article{
+        @include flexColumn;
+        align-items: center;
+        max-width: 380px;
+        margin: 0 auto;
+
+        .price{
+            font-size: $fan-h2-size;
+            font-weight: 700;
+            margin: 0 ;
+        }
+
+
     }
 }
