@@ -47,8 +47,9 @@ html{
         article{
             @include flexColumn;
             align-items: center;
-            max-width: 380px;
-            margin: 0 auto;
+            // max-width: 380px;
+            // margin: 0 auto;
+            //style this better when actual content is on the page
 
             img{
                 max-width: 40%;
