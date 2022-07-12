@@ -28,13 +28,13 @@ get_header();
 				<?php fandomonium_post_thumbnail(); ?>
 			</div>
 		</section>
-		<div>
+		<div class="schedule-content-container">
 
 			<?php
 			if (function_exists('get_field')) :
 				if (get_field('description')) :
 					?>
-						<p><?php the_field('description'); ?></p>
+						<p class="schedule-description"><?php the_field('description'); ?></p>
 					<?php
 				endif;
 			endif;
