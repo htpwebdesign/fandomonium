@@ -270,16 +270,19 @@ function fan_default_catalog_orderby( $sort_by ) {
 /**
  * Add Product description on archive-products.php
  */
-add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 15);
+add_action('woocommerce_after_shop_loop_item_title', 'add_product_excerpt', 20);
 function add_product_excerpt() {
 	the_excerpt();
 }
 
 /**
- * Remove WooCommerce "Ticket Details" link on archive-product
+ * Display currency next to price
  */
-// remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
-// want to change the text to be "Details"
+add_action('woocommerce_after_shop_loop_item_title', 'add_currency', 15);
+function add_currency() {
+	$currency = get_woocommerce_currency();
+	echo '<span class="currency-display">'. $currency .'</span>';
+}
 
 /**
  * Show number of items in Cart

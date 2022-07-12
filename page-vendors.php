@@ -25,10 +25,17 @@ get_header();
             <div class="hero-with-img">
                 <?php the_title('<h1 class="page-title">', '</h1>'); ?>
                 <?php fandomonium_post_thumbnail(); ?>
+             <div class="vendor-apply">
+					     <?php if(function_exists('get_field')):
+						    if(get_field('cta')): ?>
+							  <a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
+						    <?php endif?>
+					     <?php endif ?>
+				      </div>
             </div>
         </section>
 			
-		<section>
+		<section class="vendors">
 					<h2>Our featured Vendors</h2>
 					<?php // wp query for platinum vendors only
 					$args = array(
@@ -44,7 +51,7 @@ get_header();
 						);
 						$query = new WP_Query($args);?>
 					
-					<div>
+					<div class="platinum-vendors">
 						<?php if($query -> have_posts()):
 							while($query -> have_posts()):
 								$query->the_post(); ?>
@@ -63,6 +70,7 @@ get_header();
 					</div>
 				
 
+				<div class="list-contain">
 					<h2>Other Vendors</h2>
 
 					<?php // wp query for all other vendors
@@ -80,7 +88,7 @@ get_header();
 						$query = new WP_Query($args); ?>
 
 
-						<div>
+						<div class="other-vendors">
 							<?php if($query -> have_posts()):
 								while($query -> have_posts()):
 									$query->the_post();?>
@@ -90,12 +98,13 @@ get_header();
 							<?php wp_reset_postdata();?>
 							<?php endif?>
 						</div>
+				</div>
 			</section>
 
 			<section>
-				<h2 class="h1" id="vendor-apply">Apply as a Vendor</h2>
-				<div>
-					<p>These are our available tiers:</p>
+				<h2 class="h1">Apply as a Vendor</h2>
+				<p>These are our available tiers:</p>
+				<div class="tiers">
 					<?php 
 						$terms = get_terms( 
 							array(
@@ -105,19 +114,19 @@ get_header();
 
 						if ( $terms && ! is_wp_error( $terms ) ) :
 							foreach ($terms as $term):?>
-							
-							<h3><?php echo $term->name; ?></h3>
-							<?php if(function_exists('get_field')):
-								if(get_field('tier_price', $term)):?>
-								<p><?php the_field('tier_price', $term);?></p>
+							<article>
+								<h3><?php echo $term->name; ?></h3>
+								<?php if(function_exists('get_field')):
+									if(get_field('tier_price', $term)):?>
+									<p class="price"><?php the_field('tier_price', $term);?></p>
+									<?php endif?>
 								<?php endif?>
-							<?php endif?>
-							<p><?echo $term->description;?></p>
-
+								<p><?echo $term->description;?></p>
+							</article>
 							<?php endforeach?>
 						<?php endif?>
 				</div>
-				<?php echo do_shortcode('[contact-form-7 id="63" title="Vendor Application"]');?>
+				<?php echo do_shortcode('[contact-form-7 id="63" title="Vendor Application" html_id="vendor-application"]');?>
 			</section>
 
 			<?php // If comments are open or we have at least one comment, load up the comment template.
