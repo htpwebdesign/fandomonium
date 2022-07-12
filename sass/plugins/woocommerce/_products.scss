@@ -6,8 +6,11 @@ ul.products {
 		list-style: none;
 		position: relative;
 		margin-bottom: 2em;
+		// @include flexColumn;
+		// align-items: center;
 
 		a {
+			width: 100%;
 			text-decoration: none;
 
 			&:hover {
@@ -22,29 +25,37 @@ ul.products {
 			.price {
 				font-size: 2rem;
 			}
+
 			.currency-display {
 				text-transform: uppercase;
 			}
 
 			ul {
 				margin: 1rem 2rem 2rem;
-    			padding: 0;
+				padding: 0;
 			}
 		}
 
-
+		// WooCommerce "add to cart" aka CTA to single product page
 		.button {
-			display: block;
+			background-color: $color__button_background;
+			border: 2px solid $color__button_border;
+			padding: 0.75rem 2.5rem;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			text-align: center;
+
+			&:hover {
+				background-color: $color__button_background_invert;
+				color: $color__button-text-invert;
+			}
 		}
 	}
 }
 
 @media screen and (min-width: 48em) {
-
 	ul.products {
-
 		li.product {
-
 			@include column-width(3);
 			// float: left;
 			margin-right: $columns__margin;
@@ -60,23 +71,17 @@ ul.products {
 	}
 
 	ul.products.columns-1 {
-
 		li.product {
 			float: none;
 			width: 100%;
 		}
-
 	}
 
 	@for $i from 2 through 6 {
-
 		ul.products.columns-#{$i} {
-
 			li.product {
-
-				@include column-width( $i );
+				@include column-width($i);
 			}
-
 		}
 	}
 }
