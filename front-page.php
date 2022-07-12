@@ -51,12 +51,16 @@ get_header();
 		<section class="featured-events">
 			<?php
 			if (function_exists('get_fields')) {
-
+				?><div class="featured-events-heading-container"><?php
 				if (get_field('featured_events_heading')) {
 					?>
 					<h2><?php the_field('featured_events_heading'); ?></h2>
 					<?php
 				}
+				if (get_field('events_link')) {
+					?><a href="<?php echo get_permalink( 12 ); ?>"><?php the_field('events_link'); ?></a><?php
+				}
+				?></div><?php
 
 				$posts = get_field('feature_events');
 				if( $posts ): ?>
@@ -64,7 +68,7 @@ get_header();
 							<?php foreach( $posts as $post ): ?>
 								<li>
 									<a href="<?php echo get_permalink( $post->ID ); ?>">
-										<?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
+										<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 										<p><?php the_title(); ?></p>	
 									</a>
 								</li>
@@ -75,9 +79,7 @@ get_header();
 				
 				endif; 
 				wp_reset_postdata();
-			if (get_field('events_link')) {
-				?><a href="<?php echo get_permalink( 12 ); ?>"><?php the_field('events_link'); ?></a><?php
-			}
+				
 			}
 			?>
 		</section>
@@ -87,11 +89,17 @@ get_header();
 		<?php
 
 			if ( function_exists('get_fields') ) {
+				?><div class="featured-news-heading-container"><?php
 				if (get_field('news_heading')) {
 					?>
 					<h2><?php the_field('news_heading'); ?></h2>
 					<?php
 				}
+
+				if (get_field('news_link')) {
+					?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php the_field('news_link') ?></a><?php
+				}
+				?></div><?php
 			}
 
 				$args = array(
@@ -117,9 +125,7 @@ get_header();
 					endwhile;
 					wp_reset_postdata();
 					
-					if (get_field('news_link')) {
-						?><a href="<?php echo get_post_type_archive_link( 'post' ); ?>"><?php the_field('news_link') ?></a><?php
-					}
+					
 					
 				endif;
 

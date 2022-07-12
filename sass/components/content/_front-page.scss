@@ -1,17 +1,26 @@
 
 .featured-events {
 
+    .featured-events-heading-container {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 1rem; 
+        }
+    }
+
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
 
         @include largeTabletQuery {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 2rem;
         }
    
-        
     }
 
     a {
@@ -21,10 +30,23 @@
             object-fit: cover;
             display: block;
             margin: auto;
+            width: 100%;
 
             @include largeTabletQuery {
                 height: 12rem;
             }
+        }
+    }
+}
+
+.featured-news {
+
+    .featured-news-heading-container {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-left: 1rem;
         }
     }
 }
