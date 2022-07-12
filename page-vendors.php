@@ -88,7 +88,7 @@ get_header();
 						$query = new WP_Query($args); ?>
 
 
-						<div>
+						<div class="other-vendors">
 							<?php if($query -> have_posts()):
 								while($query -> have_posts()):
 									$query->the_post();?>
