@@ -12,7 +12,8 @@ a {
 	}
 
 	&:focus {
-		outline: thin dotted;
+		outline: dotted 2px $color__link-hover;
+		border-radius: 3px;
 	}
 
 	&:hover,
