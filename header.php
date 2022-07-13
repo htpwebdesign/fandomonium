@@ -59,7 +59,14 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'fandomonium' ); ?>test</button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<?php esc_html_e( '', 'fandomonium' ); ?>
+				  <span class="hamburger-icon" id="hamburger-icon">
+                      <span class="line"></span>
+                      <span class="line"></span>
+                      <span class="line"></span>
+                  </span>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
