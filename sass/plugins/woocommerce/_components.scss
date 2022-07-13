@@ -210,18 +210,22 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	background-color: $fan-yellow-faded;
 	clear: both;
+	padding: 1rem;
 }
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-info;
+	background-color: $fan-teal-faded;
 }
 
 .woocommerce-error {
 	background-color: $woocommerce__color-error;
+	margin: 0;
+	list-style: none;
+
 }
 
 .demo_store {
@@ -332,4 +336,48 @@ p.no-comments {
 }
 .product_meta > * {
 	margin: 0.5rem 0;
+}
+
+
+.actions {
+	.coupon {
+		label {
+			display: block;
+			margin-bottom: .5rem;
+		}
+		input {
+			width: 100%;
+		}
+	}
+
+	button {
+		padding: 1rem;
+		margin: 1rem 0 0 0;
+		width: 50%;
+		margin-right: 25%;
+
+		@include largeTabletQuery {
+			margin-right: 0;
+			margin-left: 25%;
+		}
+
+		&:hover {
+			background-color: $fan-black;
+			color: $fan-white;
+			border: 1px solid black;
+		}
+	}
+}
+
+
+.woocommerce-notices-wrapper {
+	.woocommerce-error {
+		list-style: none;
+		margin: 0;
+		li {
+			padding: 1rem;
+		}
+	}
+
+
 }
