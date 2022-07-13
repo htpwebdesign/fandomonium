@@ -210,8 +210,13 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	background-color: $fan-yellow;
 	clear: both;
+	padding: 1rem;
+
+	a {
+		font-weight: 600;
+	}
 }
 
 .woocommerce-info,
@@ -268,6 +273,10 @@ p.no-comments {
 	align-items: center;
 	margin: 2rem auto 4rem;
 
+	@include largeTabletQuery {
+		grid-column: 1/4; // in large tablet mode this will span full width along with grid
+	}
+
 	.items-number {
 		font-weight: 600;
 	}
@@ -289,47 +298,6 @@ p.no-comments {
 	}
 }
 
-// Single Ticket register name form
-.wc-box-office-ticket-form {
-	.wc-box-office-ticket-fields {
-		color: $color__text-main;
-
-		.wc-box-office-ticket-fields-title {
-			a {
-				&:focus {
-					color: $color__text-main;
-				}
-			}
-		}
-	}
-	.active {
-		border: none;
-	}
-}
-// Single Ticket Add to Cart button (submitting form)
-.single_add_to_cart_button {
-	display: block;
-	margin: 4rem auto;
-	background-color: $color__button_background;
-	border: 2px solid $color__button_border;
-	padding: 0.75rem 2.5rem;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	text-decoration: none;
-	transition: background-color 0.3s ease-in, color 0.3s ease-in;
-
-	&:hover {
-		background-color: $fan-black;
-		border: 2px solid $fan-black;
-		color: $color__button-text-invert;
-		transition: background-color 0.3s ease-in, color 0.3s ease-in;
-	}
-}
-
-.product_meta {
-	@include flexColumn;
-}
-.product_meta > * {
-	margin: 0.5rem 0;
+.woocommerce-breadcrumb {
+	margin: 2rem 0;
 }
