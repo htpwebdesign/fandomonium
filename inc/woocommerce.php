@@ -21,7 +21,7 @@ function fandomonium_woocommerce_setup() {
 		'woocommerce',
 		array(
 			'thumbnail_image_width' => 300,
-			'single_image_width'    => 300,
+			'single_image_width'    => 600,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -326,7 +326,20 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_pr
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /**
+ * Display currency next to price
+ */
+add_action('woocommerce_single_product_summary', 'add_currency', 15);
+
+/**
  * Add number of items in cart and checkout link
  */
 add_action('woocommerce_after_single_product_summary', 'show_number_of_cart_items', 20);
 add_action('woocommerce_after_single_product_summary', 'checkout_button', 30);
+
+/**
+ * Display subheading for 'Quantity'
+ */
+function add_qty_subheading() {
+	echo '<p class="quantity-title">Qty</p>';
+}
+add_action('woocommerce_before_add_to_cart_quantity', 'add_qty_subheading', 99);

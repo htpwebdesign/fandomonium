@@ -60,7 +60,6 @@
 }
 
 p.stars {
-
 	a {
 		position: relative;
 		height: 1em;
@@ -72,7 +71,6 @@ p.stars {
 		font-weight: 400;
 
 		&::before {
-
 			display: block;
 			position: absolute;
 			top: 0;
@@ -88,7 +86,6 @@ p.stars {
 		}
 
 		&:hover {
-
 			~ a::before {
 				content: "\53";
 				color: $color__text-main;
@@ -98,9 +95,7 @@ p.stars {
 	}
 
 	&:hover {
-
 		a {
-
 			&::before {
 				content: "\53";
 				color: $color__link;
@@ -110,9 +105,7 @@ p.stars {
 	}
 
 	&.selected {
-
 		a.active {
-
 			&::before {
 				content: "\53";
 				color: $color__link;
@@ -127,7 +120,6 @@ p.stars {
 		}
 
 		a:not(.active) {
-
 			&::before {
 				content: "\53";
 				color: $color__link;
@@ -141,7 +133,6 @@ p.stars {
  * Tabs
  */
 .woocommerce-tabs {
-
 	ul.tabs {
 		list-style: none;
 		margin: 0;
@@ -161,7 +152,6 @@ p.stars {
 	}
 
 	.panel {
-
 		h2:first-of-type {
 			margin-bottom: 1em;
 		}
@@ -195,16 +185,13 @@ p.stars {
  * Forms
  */
 .form-row {
-
 	&.woocommerce-validated {
-
 		input.input-text {
 			box-shadow: inset 2px 0 0 $woocommerce__color-success;
 		}
 	}
 
 	&.woocommerce-invalid {
-
 		input.input-text {
 			box-shadow: inset 2px 0 0 $woocommerce__color-error;
 		}
@@ -249,12 +236,10 @@ p.no-comments {
 }
 
 @media screen and (min-width: 48em) {
-
 	/**
 	 * Header cart
 	 */
 	.site-header-cart {
-
 		.widget_shopping_cart {
 			position: absolute;
 			top: 100%;
@@ -267,7 +252,6 @@ p.no-comments {
 
 		&:hover,
 		&.focus {
-
 			.widget_shopping_cart {
 				left: 0;
 				display: block;
@@ -281,7 +265,7 @@ p.no-comments {
 */
 .cart-items {
 	@include flexColumn;
-    align-items: center;
+	align-items: center;
 	margin: 2rem auto 4rem;
 
 	.items-number {
@@ -295,12 +279,57 @@ p.no-comments {
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		text-decoration: none;
-		transition: background-color .3s ease-in,  color .3s ease-in;
+		transition: background-color 0.3s ease-in, color 0.3s ease-in;
 
 		&:hover {
 			background-color: $fan-black;
 			color: $color__button-text-invert;
-			transition: background-color .3s ease-in,  color .3s ease-in;
+			transition: background-color 0.3s ease-in, color 0.3s ease-in;
 		}
 	}
+}
+
+// Single Ticket register name form
+.wc-box-office-ticket-form {
+	.wc-box-office-ticket-fields {
+		color: $color__text-main;
+
+		.wc-box-office-ticket-fields-title {
+			a {
+				&:focus {
+					color: $color__text-main;
+				}
+			}
+		}
+	}
+	.active {
+		border: none;
+	}
+}
+// Single Ticket Add to Cart button (submitting form)
+.single_add_to_cart_button {
+	display: block;
+	margin: 4rem auto;
+	background-color: $color__button_background;
+	border: 2px solid $color__button_border;
+	padding: 0.75rem 2.5rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background-color 0.3s ease-in, color 0.3s ease-in;
+
+	&:hover {
+		background-color: $fan-black;
+		border: 2px solid $fan-black;
+		color: $color__button-text-invert;
+		transition: background-color 0.3s ease-in, color 0.3s ease-in;
+	}
+}
+
+.product_meta {
+	@include flexColumn;
+}
+.product_meta > * {
+	margin: 0.5rem 0;
 }
