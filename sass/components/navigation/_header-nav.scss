@@ -36,13 +36,14 @@
         li {
             @include largeTabletQuery {
                 font-size: 1rem;
-                padding: 0 0.5rem;
             }
+
             a {
                 color: $color__nav-link;
 
                 @include medScreenQuery {
-                    padding: 0.5rem;
+                  
+                    padding: 1.5rem;
                 }
 
                 &:hover {
