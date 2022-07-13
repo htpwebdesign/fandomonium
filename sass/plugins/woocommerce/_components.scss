@@ -210,8 +210,13 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	background-color: $fan-yellow;
 	clear: both;
+	padding: 1rem;
+
+	a {
+		font-weight: 600;
+	}
 }
 
 .woocommerce-info,
@@ -291,4 +296,8 @@ p.no-comments {
 			transition: background-color 0.3s ease-in, color 0.3s ease-in;
 		}
 	}
+}
+
+.woocommerce-breadcrumb {
+	margin: 2rem auto;
 }
