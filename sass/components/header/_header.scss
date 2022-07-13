@@ -67,10 +67,12 @@
                     width: 0;
                 }
                 &:nth-child(1).active-burger{
-                    transform: translateY(10px) rotate(45deg)
+                    transform: translateY(10px) rotate(45deg);
+                    background-color: $fan-yellow;
                 }
                 &:nth-child(3).active-burger{
-                    transform: translateY(-10px) rotate(-45deg)
+                    transform: translateY(-10px) rotate(-45deg);
+                    background-color: $fan-yellow;
                 }
             }  
         }

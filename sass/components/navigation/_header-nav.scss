@@ -13,6 +13,7 @@
     // hamburger button
     .menu-toggle {
         display: block;
+        cursor: pointer;
 
         @include tabletQuery {
             // padding: 1rem 3rem;
