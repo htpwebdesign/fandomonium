@@ -2,6 +2,8 @@
 
 .main-navigation {
     width: 25%;
+    justify-content: flex-end;
+    display: flex;
 
     @include largeTabletQuery {
         width: 100%;
@@ -12,9 +14,9 @@
         display: block;
 
         @include tabletQuery {
-            padding: 1rem 3rem;
+            // padding: 1rem 3rem;
             margin: 0;
-            width: 100%;
+            // width: 100%;
         }
         @include largeTabletQuery {
             display: none;
@@ -54,10 +56,10 @@
 
     // hamburger button after toggle
     .menu-toggle {
-        width: 20%;
+        // width: 20%;
         position: absolute;
         z-index: 99;
-        top: 2rem;
+        top: 1.25rem;
 
         @include largeTabletQuery {
             display: none;
