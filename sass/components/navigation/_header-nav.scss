@@ -2,6 +2,9 @@
 
 .main-navigation {
     width: 25%;
+    justify-content: flex-end;
+    display: flex;
+    flex-grow: 1;
 
     @include largeTabletQuery {
         width: 100%;
@@ -10,13 +13,14 @@
     // hamburger button
     .menu-toggle {
         display: block;
+        cursor: pointer;
 
         @include tabletQuery {
-            padding: 1rem 3rem;
+            // padding: 1rem 3rem;
             margin: 0;
-            width: 100%;
+            // width: 100%;
         }
-        @include largeTabletQuery {
+        @include desktopQuery {
             display: none;
         }
     }
@@ -25,7 +29,7 @@
     .nav-menu {
         display: none;
 
-        @include largeTabletQuery {
+        @include desktopQuery {
             display: flex;
             justify-content: space-between;
         }
@@ -54,12 +58,20 @@
 
     // hamburger button after toggle
     .menu-toggle {
-        width: 20%;
+        // width: 20%;
         position: absolute;
         z-index: 99;
-        top: 2rem;
+        top: .5rem;
+
+        @include tabletQuery {
+            top: .9rem;
+        }
 
         @include largeTabletQuery {
+            top: 1.3rem;
+        }
+
+        @include desktopQuery {
             display: none;
         }
     }
@@ -76,7 +88,7 @@
         background-color: $color__header-background;
         padding: 7rem 2rem 2rem;
 
-		@include largeTabletQuery {
+		@include desktopQuery {
 			display: none;
 		}
     }

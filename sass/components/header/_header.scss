@@ -8,8 +8,13 @@
     border-bottom: 1px solid $color__header-accent;
 
     .site-branding {
-        width: 5.5rem;
+        flex-shrink: 0;
+        width: 4.5rem;
+        padding: 0.5rem 0.5rem 0 0.5rem;
 
+        @include tabletQuery {
+            width: 5.25rem;
+        }
         @include largeTabletQuery {
             width: 6rem;
         }
@@ -17,15 +22,61 @@
     .date-location {
         width: 50%;
         margin: 0.5rem;
+        margin-left: 0;
+
 
         @include largeTabletQuery {
             margin: 1rem;
+            margin-left: 0;
+
         }
 
         p {
             text-align: left;
             margin: 0;
             color: $color__header-accent;
+            font-size: .7rem;
+
+            @include tabletQuery {
+                font-size: .85rem;
+            }
+            @include largeTabletQuery {
+                font-size: 1rem;
+            }
         }
+    }
+
+    .main-navigation {
+
+        .menu-toggle {
+            border: none;
+            background: none;
+        }
+
+        .hamburger-icon {
+
+            .line {
+                width: 35px;
+                height: 2px;
+                background-color: $fan-teal;
+                display: block;
+                margin: 8px auto;
+                transition: all 0.3s ease-in-out;
+        
+                &:nth-child(2).active-burger{
+                    width: 0;
+                }
+                &:nth-child(1).active-burger{
+                    transform: translateY(10px) rotate(45deg);
+                    background-color: $fan-yellow;
+                }
+                &:nth-child(3).active-burger{
+                    transform: translateY(-10px) rotate(-45deg);
+                    background-color: $fan-yellow;
+                }
+            }  
+        }
+
+      
     }
 }
