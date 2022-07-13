@@ -151,7 +151,6 @@
 	@include largeTabletQuery {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 2rem;
 	}
 	.woocommerce-product-gallery__image {
 		img {
