@@ -3,6 +3,11 @@
 		position: relative;
 
 		.summary {
+			@include largeTabletQuery {
+				order: -1;
+				margin-right: 2rem;
+			}
+
 			.product_title {
 				margin-bottom: 0;
 			}
