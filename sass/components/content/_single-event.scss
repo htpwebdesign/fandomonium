@@ -2,6 +2,10 @@
 .single-event-header {
     margin-top: 2rem;
 
+    .post-thumbnail {
+        width: 100%;
+    }
+
    
     @include desktopQuery {
         display: flex;

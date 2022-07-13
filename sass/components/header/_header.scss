@@ -28,4 +28,36 @@
             color: $color__header-accent;
         }
     }
+
+    .main-navigation {
+
+        .menu-toggle {
+            border: none;
+            background: none;
+        }
+
+        .hamburger-icon {
+
+            .line {
+                width: 35px;
+                height: 2px;
+                background-color: $fan-teal;
+                display: block;
+                margin: 8px auto;
+                transition: all 0.3s ease-in-out;
+        
+                &:nth-child(2).active-burger{
+                    width: 0;
+                }
+                &:nth-child(1).active-burger{
+                    transform: translateY(10px) rotate(45deg)
+                }
+                &:nth-child(3).active-burger{
+                    transform: translateY(-10px) rotate(-45deg)
+                }
+            }  
+        }
+
+      
+    }
 }
