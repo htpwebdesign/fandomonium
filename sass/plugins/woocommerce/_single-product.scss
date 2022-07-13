@@ -31,6 +31,10 @@
 				right: 1em;
 				display: block;
 				z-index: 99;
+
+				@include largeTabletQuery {
+					top: 3rem;
+				}
 			}
 
 			.flex-viewport {
@@ -136,6 +140,24 @@
 			margin: 0.5rem 0;
 		}
 	}
+}
+
+.type-product {
+	@include largeTabletQuery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+	.woocommerce-product-gallery__image {
+		img {
+			@include largeTabletQuery {
+				object-fit: cover;
+				margin-top: 1.5rem;
+				height: 350px;
+			}
+		}
+	}
+
 }
 
 .stock {
