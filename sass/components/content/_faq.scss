@@ -22,9 +22,9 @@
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .accordion:hover {
-    border: .125rem solid $fan-teal;
-    background-color: $fan-teal;
-    color: $fan-white;
+      background-color: $fan-teal-faded;
+      border: .125rem solid $fan-teal-faded;
+      transition: all .3s ease-in;
   }
 
   .active::after{

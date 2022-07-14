@@ -121,8 +121,8 @@
 		.single_add_to_cart_button {
 			display: block;
 			margin: 4rem auto;
-			background-color: $color__button_background;
-			border: 2px solid $color__button_border;
+			background-color: $color__button-background;
+			border: 2px solid $color__button-border;
 			padding: 0.75rem 2.5rem;
 			font-weight: 600;
 			letter-spacing: 1px;
@@ -131,9 +131,9 @@
 			transition: background-color 0.3s ease-in, color 0.3s ease-in;
 
 			&:hover {
-				background-color: $fan-black;
-				border: 2px solid $fan-black;
-				color: $color__button-text-invert;
+				background-color: $color__button-background-hover;
+				border: 2px solid $color__button-background-hover;
+				color: $color__button-text-hover;
 				transition: background-color 0.3s ease-in, color 0.3s ease-in;
 			}
 		}

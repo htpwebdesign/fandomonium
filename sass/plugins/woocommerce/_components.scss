@@ -210,7 +210,7 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $fan-yellow-faded;
+	background-color: $color__alert-success;
 	clear: both;
 	padding: 1rem;
 
@@ -222,7 +222,7 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $fan-teal-faded;
+	background-color: $color__alert-message;
 }
 
 .woocommerce-error {
@@ -285,7 +285,7 @@ p.no-comments {
 	}
 
 	.checkout-btn {
-		background-color: $fan-yellow;
+		background-color: $color__button-secondary-background;
 		padding: 0.75rem 2.5rem;
 		font-weight: 600;
 		letter-spacing: 1px;
@@ -294,8 +294,8 @@ p.no-comments {
 		transition: background-color 0.3s ease-in, color 0.3s ease-in;
 
 		&:hover {
-			background-color: $fan-black;
-			color: $color__button-text-invert;
+			background-color: $color__button-background-hover;
+			color: $color__button-text-hover;
 			transition: background-color 0.3s ease-in, color 0.3s ease-in;
 		}
 	}
@@ -334,9 +334,9 @@ p.no-comments {
 		}
 
 		&:hover {
-			background-color: $fan-black;
-			color: $fan-white;
-			border: 1px solid black;
+			background-color: $color__button-background-hover;
+			color: $color__button-text-hover;
+			border: 1px solid $color__button-background-hover;
 		}
 	}
 }

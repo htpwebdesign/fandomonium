@@ -14,20 +14,20 @@ html{
     width: 100%;
 
     a{
-        color: $fan-teal;
+        color: $color__main-accent;
         font-weight: 700;
         text-decoration: none;
         text-transform: uppercase;
         padding: 0.75rem;
-        border: 3px solid $color__button_border;
-        border-radius: .25rem;
-        transition: background-color .25s ease-in;
+        border: 3px solid $color__button-border;
+        transition: all .3s ease-in;
         max-width: 12rem;
 
         &:hover{
-            color: $color__button-text-invert;
-            background-color: $color__button_background_invert;
-            transition: background-color .25s ease-in,  color .3s ease-in;
+            color: $fan-black;
+            background-color: $color__button-secondary-background;
+            border: 3px solid $color__button-secondary-background;
+            transition: all .3s ease-in;
         }
     }
 
@@ -168,12 +168,18 @@ html{
         background-color: rgb(255, 255, 255);
         text-decoration: none;
         padding: 0.75rem 3rem;
-        border-width: 2px;
-        border-style: solid;
-        border-color: rgb(45, 177, 177);
+        border: 2px solid $fan-teal;
         border-image: initial;
-        border-radius: 0.25rem;
 
+        &:hover {
+            color: $color__button-text-hover;
+            background-color: $color__button-background-hover;
+            border: 2px solid $color__button-background-hover;
+            transition: all .3s ease-in;
+        }
+        &:focus {
+            border: 1px dotted $fan-black;
+        }
       }
 
       @include tabletQuery{
