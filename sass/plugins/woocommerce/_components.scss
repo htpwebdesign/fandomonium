@@ -210,7 +210,7 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $color__alert-succes;
+	background-color: $color__alert-success;
 	clear: both;
 	padding: 1rem;
 
@@ -294,7 +294,7 @@ p.no-comments {
 		transition: background-color 0.3s ease-in, color 0.3s ease-in;
 
 		&:hover {
-			background-color: $color-button-background-hover;
+			background-color: $color__button-background-hover;
 			color: $color__button-text-hover;
 			transition: background-color 0.3s ease-in, color 0.3s ease-in;
 		}
@@ -334,9 +334,9 @@ p.no-comments {
 		}
 
 		&:hover {
-			background-color: $color-button-background-hover;
+			background-color: $color__button-background-hover;
 			color: $color__button-text-hover;
-			border: 1px solid $color-button-background-hover;
+			border: 1px solid $color__button-background-hover;
 		}
 	}
 }
