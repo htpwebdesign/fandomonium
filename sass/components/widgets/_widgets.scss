@@ -1,5 +1,9 @@
 .widget {
-	margin: 2.5rem 4rem 2rem 4rem;
+	margin: 2rem auto;
+
+	@include desktopQuery {
+		margin: 2.5rem 4rem 2rem;
+	}
 
 	// Make sure select elements fit in widgets.
 	select {
