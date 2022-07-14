@@ -52,9 +52,3 @@
 	height: 100%;
 	object-fit: cover;
 }
-
-//yellow stripe background mixin
-@mixin fanBackground{
-	background-image: linear-gradient(45deg, #ffcf55 25.20%, #ffffff 25.20%, #ffffff 50%, #ffcf55 50%, #ffcf55 75.20%, #ffffff 75.20%, #ffffff 100%);
-	background-size: 712.76px 712.76px;
-}
