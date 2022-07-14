@@ -28,7 +28,7 @@ get_header();
              <div class="vendor-apply">
 					     <?php if(function_exists('get_field')):
 						    if(get_field('cta')): ?>
-							  <a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?echo get_field('cta')['title']?></a>
+							  <a href="<?php echo esc_url(get_field('cta')['url']); ?>" class="vendor-apply"><?php echo get_field('cta')['title']?></a>
 						    <?php endif?>
 					     <?php endif ?>
 				      </div>
@@ -121,7 +121,7 @@ get_header();
 									<p class="price"><?php the_field('tier_price', $term);?></p>
 									<?php endif?>
 								<?php endif?>
-								<p><?echo $term->description;?></p>
+								<p><?php echo $term->description;?></p>
 							</article>
 							<?php endforeach?>
 						<?php endif?>
