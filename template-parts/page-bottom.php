@@ -20,7 +20,8 @@
 				$link_url = $link['url'];
 				$link_title = $link['title'];
 	?>
-				<article class="buy-tickets-cta">
+				<article class="buy-tickets-cta" data-aos="fade-up"
+										  data-aos-offset="200">
 					<h2>Buy tickets now!</h2>
 					<a href="<?php echo esc_url($link_url); ?>">
 						<?php echo esc_html($link_title) ?>
@@ -50,7 +51,8 @@
 		$query = new WP_Query($args);
 		if ($query->have_posts()) {
 	?>
-			<article class="feat-vendors">
+			<article class="feat-vendors" data-aos="fade-up"
+										  data-aos-offset="200">
 				<h2>Featured Vendors</h2>
 			
 				<div class="vendors-logos">
