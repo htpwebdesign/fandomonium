@@ -1,6 +1,7 @@
 @use "../abstracts/mixins/mixins" as *;
 
 .site {
+	max-width: 2200px;
 	margin: 0 auto;
 }
 
