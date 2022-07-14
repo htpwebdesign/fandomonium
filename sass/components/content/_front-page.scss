@@ -50,6 +50,7 @@
     a {
 
         img {
+            aspect-ratio: 3/2;
             object-position: center;
             object-fit: cover;
             display: block;
@@ -75,6 +76,7 @@
     }
 
     img {
+        aspect-ratio: 3/2;
         object-position: center;
             object-fit: cover;
             display: block;
@@ -125,11 +127,13 @@
     a {
 
         img {
+            aspect-ratio: 3/2;
             object-position: center;
             object-fit: cover;
             display: block;
             margin: auto;
             width: 100%;
+           
 
             @include largeTabletQuery {
                 height: 12rem;
