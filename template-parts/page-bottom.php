@@ -19,15 +19,15 @@
 				$link = get_field('page_bottom_cta', 'options');
 				$link_url = $link['url'];
 				$link_title = $link['title'];
-	?>
-				<article class="buy-tickets-cta" data-aos="fade-up"
-										  data-aos-offset="200">
-					<h2>Buy tickets now!</h2>
-					<a href="<?php echo esc_url($link_url); ?>">
-						<?php echo esc_html($link_title) ?>
-					</a>
-				</article>
-	<?php
+				?>
+					<article class="buy-tickets-cta" data-aos="fade-up"
+											data-aos-offset="200">
+						<h2>Buy tickets now!</h2>
+						<a href="<?php echo esc_url($link_url); ?>">
+							<?php echo esc_html($link_title) ?>
+						</a>
+					</article>
+				<?php
 			}
 		}
 	}
