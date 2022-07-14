@@ -183,8 +183,7 @@ get_header();
 
 		</section>
 
-		<section class="featured-vendors" data-aos="fade-up"
-										  data-aos-offset="200">
+		<section class="featured-vendors" >
 
 			<?php 
 			get_template_part( 'template-parts/page-bottom' );
