@@ -13,16 +13,19 @@
             text-decoration: none;
             text-transform: uppercase;
             padding: 0.75rem 3rem;
-            background-color: $color__button_background;
-            border: 2px solid $color__button_border;
+            background-color: $color__button-background;
+            border: 2px solid $color__button-border;
             border-radius: .25rem;
             transition: background-color .3s ease-in;
 
 
             &:hover{
-                color: $color__button-text-invert;
-                background-color: $color__button_background_invert;
+                color: $color__button-text-hover;
+                background-color: $color__button-background-hover;
                 transition: background-color .3s ease-in,  color .3s ease-in;
+            }
+            &:focus {
+                border: 1px dotted $fan-black;
             }
         }
     }

@@ -29,20 +29,20 @@
     &.day-one {
         .schedule {
             &:nth-of-type(odd) {
-                background-color: $fan-teal-faded;
+                background-color: $color__schedule-day1;
             }
             &:nth-of-type(even) {
-                background-color: rgba($fan-teal-faded, 0.2);
+                background-color: rgba($color__schedule-day1, 0.2);
             }
         }
     }
     &.day-two {
         .schedule {
             &:nth-of-type(odd) {
-                background-color: $fan-yellow-faded;
+                background-color: $color__schedule-day2;
             }
             &:nth-of-type(even) {
-                background-color: rgba($fan-yellow-faded, 0.2);
+                background-color: rgba($color__schedule-day2, 0.2);
             }
         }
     }
@@ -109,10 +109,10 @@
             }
             
             &#btnOne {
-                background-color: $fan-teal-faded; 
+                background-color: $color__schedule-day1; 
             }
             &#btnTwo {
-                background-color: $fan-yellow-faded; 
+                background-color: $color__schedule-day2; 
             }
 
         }
