@@ -3,3 +3,13 @@
 @import "variables/structure";
 @import "variables/columns";
 @import "mixins/mixins";
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+    @import "animateOnScroll/animations";
+    @import "animateOnScroll/core";
+    @import "animateOnScroll/easing";
+}
+
+

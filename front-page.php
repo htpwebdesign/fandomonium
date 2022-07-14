@@ -28,7 +28,8 @@ get_header();
 			</div>
 		</section>
 
-		<section class="welcome-message">
+		<section class="welcome-message" data-aos="fade-up"
+     data-aos-duration="1500">
 			<?php
 				if (function_exists('get_fields')) {
 
@@ -48,10 +49,11 @@ get_header();
 		</section>
 
 
-		<section class="featured-events">
+		<section class="featured-events" >
 			<?php
 			if (function_exists('get_fields')) {
-				?><div class="featured-events-heading-container"><?php
+				?><div class="featured-events-heading-container" data-aos="fade-up"
+																 data-aos-offset="200"><?php
 				if (get_field('featured_events_heading')) {
 					?>
 					<h2><?php the_field('featured_events_heading'); ?></h2>
@@ -66,7 +68,8 @@ get_header();
 				if( $posts ): ?>
 						<ul>
 							<?php foreach( $posts as $post ): ?>
-								<li>
+								<li data-aos="fade-up"
+									data-aos-offset="200">
 									<a href="<?php echo get_permalink( $post->ID ); ?>">
 										<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 										<h3><?php the_title(); ?></h3>	
@@ -85,11 +88,12 @@ get_header();
 		</section>
 
 
-		<section class="featured-news">
+		<section class="featured-news"  >
 		<?php
 
 			if ( function_exists('get_fields') ) {
-				?><div class="featured-news-heading-container"><?php
+				?><div class="featured-news-heading-container" data-aos="fade-up"
+															   data-aos-offset="200"><?php
 				if (get_field('news_heading')) {
 					?>
 					<h2><?php the_field('news_heading'); ?></h2>
@@ -114,7 +118,9 @@ get_header();
 						$blog_query -> the_post();
 
 						?>
-						<article>
+						<article    data-aos="fade-up"
+									data-aos-offset="200">
+
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail( 'large' ); ?>
 								<h3> <?php the_title(); ?> </h3>
@@ -137,11 +143,12 @@ get_header();
 		</section>
 
 
-		<section class="featured-guests">
+		<section class="featured-guests" >
 
 		<?php
 			if (function_exists('get_fields')) :
-				?><div class="featured-guests-heading-container"><?php
+				?><div class="featured-guests-heading-container" data-aos="fade-up"
+															   	 data-aos-offset="200"><?php
 				if (get_field('featured_guests_heading')) {
 					?>
 					<h2><?php the_field('featured_guests_heading'); ?></h2>
@@ -156,7 +163,8 @@ get_header();
 				if( $posts ): ?>
 						<ul>
 							<?php foreach( $posts as $post ): ?>
-								<li>
+								<li data-aos="fade-up"
+									data-aos-offset="200">
 									<a href="<?php echo get_permalink( $post->ID ); ?>">
 										<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 										<h3><?php the_title(); ?></h3>
@@ -175,7 +183,7 @@ get_header();
 
 		</section>
 
-		<section class="featured-vendors">
+		<section class="featured-vendors" >
 
 			<?php 
 			get_template_part( 'template-parts/page-bottom' );
