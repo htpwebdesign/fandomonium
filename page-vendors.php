@@ -92,7 +92,6 @@ get_header();
 							<?php if($query -> have_posts()):
 								while($query -> have_posts()):
 									$query->the_post();?>
-
 									<h3><?php the_title();?></h3>
 								<?php endwhile?>
 							<?php wp_reset_postdata();?>
@@ -117,8 +116,17 @@ get_header();
 							<article>
 								<h3><?php echo $term->name; ?></h3>
 								<?php if(function_exists('get_field')):
-									if(get_field('tier_price', $term)):?>
-									<p class="price"><?php the_field('tier_price', $term);?></p>
+
+									if(get_field('tier_picture', $term)):?>
+										<img 
+											class="tier-badge" 
+											src="<?php echo get_field('tier_picture', $term)['sizes']['thumbnail'];?>"
+											alt="<?php echo get_field('tier_picture', $term)['alt'];?>"
+										>
+									<?php endif?>
+
+									<?php if(get_field('tier_price', $term)):?>
+										<p class="price"><?php the_field('tier_price', $term);?></p>
 									<?php endif?>
 								<?php endif?>
 								<p><?php echo $term->description;?></p>
