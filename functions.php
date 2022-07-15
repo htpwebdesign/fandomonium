@@ -283,3 +283,39 @@ function wpdev_filter_login_head() {
 }
  
 add_action( 'login_head', 'wpdev_filter_login_head', 100 );
+
+
+
+function remove_dashboard_widgets() {
+    global $wp_meta_boxes;
+  
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+    unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+  
+} 
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+
+
+  
+function my_custom_dashboard_widgets() {
+global $wp_meta_boxes;
+ 
+wp_add_dashboard_widget('custom_help_widget', 'Theme Support', 'custom_dashboard_help');
+}
+ 
+function custom_dashboard_help() {
+	?>
+		<a href="<?php echo wp_get_attachment_url(319); ?>">Tutorial PDF</a>
+	<?php
+}
+
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+
+
+
