@@ -22,7 +22,15 @@
 				?>
 					<article class="buy-tickets-cta" data-aos="fade-up"
 											data-aos-offset="200">
-						<h2>Buy tickets now!</h2>
+						<?php
+						if (get_field('page_bottom_cta_heading', 'options')) {
+							?>
+								<h2><?php the_field('page_bottom_cta_heading', 'options') ?></h2>
+							<?php
+						}
+						?>
+										
+						
 						<a href="<?php echo esc_url($link_url); ?>">
 							<?php echo esc_html($link_title) ?>
 						</a>
